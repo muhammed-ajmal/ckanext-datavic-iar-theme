@@ -1,11 +1,11 @@
 $rpl-footer-breakpoint: 'l' !default;
-$rpl-footer-bg-color: rpl-color('dark_primary') !default;
+$rpl-footer-bg-color: rpl-color('primary') !default;
 $rpl-footer-bg-image: url('/assets/images/footer-shape.png') !default;
 $rpl-footer-bottom-bg-color: transparent !default;
-$rpl-footer-text-color: rpl-color('white') !default;
+$rpl-footer-text-color: rpl-color('extra_dark_neutral') !default;
 $rpl-footer-border-width: $rpl-border-width !default;
 $rpl-footer-border-color: rpl-color('primary') !default;
-$rpl-footer-border-color-light: rpl-color('white') !default;
+$rpl-footer-border-color-light: rpl-color('extra_dark_neutral') !default;
 $rpl-footer-logo-max-width: rem(112px) !default;
 $rpl-footer-logo-max-height: rem(52px) !default;
 $rpl-footer-acknowledgement-margin: $rpl-space-3 0 ($rpl-space * 9) !default;

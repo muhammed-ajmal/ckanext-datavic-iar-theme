@@ -15,3 +15,13 @@
   }
 }
 
+$nav-tab-icon-color: rpl-color('primary') !default;
+.nav.nav-tabs i.fa {
+  color: $nav-tab-icon-color
+}
+
+$nav-tab-a-color: rpl-color('mid_neutral_4') !default;
+.nav.nav-tabs a {
+  color: $nav-tab-a-color
+}
+
