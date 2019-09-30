@@ -13,7 +13,7 @@
 @import '../ripple/packages/components/Atoms/Global/scss/settings/variables';
 @import '../ripple/packages/components/Atoms/Global/scss/settings/grid';
 @import '../ripple/packages/components/Atoms/Global/scss/settings/layout';
-@import '../ripple/packages/components/Atoms/Global/scss/settings/button';
+@import 'button_color';
 @import '../ripple/packages/components/Atoms/Global/scss/settings/print';
 
 //@import '../ripple/packages/Atoms/Global/scss/settings';
@@ -37,6 +37,7 @@
 @import 'acknowledgement';
 @import 'breadcrumbs';
 @import 'button';
+@import 'button_extras';
 @import 'footer';
 @import 'footer_extras';
 @import 'header';

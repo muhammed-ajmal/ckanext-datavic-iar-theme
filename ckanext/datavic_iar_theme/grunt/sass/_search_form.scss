@@ -24,7 +24,7 @@
 }
 
 $rpl-search-form-button-width: rem(28px) !default;
-$rpl-search-form-input-text-color: rpl-color('extra_dark_neutral') !default;
+$rpl-search-form-input-text-color: rpl-color('mid_neutral_3') !default;
 $rpl-search-form-input-margin: auto auto ($rpl-space-4) auto !default;
 $rpl-search-form-input-margin-s: auto auto ($rpl-space-4) auto !default;
 $rpl-search-form-input-margin-l: auto auto ($rpl-space-4) auto !default;
@@ -50,7 +50,7 @@ $rpl-search-form-sub-heading-ruleset: (
 ) !default;
 $rpl-search-form-show-filters-ruleset: ('s', .87em, 'bold') !default;
 $rpl-search-form-legend-ruleset: (2em, 2.2em, 'bold') !default;
-$rpl-search-form-show-filters-text-color: rpl-color('primary') !default;
+$rpl-search-form-show-filters-text-color: rpl-color('dark_neutral') !default;
 $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
 
 .rpl-search-form {
@@ -96,7 +96,7 @@ $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
     span {
       // TODO - update to match design
       @include rpl_typography_ruleset($rpl-search-form-search-text);
-      color: rpl-color('primary');
+      color: rpl-color('dark_neutral');
       margin-right: $rpl-space-2;
     }
 

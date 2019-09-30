@@ -23,8 +23,8 @@ $rpl-pagination-step-color: rpl-color('extra_dark_neutral') !default;
 $rpl-pagination-step-border-bottom: 2px solid transparent !default;
 $rpl-pagination-step-hover-color: rpl-color('secondary') !default;
 $rpl-pagination-step-hover-border-bottom: 2px solid rpl-color('secondary') !default;
-$rpl-pagination-step-current-color: rpl-color('secondary') !default;
-$rpl-pagination-step-current-border-bottom: 2px solid rpl-color('secondary') !default;
+$rpl-pagination-step-current-color: rpl-color('dark_primary') !default;
+$rpl-pagination-step-current-border-bottom: 2px solid rpl-color('dark_primary') !default;
 $rpl-pagination-nav-margin: 0 0 0 ($rpl-space * 5) !default;
 
 .module {
