@@ -21,21 +21,6 @@ $gutterless-grid: (
   @include rpl_text_color($rpl-footer-text-color);
   background-color: $rpl-footer-bg-color;
 
-  @include rpl_breakpoint($rpl-footer-breakpoint) {
-    background-image: $rpl-footer-bg-image;
-    background-position: calc(100% + #{rem(600px)}) bottom;
-    background-repeat: no-repeat;
-    background-size: rem(880px);
-  }
-
-  @include rpl_breakpoint(xl) {
-    background-position: calc(100% + #{rem(440px)}) bottom;
-  }
-
-  @include rpl_breakpoint(xxxl) {
-    background-position: calc(100% + #{rem(100px)}) bottom;
-  }
-
   @include rpl_print {
     background-image: none;
     background-color: transparent;
