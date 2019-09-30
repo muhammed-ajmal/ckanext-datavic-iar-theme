@@ -14,8 +14,7 @@ $rpl-colors: (
   'warning': #ca4c21,
   'success': #009ca6,
   'white': #fff,
-  'black': #000,
-  'primary_gradient_end': #FCEAB2
+  'black': #000
 ) !default;
 
 $rpl-success-bg-color: rgba(rpl-color('success'), .07);
