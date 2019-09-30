@@ -2,14 +2,14 @@ $rpl-button-ruleset: (
   'xs': ('xs', 1em, 'bold'),
   'm': ('s', 1em, 'bold')
 ) !default;
-$rpl-button-text-color: rpl_color('white') !default;
+$rpl-button-text-color: rpl_color('extra_dark_neutral') !default;
 $rpl-button-border-radius: rem(4px) !default;
 $rpl-button-padding: $rpl-space-4 ($rpl-space * 12) !default;
 $rpl-button-border: 1px solid transparent !default;
 $rpl-button-primary-background-color: rpl_color('primary') !default;
 $rpl-button-primary-text-color: rpl_color('extra_dark_neutral') !default;
 $rpl-button-primary-hover-background-color: rpl_color('light_primary') !default;
-$rpl-button-primary-hover-text-color: rpl_color('white') !default;
+$rpl-button-primary-hover-text-color: rpl_color('extra_dark_neutral') !default;
 $rpl-button-secondary-background-color: rpl_color('secondary') !default;
 $rpl-button-secondary-text-color: rpl_color('white') !default;
 $rpl-button-secondary-hover-background-color: rpl_color('primary') !default;
