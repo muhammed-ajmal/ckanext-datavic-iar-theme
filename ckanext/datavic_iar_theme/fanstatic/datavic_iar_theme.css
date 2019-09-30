@@ -942,7 +942,7 @@ nav {
     .rpl-site-header--open .rpl-site-header__inner {
       margin: 0;
       border-radius: 0.25rem;
-      background-color: #D63C00;
+      background-color: #F6BE00;
       height: 100%; }
   .rpl-site-header__top {
     display: flex;
@@ -991,7 +991,7 @@ nav {
     margin-left: auto; }
   .rpl-site-header__search-container {
     position: relative;
-    background-color: #D63C00;
+    background-color: #F6BE00;
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -1303,7 +1303,7 @@ nav {
 .rpl-menu--vertical .rpl-menu__item,
 .rpl-menu--horizontal-floating-wrapper .rpl-menu__item,
 .rpl-menu--horizontal .rpl-menu--subs .rpl-menu__item {
-  border-top: 1px solid #F6BE00; }
+  border-top: 1px solid #F69C00; }
   .rpl-menu--vertical .rpl-menu__item:first-child,
   .rpl-menu--horizontal-floating-wrapper .rpl-menu__item:first-child,
   .rpl-menu--horizontal .rpl-menu--subs .rpl-menu__item:first-child {
@@ -1371,7 +1371,7 @@ nav {
   .rpl-menu--horizontal-floating-wrapper .rpl-menu__item-link:focus,
   .rpl-menu--horizontal .rpl-menu--subs .rpl-menu__item-link:hover,
   .rpl-menu--horizontal .rpl-menu--subs .rpl-menu__item-link:focus {
-    background-color: #F6BE00; }
+    background-color: #F69C00; }
   .rpl-menu--vertical .rpl-menu__item-link--active,
   .rpl-menu--horizontal-floating-wrapper .rpl-menu__item-link--active,
   .rpl-menu--horizontal .rpl-menu--subs .rpl-menu__item-link--active {
