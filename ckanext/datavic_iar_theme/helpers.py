@@ -8,7 +8,7 @@ def organization_list():
     return toolkit.get_action('organization_list')({}, {'all_fields': True})
 
 
-def group_list():
+def search_form_group_list():
     return toolkit.get_action('group_list')({}, {'all_fields': True})
 
 

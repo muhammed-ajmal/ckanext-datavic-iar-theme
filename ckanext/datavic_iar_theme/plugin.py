@@ -22,7 +22,7 @@ class DatavicIARThemePlugin(plugins.SingletonPlugin):
         '''
         return {
             'organization_list': helpers.organization_list,
-            'group_list': helpers.group_list,
+            'search_form_group_list': helpers.search_form_group_list,
             'format_list': helpers.format_list,
             'get_parent_site_url': helpers.get_parent_site_url,
         }
