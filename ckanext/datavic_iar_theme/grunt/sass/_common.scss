@@ -32,3 +32,18 @@ $nav-tab-a-color: rpl-color('mid_neutral_4') !default;
 .block-search-title {
   color: rpl-color('dark_primary');
 }
+
+.account-masthead {
+  background: none;
+  background-color: rpl-color('mid_neutral_1');
+  .account {
+    ul {
+      li {
+        border-color: #bfc5cd;
+        a {
+          color: rpl-color('dark_neutral');
+        }
+      }
+    }
+  }
+}
