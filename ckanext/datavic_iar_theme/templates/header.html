@@ -88,6 +88,11 @@
                 <div class="rpl-menu__column">
                   <div class="rpl-menu__header"><!----> <!----></div>
                   <ul class="rpl-menu__items rpl-menu__items--root">
+                    {% if c.userobj %}
+                    <li class="rpl-menu__item">
+                      <a href="{{ h.url_for('dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                    </li>
+                    {% endif %}
                     <li class="rpl-menu__item">
                       <a href="{{ h.url_for('search') }}" class="rpl-link rpl-menu__item-link">{{ _('Data') }}</a>
                     </li>
@@ -141,6 +146,11 @@
                     <!----> <!---->
                   </div>
                   <ul class="rpl-menu__items rpl-menu__items--root">
+                    {% if c.userobj %}
+                    <li class="rpl-menu__item">
+                        <a href="{{ h.url_for('dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                    </li>
+                    {% endif %}
                     <li class="rpl-menu__item">
                       <a href="{{ h.url_for('search') }}" class="rpl-link rpl-menu__item-link">{{ _('Datasets') }}</a>
                     </li>

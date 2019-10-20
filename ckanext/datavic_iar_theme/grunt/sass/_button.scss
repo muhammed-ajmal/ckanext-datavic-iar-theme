@@ -25,3 +25,14 @@
         font-size: initial;
     }
 }
+
+.btn-secondary {
+
+    @include rpl_button;
+    @include rpl_button_secondary
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}

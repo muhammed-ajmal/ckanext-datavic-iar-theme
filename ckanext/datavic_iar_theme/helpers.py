@@ -26,4 +26,4 @@ def format_list(limit=100):
     return [resource.format for resource in query if not resource.format == '']
 
 def get_parent_site_url():
-    return config.get('ckan.parent_site_url', 'https://www.data.vic.gov.au/')
+    return config.get('ckan.parent_site_url', 'https://www.data.vic.gov.au')
