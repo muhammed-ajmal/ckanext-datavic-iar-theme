@@ -1,0 +1,30 @@
+.btn {
+  &:hover {
+    background-color: $rpl-button-primary-hover-background-color;
+  }
+}
+
+.content_action a.btn, #followee-filter a.btn {
+  background-color: $rpl-button-primary-background-color;
+  color: $rpl-button-primary-text-color;
+  &:hover {
+    background-color: $rpl-button-primary-hover-background-color;
+  }
+  &.active,
+  &:active {
+    background-color: $rpl-button-active-background-color;
+    background-image: $rpl-button-active-background-image;
+    color: $rpl-button-active-text-color;
+  }
+  &:focus {
+    background-position: unset;
+    transition: none;
+  }
+}
+
+.btn-primary {
+  .caret {
+    border-top-color: $rpl-button-primary-text-color;
+    border-bottom-color: $rpl-button-primary-text-color;
+  }
+}

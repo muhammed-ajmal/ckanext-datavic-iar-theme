@@ -1,0 +1,11 @@
+{% ckan_extends %}
+
+{% block styles %}
+  {{ super() }}
+  {% resource 'datavic_iar_theme/datavic_iar_theme.css' %}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  {% resource 'datavic_iar_theme/datavic_iar_theme.js' %}
+{% endblock %}
