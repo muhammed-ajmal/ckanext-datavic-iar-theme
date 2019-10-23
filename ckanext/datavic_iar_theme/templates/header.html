@@ -90,7 +90,7 @@
                   <ul class="rpl-menu__items rpl-menu__items--root">
                     {% if c.userobj %}
                     <li class="rpl-menu__item">
-                      <a href="{{ h.url_for('dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                      <a href="{{ h.url_for(controller='user', action='dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
                     </li>
                     {% endif %}
                     <li class="rpl-menu__item">
@@ -148,7 +148,7 @@
                   <ul class="rpl-menu__items rpl-menu__items--root">
                     {% if c.userobj %}
                     <li class="rpl-menu__item">
-                        <a href="{{ h.url_for('dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                        <a href="{{ h.url_for(controller='user', action='dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
                     </li>
                     {% endif %}
                     <li class="rpl-menu__item">
