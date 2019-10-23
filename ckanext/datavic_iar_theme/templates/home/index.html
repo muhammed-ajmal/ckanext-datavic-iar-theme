@@ -1,0 +1,29 @@
+{% ckan_extends %}
+
+{% set query = '' %}
+{% set count = '' %}
+{% set type = '' %}
+{% set facets = true %}
+{% set placeholder = ('Search for open data') %}
+{% set sorting = false %}
+{% set form_id = false %}
+{% set sorting_selected = '' %}
+
+
+{% block primary_content %}
+
+<section>
+    <div class="rpl-hero-banner">
+        <div class=rpl-hero-banner__center>
+            <h1 class="rpl-hero-banner__title">
+                <span>VPS Data Directory</span>
+            </h1>
+            <p class="rpl-hero-banner__description">The place for VPS to find, discover and share amongst departments and agencies</p>
+        </div>
+    </div>
+
+    {% snippet 'snippets/dataset_search_form.html', query=query, count=count, type=type, facets=facets, placeholder=placeholder, sorting=sorting, form_id=form_id, sorting_selected=sorting_selected %}
+
+</section>
+
+{% endblock %}
