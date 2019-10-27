@@ -1,0 +1,82 @@
+  $rpl-hero-banner-title-typography-ruleset: (
+    'xs': ('mega', 1.14em, 'bold'),
+    'm': ('xgiga', 1.08em, 'bold'),
+    'xxl': ('tera', 1em, 'bold')
+  ) !default;
+
+  $rpl-hero-banner-title-color: rpl_color('primary') !default;
+  $rpl-hero-banner-description-typography-ruleset: (
+    'xs': ('l', 1.2em, 'medium'),
+    'm': ('xl', 1.17em, 'medium'),
+    'xxl': ('mega', 1.14em, 'medium')
+  ) !default;
+  $rpl-hero-banner-description-text-color: rpl_color('extra_dark_neutral') !default;
+  $rpl-hero-banner-description-letter-spacing: rem(-0.12px) !default;
+
+  $rpl-hero-banner-vertical-spacing: (
+    'xs': ('top': rem(28px), 'bottom': rem(50px)),
+    's': ('top': rem(44px), 'bottom': rem(32px)),
+    'm': ('top': rem(62px), 'bottom': rem(40px)),
+    'l': ('top': rem(71px), 'bottom': rem(38px)),
+    'xl': ('top': rem(71px), 'bottom': rem(38px)),
+    'xxl': ('top': rem(76px), 'bottom': rem(34px))
+  ) !default;
+ 
+
+  .rpl-hero-banner {
+    $root: &;
+    @include rpl_mobile_padding;
+    position: relative;
+    background-repeat: no-repeat;
+
+    @include rpl_breakpoint('m') {
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      width: 724px;
+    }
+
+    @include rpl_breakpoint('l') {
+      width: 940px;
+    }
+
+    @each $bp, $spacing in $rpl-hero-banner-vertical-spacing {
+      @include rpl_breakpoint($bp) {
+        padding-top: map-get($spacing, top);
+        padding-bottom: map-get($spacing, bottom);
+      }
+    }
+
+    @include rpl_print {
+      padding: 0;
+      border: 0;
+      background-image: none !important; // Needs to override inline definition.
+    }
+
+    &__center { 
+        padding: 0 25px;             
+    }
+  
+
+    &__title {
+      @include rpl_typography_ruleset($rpl-hero-banner-title-typography-ruleset);
+      @include rpl_text_color($rpl-hero-banner-title-color);
+      margin: 0;
+
+    }
+
+    &__description {
+      @include rpl_typography_ruleset($rpl-hero-banner-description-typography-ruleset);
+      @include rpl_text_color($rpl-hero-banner-description-text-color);
+      letter-spacing: $rpl-hero-banner-description-letter-spacing;
+      margin-top: $rpl-space-3;
+
+      @include rpl_breakpoint(s) {
+        margin-top: $rpl-space-4;
+      }
+
+      @include rpl_print_margin('s');
+
+    }
+  }
