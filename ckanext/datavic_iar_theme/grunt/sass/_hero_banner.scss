@@ -1,4 +1,3 @@
-  $rpl-hero-banner-border: 1px solid rpl_color('mid_neutral_1') !default;
   $rpl-hero-banner-title-typography-ruleset: (
     'xs': ('mega', 1.14em, 'bold'),
     'm': ('xgiga', 1.08em, 'bold'),
@@ -31,8 +30,6 @@
     background-repeat: no-repeat;
 
     @include rpl_breakpoint('m') {
-      border-bottom: $rpl-hero-banner-border;
-
       padding-left: 0;
       padding-right: 0;
       margin-left: auto;

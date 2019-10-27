@@ -2392,7 +2392,6 @@ label.chk-label-active .custom-check,
       padding: 0; } }
   @media screen and (min-width: 768px) {
     .rpl-hero-banner {
-      border-bottom: 1px solid #D7DBE0;
       padding-left: 0;
       padding-right: 0;
       margin-left: auto;
@@ -2486,6 +2485,3 @@ label.chk-label-active .custom-check,
         margin-bottom: 0;
         margin-top: 1rem;
         margin-bottom: 1rem; } }
-
-.block-search-title {
-  display: none; }
