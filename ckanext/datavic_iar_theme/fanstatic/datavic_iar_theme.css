@@ -2146,7 +2146,7 @@ nav {
     border: 0;
     padding: 1px;
     width: 100%;
-    color: #BFC5CD; }
+    color: #465870; }
     @media screen and (min-width: 0) {
       .rpl-search-form__input {
         font-family: "VIC-Medium", "Arial", "Helvetica", "sans-serif";
@@ -2253,7 +2253,7 @@ nav {
 
 .rpl-search-form__field input[type="text"] {
   background-color: transparent;
-  color: #BFC5CD;
+  color: #465870;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.17em;
