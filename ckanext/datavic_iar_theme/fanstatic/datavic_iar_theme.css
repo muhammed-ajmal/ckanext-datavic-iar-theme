@@ -1993,7 +1993,7 @@ nav {
   text-align: left;
   cursor: pointer; }
   .rpl-checklist__single-item:hover, .rpl-checklist__single-item:focus {
-    color: #fff;
+    color: #011A3C;
     background-color: #F6BE00; }
   .rpl-checklist__single-item--selected {
     text-decoration: underline; }
