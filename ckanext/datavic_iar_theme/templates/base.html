@@ -1,5 +1,12 @@
 {% ckan_extends %}
 
+{% block head_extras %}
+  {{ super() }}
+  {% if h.get_gtm_code() %}
+    {% snippet "snippets/gtm_include.html" %}
+  {% endif %}
+{% endblock %}
+
 {% block styles %}
   {{ super() }}
   {% resource 'datavic_iar_theme/datavic_iar_theme.css' %}
