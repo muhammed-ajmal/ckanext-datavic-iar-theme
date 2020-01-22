@@ -27,3 +27,8 @@ def format_list(limit=100):
 
 def get_parent_site_url():
     return config.get('ckan.parent_site_url', 'https://www.data.vic.gov.au')
+
+def get_gtm_code():
+    # To get Google Tag Manager Code
+    gtm_code = config.get('ckan.google_tag_manager.gtm_container_id', False)
+    return str(gtm_code)
