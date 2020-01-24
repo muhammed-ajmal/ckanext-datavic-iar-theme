@@ -801,7 +801,8 @@ nav {
   padding-left: 1.25rem !important;
   padding-right: 1.25rem !important;
   background-color: transparent;
-  padding-top: 0.75rem;
+  border-top: 1px solid #000;
+  padding-top: 2rem;
   padding-bottom: 1rem; }
   @media screen and (min-width: 576px) {
     .rpl-site-footer__bottom {
@@ -1943,7 +1944,7 @@ nav {
   text-align: left;
   display: block;
   width: 100%;
-  background: transparent;
+  background: #fff;
   border: 0;
   padding: 1rem; }
   @media screen and (min-width: 768px) {
@@ -2226,7 +2227,8 @@ nav {
 
 .search-form-wrapper {
   background-color: #F6F6F9;
-  border-top: 1px solid #D7DBE0;
+  border-top: 0;
+  margin-bottom: 1px;
   width: 100vw;
   position: relative;
   left: 50%;
@@ -2403,27 +2405,27 @@ label.chk-label-active .custom-check,
   @media screen and (min-width: 0) {
     .rpl-hero-banner {
       padding-top: 1.75rem;
-      padding-bottom: 3.125rem; } }
+      padding-bottom: 1.75rem; } }
   @media screen and (min-width: 576px) {
     .rpl-hero-banner {
-      padding-top: 2.75rem;
+      padding-top: 2rem;
       padding-bottom: 2rem; } }
   @media screen and (min-width: 768px) {
     .rpl-hero-banner {
-      padding-top: 3.875rem;
+      padding-top: 2.5rem;
       padding-bottom: 2.5rem; } }
   @media screen and (min-width: 992px) {
     .rpl-hero-banner {
-      padding-top: 4.4375rem;
-      padding-bottom: 2.375rem; } }
+      padding-top: 3.125rem;
+      padding-bottom: 3.125rem; } }
   @media screen and (min-width: 1200px) {
     .rpl-hero-banner {
-      padding-top: 4.4375rem;
-      padding-bottom: 2.375rem; } }
+      padding-top: 3.125rem;
+      padding-bottom: 3.125rem; } }
   @media screen and (min-width: 1600px) {
     .rpl-hero-banner {
-      padding-top: 4.75rem;
-      padding-bottom: 2.125rem; } }
+      padding-top: 3.125rem;
+      padding-bottom: 3.125rem; } }
   @media print {
     .rpl-hero-banner {
       padding: 0;
@@ -2432,7 +2434,7 @@ label.chk-label-active .custom-check,
   .rpl-hero-banner__center {
     padding: 0 25px; }
   .rpl-hero-banner__title {
-    color: #F6BE00;
+    color: #465870;
     margin: 0; }
     @media screen and (min-width: 0) {
       .rpl-hero-banner__title {

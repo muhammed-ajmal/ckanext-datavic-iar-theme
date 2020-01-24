@@ -261,9 +261,9 @@
   {% endblock %}
 
   {% block search_title %}
-    {% if not error %}
+    {% if not error and count %}
       <h2 class="block-search-title">{% snippet 'snippets/search_result_text.html', query=query, count=count, type=type %}</h2>
-    {% else %}
+    {% elif error %}
       <h2>Error</h2>
     {% endif %}
   {% endblock %}
