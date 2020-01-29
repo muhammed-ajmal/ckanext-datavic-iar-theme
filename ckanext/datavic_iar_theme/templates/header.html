@@ -31,7 +31,7 @@
               {% set new_activities = h.new_activities() %}
               <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
                 {% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
-                <a href="{{ h.url_for(controller='user', action='dashboard') }}" title="{{ notifications_tooltip }}">
+                <a href="{{ h.url_for(controller='user', action='dashboard_datasets') }}" title="{{ notifications_tooltip }}">
                   <i class="fa fa-tachometer" aria-hidden="true"></i>
                   <span class="text">{{ _('Dashboard') }}</span>
                   <span class="badge">{{ new_activities }}</span>
@@ -90,7 +90,7 @@
                   <ul class="rpl-menu__items rpl-menu__items--root">
                     {% if c.userobj %}
                     <li class="rpl-menu__item">
-                      <a href="{{ h.url_for(controller='user', action='dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                      <a href="{{ h.url_for(controller='user', action='dashboard_datasets') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
                     </li>
                     {% endif %}
                     <li class="rpl-menu__item">
@@ -148,7 +148,7 @@
                   <ul class="rpl-menu__items rpl-menu__items--root">
                     {% if c.userobj %}
                     <li class="rpl-menu__item">
-                        <a href="{{ h.url_for(controller='user', action='dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                        <a href="{{ h.url_for(controller='user', action='dashboard_datasets') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
                     </li>
                     {% endif %}
                     <li class="rpl-menu__item">
