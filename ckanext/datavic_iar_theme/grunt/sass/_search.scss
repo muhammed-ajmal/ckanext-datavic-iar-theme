@@ -25,11 +25,15 @@ $dataset-item-text-color: rpl-color('extra_dark_neutral') !default;
 
 .dataset-item {
   border-bottom: none;
-  border-top: 2px solid rpl-color('mid_neutral_1');
+  border-top: 1px solid rpl-color('mid_neutral_1');
   padding: rem(32px) 0 0 0;
   margin: rem(32px) 0 0 0;
   
   .dataset-content .dataset-heading > a, .dataset-content div {
     color: $dataset-item-text-color;
   }
+}
+
+.dataset-heading {
+  font-size: rem(24px);
 }
