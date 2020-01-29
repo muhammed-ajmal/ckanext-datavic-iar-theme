@@ -51,3 +51,46 @@ $nav-tab-a-color: rpl-color('mid_neutral_4') !default;
     }
   }
 }
+
+.dashboard {
+  &.page-header {
+    background-color: rpl-color('white');
+    border: 1px solid rpl-color('mid_neutral_1');
+    height: rem(36px);
+    position: relative;
+  }
+  .nav-tabs {
+    padding-left: rem(25px);
+    position: absolute;
+    border-bottom: none;
+    bottom: 1px;
+    left: 0;
+    > li {
+      > a {
+        border: 1px solid rpl-color('mid_neutral_1');
+        border-bottom-color: transparent;
+        border-left: none;
+        margin-right: 0;
+        &:hover {
+          border-bottom: 1px solid rpl-color('mid_neutral_1');
+        }
+      }
+      &.active {
+        > a {
+          font-family: "Vic-Bold", arial, sans-serif;
+          &:hover {
+            border: 1px solid rpl-color('mid_neutral_1');
+            border-bottom-color: transparent;
+            border-left: none;
+          }
+        }
+      }
+      &:first-child {
+        > a,
+        > a:hover {
+          border-left: 1px solid rpl-color('mid_neutral_1');
+        }
+      }
+    }
+  }
+}
