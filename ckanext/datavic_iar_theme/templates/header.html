@@ -31,7 +31,7 @@
               {% set new_activities = h.new_activities() %}
               <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
                 {% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
-                <a href="{{ h.url_for(controller='user', action='dashboard') }}" title="{{ notifications_tooltip }}">
+                <a href="{{ h.url_for(controller='user', action='dashboard_datasets') }}" title="{{ notifications_tooltip }}">
                   <i class="fa fa-tachometer" aria-hidden="true"></i>
                   <span class="text">{{ _('Dashboard') }}</span>
                   <span class="badge">{{ new_activities }}</span>
@@ -90,7 +90,7 @@
                   <ul class="rpl-menu__items rpl-menu__items--root">
                     {% if c.userobj %}
                     <li class="rpl-menu__item">
-                      <a href="{{ h.url_for(controller='user', action='dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                      <a href="{{ h.url_for(controller='user', action='dashboard_datasets') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
                     </li>
                     {% endif %}
                     <li class="rpl-menu__item">
@@ -135,6 +135,9 @@
             <img src="/vps-data-directory-logo.svg" alt="VPS Data Directory logo">
           </a>
         </div>
+        <div class="alpha-label">
+          <svg width="64" height="24" viewBox="0 0 64 24" xmlns="http://www.w3.org/2000/svg"><g id="Page-1" style="fill:none;stroke-width:1;stroke:none"><rect id="Rectangle" x="0.5" y="0.5" width="63" height="23" rx="2" stroke="#000"/><path d="M11.1 16.5L12.1 14.2 16.6 14.2 17.5 16.5 18.6 16.5 14.8 7.5 13.8 7.5 10 16.5 11.1 16.5ZM16.2 13.3L12.5 13.3 14.3 8.8 16.2 13.3ZM26.3 16.5L26.3 15.5 21.2 15.5 21.2 7.5 20.1 7.5 20.1 16.5 26.3 16.5ZM29.2 16.5L29.2 13.1 32.1 13.1C34 13.1 35.2 11.9 35.2 10.3 35.2 8.6 34 7.5 32.1 7.5L28.2 7.5 28.2 16.5 29.2 16.5ZM32.1 12.1L29.2 12.1 29.2 8.5 32.1 8.5C33.4 8.5 34.2 9.2 34.2 10.3 34.2 11.4 33.4 12.1 32.1 12.1ZM38.1 16.5L38.1 12.4 43.5 12.4 43.5 16.5 44.6 16.5 44.6 7.5 43.5 7.5 43.5 11.5 38.1 11.5 38.1 7.5 37.1 7.5 37.1 16.5 38.1 16.5ZM47.2 16.5L48.2 14.2 52.6 14.2 53.6 16.5 54.7 16.5 50.9 7.5 49.9 7.5 46.1 16.5 47.2 16.5ZM52.2 13.3L48.6 13.3 50.4 8.8 52.2 13.3Z" id="ALPHA" fill="#000"/></g></svg>
+        </div>
       </div>
       <div class="rpl-site-header__menu-container rpl-site-header__menu-container--horizontal">
         <div class="rpl-site-header__menu">
@@ -148,7 +151,7 @@
                   <ul class="rpl-menu__items rpl-menu__items--root">
                     {% if c.userobj %}
                     <li class="rpl-menu__item">
-                        <a href="{{ h.url_for(controller='user', action='dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                        <a href="{{ h.url_for(controller='user', action='dashboard_datasets') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
                     </li>
                     {% endif %}
                     <li class="rpl-menu__item">
