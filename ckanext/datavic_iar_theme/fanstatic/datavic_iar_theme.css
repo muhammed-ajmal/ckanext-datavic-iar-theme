@@ -1711,6 +1711,21 @@ nav {
 .dataset-heading {
   font-size: 1.5rem; }
 
+.order-by.rpl-search-form__filters {
+  padding-top: 1.875rem; }
+
+.order-by .vue-form-generator .form-group {
+  margin-bottom: 0; }
+
+.order-by .vue-form-generator label {
+  font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
+  font-size: 1rem;
+  line-height: 1em;
+  font-weight: normal;
+  color: #011A3C;
+  display: block;
+  margin-bottom: 0.75rem; }
+
 .da-search {
   background-color: #F6F6F9; }
   .da-search .rpl-search-form__btn:hover span, .da-search .rpl-search-form__btn:focus span {
@@ -2374,9 +2389,6 @@ nav {
       /* Internet Explorer 10+ */
       color: #BFC5CD; } }
 
-.package-search-control-order-by {
-  margin: 30px 0; }
-
 ul.btn-holder {
   margin: 0;
   padding: 0;
@@ -2397,7 +2409,7 @@ ul.btn-holder {
   background: #fff;
   line-height: 18px;
   text-align: center;
-  border: 1px solid #008fff;
+  border: 1px solid #F69C00;
   border-width: 0 1px 1px;
   z-index: 10; }
 
