@@ -526,9 +526,6 @@ h2 {
   .dashboard .nav-tabs > li:first-child > a:hover {
     border-left: 1px solid #D7DBE0; }
 
-.dataset-contact form label:after {
-  content: ""; }
-
 @media screen and (min-width: 768px) {
   .rpl-acknowledgement {
     display: flex;
@@ -2587,3 +2584,18 @@ label.chk-label-active .custom-check,
         margin-bottom: 0;
         margin-top: 1rem;
         margin-bottom: 1rem; } }
+
+.dataset-contact form label:after {
+  content: ""; }
+
+.dataset-contact .form-controls {
+  margin-bottom: 0.875rem; }
+
+.dataset-contact .privacy-statement {
+  font-size: 0.875rem;
+  line-height: 1.3rem;
+  padding-top: 0.875rem; }
+  .dataset-contact .privacy-statement label {
+    font-weight: normal; }
+  .dataset-contact .privacy-statement input[type="checkbox"] {
+    position: unset; }
