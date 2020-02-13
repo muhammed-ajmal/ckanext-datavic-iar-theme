@@ -251,4 +251,11 @@ $rpl-site-header-logout-btn-icon-margin: 0 0 0 $rpl-space-2 !default;
       padding-left: 0;
     }
   }
+
+  .alpha-label {
+    display: inline-block;
+    margin-top: rem(7px);
+    padding-left: rem(20px);
+    padding-right: rem(20px);
+  }
 }
