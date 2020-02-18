@@ -1,0 +1,24 @@
+.dataset-contact {
+  form {
+    label {
+      &:after {
+        content: "";
+      }
+    }
+  }
+  .form-controls {
+    margin-bottom: rem(14px);
+  }
+  .privacy-statement {
+    font-size: rem(14px);
+    line-height: 1.3rem;
+    padding-top: rem(14px);
+    label {
+      font-weight: normal;
+    }
+    input[type="checkbox"] {
+      margin-top: 3px;
+      position: unset;
+    }
+  }
+}

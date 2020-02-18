@@ -63,7 +63,8 @@ $gutterless-grid: (
   @include rpl_mobile_padding;
   @include rpl_site_constrain;
   background-color: $rpl-footer-bottom-bg-color;
-  padding-top: $rpl-space-3;
+  border-top: 1px solid rpl-color('black');
+  padding-top: $rpl-space-4 * 2;
   padding-bottom: $rpl-space-4;
 
   @include rpl_breakpoint($rpl-footer-breakpoint) {

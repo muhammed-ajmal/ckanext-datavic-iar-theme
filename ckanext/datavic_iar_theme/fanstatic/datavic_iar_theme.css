@@ -404,6 +404,21 @@ html {
 body {
   color: #011A3C; }
 
+.module-content h1 {
+  font-family: "Vic-Bold", arial, sans-serif;
+  font-size: 1.75rem;
+  padding-top: 1rem; }
+
+.module-content .resources h3 {
+  padding-top: 1rem; }
+
+.additional-info h3,
+.dataset-contact h3 {
+  padding: 1rem 0; }
+
+h2 {
+  font-size: 1.5rem; }
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -481,6 +496,35 @@ body {
     border-color: #bfc5cd; }
     .account-masthead .account ul li a {
       color: #465870; }
+
+.dashboard.page-header {
+  background-color: #fff;
+  border: 1px solid #D7DBE0;
+  height: 2.25rem;
+  position: relative; }
+
+.dashboard .nav-tabs {
+  padding-left: 1.5625rem;
+  position: absolute;
+  border-bottom: none;
+  bottom: 1px;
+  left: 0; }
+  .dashboard .nav-tabs > li > a {
+    border: 1px solid #D7DBE0;
+    border-bottom-color: transparent;
+    border-left: none;
+    margin-right: 0; }
+    .dashboard .nav-tabs > li > a:hover {
+      border-bottom: 1px solid #D7DBE0; }
+  .dashboard .nav-tabs > li.active > a {
+    font-family: "Vic-Bold", arial, sans-serif; }
+    .dashboard .nav-tabs > li.active > a:hover {
+      border: 1px solid #D7DBE0;
+      border-bottom-color: transparent;
+      border-left: none; }
+  .dashboard .nav-tabs > li:first-child > a,
+  .dashboard .nav-tabs > li:first-child > a:hover {
+    border-left: 1px solid #D7DBE0; }
 
 @media screen and (min-width: 768px) {
   .rpl-acknowledgement {
@@ -804,7 +848,8 @@ nav {
   padding-left: 1.25rem !important;
   padding-right: 1.25rem !important;
   background-color: transparent;
-  padding-top: 0.75rem;
+  border-top: 1px solid #000;
+  padding-top: 2rem;
   padding-bottom: 1rem; }
   @media screen and (min-width: 576px) {
     .rpl-site-footer__bottom {
@@ -979,12 +1024,12 @@ nav {
   line-height: 1em; }
 
 .rpl-site-header {
-  padding: 0.625rem 0;
+  padding: 0.625rem 0 0.25rem 0;
   box-sizing: border-box;
   width: 100%; }
   @media screen and (min-width: 768px) {
     .rpl-site-header {
-      padding: 1.25rem; } }
+      padding: 1.25rem 1.25rem 0.25rem 1.25rem; } }
   .rpl-site-header__inner {
     overflow: hidden;
     background-color: #F6BE00;
@@ -1668,6 +1713,21 @@ nav {
 .dataset-heading {
   font-size: 1.5rem; }
 
+.order-by.rpl-search-form__filters {
+  padding-top: 1.875rem; }
+
+.order-by .vue-form-generator .form-group {
+  margin-bottom: 0; }
+
+.order-by .vue-form-generator label {
+  font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
+  font-size: 1rem;
+  line-height: 1em;
+  font-weight: normal;
+  color: #011A3C;
+  display: block;
+  margin-bottom: 0.75rem; }
+
 .da-search {
   background-color: #F6F6F9; }
   .da-search .rpl-search-form__btn:hover span, .da-search .rpl-search-form__btn:focus span {
@@ -1989,7 +2049,7 @@ nav {
   text-align: left;
   display: block;
   width: 100%;
-  background: transparent;
+  background: #fff;
   border: 0;
   padding: 1rem; }
   @media screen and (min-width: 768px) {
@@ -2272,7 +2332,8 @@ nav {
 
 .search-form-wrapper {
   background-color: #F6F6F9;
-  border-top: 1px solid #D7DBE0;
+  border-top: 0;
+  margin-bottom: 1px;
   width: 100vw;
   position: relative;
   left: 50%;
@@ -2330,9 +2391,6 @@ nav {
       /* Internet Explorer 10+ */
       color: #BFC5CD; } }
 
-.package-search-control-order-by {
-  margin: 30px 0; }
-
 ul.btn-holder {
   margin: 0;
   padding: 0;
@@ -2353,7 +2411,7 @@ ul.btn-holder {
   background: #fff;
   line-height: 18px;
   text-align: center;
-  border: 1px solid #008fff;
+  border: 1px solid #F69C00;
   border-width: 0 1px 1px;
   z-index: 10; }
 
@@ -2449,27 +2507,27 @@ label.chk-label-active .custom-check,
   @media screen and (min-width: 0) {
     .rpl-hero-banner {
       padding-top: 1.75rem;
-      padding-bottom: 3.125rem; } }
+      padding-bottom: 1.75rem; } }
   @media screen and (min-width: 576px) {
     .rpl-hero-banner {
-      padding-top: 2.75rem;
+      padding-top: 2rem;
       padding-bottom: 2rem; } }
   @media screen and (min-width: 768px) {
     .rpl-hero-banner {
-      padding-top: 3.875rem;
+      padding-top: 2.5rem;
       padding-bottom: 2.5rem; } }
   @media screen and (min-width: 992px) {
     .rpl-hero-banner {
-      padding-top: 4.4375rem;
-      padding-bottom: 2.375rem; } }
+      padding-top: 3.125rem;
+      padding-bottom: 3.125rem; } }
   @media screen and (min-width: 1200px) {
     .rpl-hero-banner {
-      padding-top: 4.4375rem;
-      padding-bottom: 2.375rem; } }
+      padding-top: 3.125rem;
+      padding-bottom: 3.125rem; } }
   @media screen and (min-width: 1600px) {
     .rpl-hero-banner {
-      padding-top: 4.75rem;
-      padding-bottom: 2.125rem; } }
+      padding-top: 3.125rem;
+      padding-bottom: 3.125rem; } }
   @media print {
     .rpl-hero-banner {
       padding: 0;
@@ -2478,7 +2536,7 @@ label.chk-label-active .custom-check,
   .rpl-hero-banner__center {
     padding: 0 25px; }
   .rpl-hero-banner__title {
-    color: #F6BE00;
+    color: #465870;
     margin: 0; }
     @media screen and (min-width: 0) {
       .rpl-hero-banner__title {
@@ -2531,3 +2589,19 @@ label.chk-label-active .custom-check,
         margin-bottom: 0;
         margin-top: 1rem;
         margin-bottom: 1rem; } }
+
+.dataset-contact form label:after {
+  content: ""; }
+
+.dataset-contact .form-controls {
+  margin-bottom: 0.875rem; }
+
+.dataset-contact .privacy-statement {
+  font-size: 0.875rem;
+  line-height: 1.3rem;
+  padding-top: 0.875rem; }
+  .dataset-contact .privacy-statement label {
+    font-weight: normal; }
+  .dataset-contact .privacy-statement input[type="checkbox"] {
+    margin-top: 3px;
+    position: unset; }
