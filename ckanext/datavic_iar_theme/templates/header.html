@@ -28,23 +28,6 @@
                   <span class="username">{{ c.userobj.display_name }}</span>
                 </a>
               </li>
-              {% set new_activities = h.new_activities() %}
-              <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
-                {% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
-                <a href="{{ h.url_for(controller='user', action='dashboard_datasets') }}" title="{{ notifications_tooltip }}">
-                  <i class="fa fa-tachometer" aria-hidden="true"></i>
-                  <span class="text">{{ _('Dashboard') }}</span>
-                  <span class="badge">{{ new_activities }}</span>
-                </a>
-              </li>
-              {% block header_account_settings_link %}
-                <li>
-                  <a href="{{ h.url_for(controller='user', action='edit', id=c.userobj.name) }}" title="{{ _('Edit settings') }}">
-                    <i class="fa fa-cog" aria-hidden="true"></i>
-                    <span class="text">{{ _('Settings') }}</span>
-                  </a>
-                </li>
-              {% endblock %}
               {% block header_account_log_out_link %}
                 <li>
                   <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
@@ -88,11 +71,13 @@
                 <div class="rpl-menu__column">
                   <div class="rpl-menu__header"><!----> <!----></div>
                   <ul class="rpl-menu__items rpl-menu__items--root">
-                    {% if c.userobj %}
                     <li class="rpl-menu__item">
-                      <a href="{{ h.url_for(controller='user', action='dashboard_datasets') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
-                    </li>
+                    {% if c.userobj %}
+                      <a href="{{ h.url_for(controller='user', action='dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                    {% else %}
+                      <a href="{{ h.url_for(controller='user', action='login') }}" class="rpl-link rpl-menu__item-link">{{ _('Login') }}</a>
                     {% endif %}
+                    </li>
                     <li class="rpl-menu__item">
                       <a href="{{ h.url_for('search') }}" class="rpl-link rpl-menu__item-link">{{ _('Data') }}</a>
                     </li>
@@ -149,11 +134,13 @@
                     <!----> <!---->
                   </div>
                   <ul class="rpl-menu__items rpl-menu__items--root">
-                    {% if c.userobj %}
                     <li class="rpl-menu__item">
-                        <a href="{{ h.url_for(controller='user', action='dashboard_datasets') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
-                    </li>
+                    {% if c.userobj %}
+                        <a href="{{ h.url_for(controller='user', action='dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                    {% else %}
+                      <a href="{{ h.url_for(controller='user', action='login') }}" class="rpl-link rpl-menu__item-link">{{ _('Login') }}</a>
                     {% endif %}
+                    </li>
                     <li class="rpl-menu__item">
                       <a href="{{ h.url_for('search') }}" class="rpl-link rpl-menu__item-link">{{ _('Datasets') }}</a>
                     </li>
