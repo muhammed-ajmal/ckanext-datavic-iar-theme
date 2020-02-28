@@ -497,34 +497,45 @@ h2 {
     .account-masthead .account ul li a {
       color: #465870; }
 
-.dashboard.page-header {
-  background-color: #fff;
-  border: 1px solid #D7DBE0;
-  height: 2.25rem;
-  position: relative; }
+.dashboard .nav-tabs > li > a:hover {
+  border: 1px solid #D7DBE0; }
 
-.dashboard .nav-tabs {
-  padding-left: 1.5625rem;
-  position: absolute;
-  border-bottom: none;
-  bottom: 1px;
-  left: 0; }
-  .dashboard .nav-tabs > li > a {
+@media screen and (min-width: 768px) {
+  .dashboard .nav-tabs {
+    font-size: .765rem; } }
+
+@media screen and (min-width: 992px) {
+  .dashboard .nav-tabs {
+    font-size: 1rem; } }
+
+@media screen and (min-width: 768px) {
+  .dashboard.page-header {
+    background-color: #fff;
     border: 1px solid #D7DBE0;
-    border-bottom-color: transparent;
-    border-left: none;
-    margin-right: 0; }
-    .dashboard .nav-tabs > li > a:hover {
-      border-bottom: 1px solid #D7DBE0; }
-  .dashboard .nav-tabs > li.active > a {
-    font-family: "Vic-Bold", arial, sans-serif; }
-    .dashboard .nav-tabs > li.active > a:hover {
+    height: 2.25rem;
+    position: relative; }
+  .dashboard .nav-tabs {
+    padding-left: 1.5625rem;
+    position: absolute;
+    border-bottom: none;
+    bottom: 1px;
+    left: 0; }
+    .dashboard .nav-tabs > li > a {
       border: 1px solid #D7DBE0;
       border-bottom-color: transparent;
-      border-left: none; }
-  .dashboard .nav-tabs > li:first-child > a,
-  .dashboard .nav-tabs > li:first-child > a:hover {
-    border-left: 1px solid #D7DBE0; }
+      border-left: none;
+      margin-right: 0; }
+      .dashboard .nav-tabs > li > a:hover {
+        border-bottom: 1px solid #D7DBE0; }
+    .dashboard .nav-tabs > li.active > a {
+      font-family: "Vic-Bold", arial, sans-serif; }
+      .dashboard .nav-tabs > li.active > a:hover {
+        border: 1px solid #D7DBE0;
+        border-bottom-color: transparent;
+        border-left: none; }
+    .dashboard .nav-tabs > li:first-child > a,
+    .dashboard .nav-tabs > li:first-child > a:hover {
+      border-left: 1px solid #D7DBE0; } }
 
 @media screen and (min-width: 768px) {
   .rpl-acknowledgement {
