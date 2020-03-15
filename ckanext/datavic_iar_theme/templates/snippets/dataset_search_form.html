@@ -243,6 +243,9 @@
     {% if c.controller == 'organization' and c.action == 'index' %}
     {% else %}
         {% if sorting %}
+          {% if not sorting_selected %}
+            {% set sorting_selected = 'score desc, metadata_modified desc' %}
+          {% endif %}
           <div class="rpl-search-form__filters order-by">
             <div class="vue-form-generator">
                 <fieldset class="rpl-fieldset">
