@@ -90,7 +90,7 @@ $nav-tab-a-color: rpl-color('mid_neutral_4') !default;
   }
   @include rpl-breakpoint(l) {
     .nav-tabs {
-      font-size: 1rem;
+      font-size: .85rem;
     }
   }
   @include rpl-breakpoint(m) {
