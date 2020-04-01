@@ -506,7 +506,7 @@ h2 {
 
 @media screen and (min-width: 992px) {
   .dashboard .nav-tabs {
-    font-size: 1rem; } }
+    font-size: .85rem; } }
 
 @media screen and (min-width: 768px) {
   .dashboard.page-header {

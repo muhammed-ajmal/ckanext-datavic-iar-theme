@@ -15,6 +15,7 @@
             {{ h.build_nav_icon('user_dashboard_newsfeed', _('Activity Stream')) }}
             {% if h.check_access('user_dashboard_reports') %}
               {{ h.build_nav_icon('user_dashboard_reports', _('Reports')) }}
+              {{ h.build_nav_icon('user_report_schedules', _('Report schedules')) }}
             {% endif %}
           {% else %}
             <li class="{% if h.current_url () == '/dashboard' %}active{% endif %}">
