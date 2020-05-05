@@ -1,0 +1,16 @@
+{% ckan_extends %}
+
+{% block content_action %}
+  {% if h.is_dataset_harvested(pkg.id) %}
+    {% set harvest_text = 'Harvest Data' if h.check_access('sysadmin') else 'Harvest Data - Read Only'%}
+    {% set harvest_icon = 'unlock' if h.check_access('sysadmin') else 'lock'%}
+    {% set harvest_title = 'This dataset has been harvested and should only be updated from the harvested source' if h.check_access('sysadmin') else 'This dataset has been harvested and can only be updated from the harvested source'%}
+    <span class="label label-inverse" title="{{ harvest_title }}" >
+      <i class="fa fa-{{ harvest_icon }}"></i>
+      {{ harvest_text }}
+    </span>
+  {% endif %}
+  {% if h.check_access('package_update', {'id':pkg.id }) %}
+    {% link_for _('Manage'), controller='package', action='edit', id=pkg.name, class_='btn', icon='wrench' %}   
+  {% endif %}
+{% endblock %}
