@@ -26,7 +26,7 @@
 {% block add_button %}
   {% if is_dataset_harvested %}
       {% resource 'ckanext-datavicmain/datavicmain-confirm-action.js' %}
-      {% set confirmation_text =  _('This dataset has been harvested and should only be updated from the harvested source. Are you sure you want to add') %}
+      {% set confirmation_text =  _('This dataset has been harvested and should only be updated from the harvested source. Are you sure you want to add?') %}
       <input type="hidden" name="save" value="go-dataset-complete" />
       <button class="btn btn-primary" type="submit" data-module="datavicmain-confirm-action" data-module-with-data=true  data-module-content="{{ confirmation_text }}">{{ _('Add') }}</button>
   {% else %} 
