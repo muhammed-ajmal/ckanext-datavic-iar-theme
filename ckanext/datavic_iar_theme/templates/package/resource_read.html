@@ -1,7 +1,7 @@
 {% ckan_extends %}
 
 {% block resource_actions_inner %}
-{% if h.is_dataset_harvested(pkg.id) %}
+{% if h.check_access('ckan_package_update', {'id':pkg.id }) and h.is_dataset_harvested(pkg.id) %}
     {% set harvest_text = 'Harvest Data' if h.check_access('sysadmin') else 'Harvest Data - Read Only'%}
     {% set harvest_icon = 'unlock' if h.check_access('sysadmin') else 'lock'%}
     {% set harvest_title = 'This dataset has been harvested and should only be updated from the harvested source' if h.check_access('sysadmin') else 'This dataset has been harvested and can only be updated from the harvested source'%}
