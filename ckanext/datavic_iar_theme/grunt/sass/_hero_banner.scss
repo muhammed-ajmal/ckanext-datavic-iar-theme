@@ -4,7 +4,7 @@
     'xxl': ('tera', 1em, 'bold')
   ) !default;
 
-  $rpl-hero-banner-title-color: rpl_color('primary') !default;
+  $rpl-hero-banner-title-color: rpl_color('dark_neutral') !default;
   $rpl-hero-banner-description-typography-ruleset: (
     'xs': ('l', 1.2em, 'medium'),
     'm': ('xl', 1.17em, 'medium'),
@@ -14,12 +14,12 @@
   $rpl-hero-banner-description-letter-spacing: rem(-0.12px) !default;
 
   $rpl-hero-banner-vertical-spacing: (
-    'xs': ('top': rem(28px), 'bottom': rem(50px)),
-    's': ('top': rem(44px), 'bottom': rem(32px)),
-    'm': ('top': rem(62px), 'bottom': rem(40px)),
-    'l': ('top': rem(71px), 'bottom': rem(38px)),
-    'xl': ('top': rem(71px), 'bottom': rem(38px)),
-    'xxl': ('top': rem(76px), 'bottom': rem(34px))
+    'xs': ('top': rem(28px), 'bottom': rem(28px)),
+    's': ('top': rem(32px), 'bottom': rem(32px)),
+    'm': ('top': rem(40px), 'bottom': rem(40px)),
+    'l': ('top': rem(50px), 'bottom': rem(50px)),
+    'xl': ('top': rem(50px), 'bottom': rem(50px)),
+    'xxl': ('top': rem(50px), 'bottom': rem(50px))
   ) !default;
  
 

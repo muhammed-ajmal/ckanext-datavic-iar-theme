@@ -5,6 +5,8 @@ import logging
 from ckan.common import config
 from sqlalchemy import and_ as _and_
 from sqlalchemy.sql import func
+import ckan.lib.helpers as h
+from webhelpers.html import tags
 
 log = logging.getLogger(__name__)
 
@@ -45,3 +47,29 @@ def get_gtm_code():
     # To get Google Tag Manager Code
     gtm_code = config.get('ckan.google_tag_manager.gtm_container_id', False)
     return str(gtm_code)
+
+def datavic_linked_user(user, maxlength=0, avatar=20):
+    # Copied from ckan.lib.helpers.linked_user
+    if not isinstance(user, model.User):
+        user_name = unicode(user)
+        user = model.User.get(user_name)
+        if not user:
+            return user_name
+    if user:
+        name = user.name if model.User.VALID_NAME.match(user.name) else user.id
+        displayname = user.display_name
+
+        if maxlength and len(user.display_name) > maxlength:
+            displayname = displayname[:maxlength] + '...'
+
+        return tags.literal(u'{icon} {link}'.format(
+            icon=h.gravatar(
+                email_hash=user.email_hash,
+                size=avatar
+            ),
+            link=tags.link_to(
+                displayname,
+                # DataVic custom changes to show different links depending on user access
+                h.url_for(controller='user', action='read', id=name) if h.check_access('package_create') else  h.url_for(controller='user', action='activity', id=name)
+            )
+        ))

@@ -2,6 +2,41 @@ body {
   color: rpl-color('extra_dark_neutral');
 }
 
+.module-content {
+  h1 {
+    font-family: "Vic-Bold", arial, sans-serif;
+    font-size: rem(28px);
+    padding-top: rem(16px);
+  }
+  .resources {
+    h3 {
+      padding-top: rem(16px);
+    }
+  }
+  .notes.embedded-content {
+    h2 {
+      font-size: rem(20px);
+    }
+    h3 {
+      font-size: rem(18px);
+    }
+    h3 {
+      font-size: rem(16px);
+    }
+  }
+}
+
+.additional-info,
+.dataset-contact {
+  h3 {
+    padding: rem(16px) 0;
+  }
+}
+
+h2 {
+  font-size: rem(24px);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -45,5 +80,77 @@ $nav-tab-a-color: rpl-color('mid_neutral_4') !default;
         }
       }
     }
+  }
+}
+
+.dashboard {
+  .nav-tabs {
+    > li {
+      > a {
+        &:hover {
+          border: 1px solid rpl-color('mid_neutral_1');
+        }
+      }
+    }
+  }
+
+  @include rpl-breakpoint(m) {
+    .nav-tabs {
+      font-size: .765rem;
+    }
+  }
+  @include rpl-breakpoint(l) {
+    .nav-tabs {
+      font-size: .85rem;
+    }
+  }
+  @include rpl-breakpoint(m) {
+
+    &.page-header {
+      background-color: rpl-color('white');
+      border: 1px solid rpl-color('mid_neutral_1');
+      height: rem(36px);
+      position: relative;
+    }
+    .nav-tabs {
+      padding-left: rem(25px);
+      position: absolute;
+      border-bottom: none;
+      bottom: 1px;
+      left: 0;
+
+      > li {
+        > a {
+          border: 1px solid rpl-color('mid_neutral_1');
+          border-bottom-color: transparent;
+          border-left: none;
+          margin-right: 0;
+
+          &:hover {
+            border-bottom: 1px solid rpl-color('mid_neutral_1');
+          }
+        }
+
+        &.active {
+          > a {
+            font-family: "Vic-Bold", arial, sans-serif;
+
+            &:hover {
+              border: 1px solid rpl-color('mid_neutral_1');
+              border-bottom-color: transparent;
+              border-left: none;
+            }
+          }
+        }
+
+        &:first-child {
+          > a,
+          > a:hover {
+            border-left: 1px solid rpl-color('mid_neutral_1');
+          }
+        }
+      }
+    }
+
   }
 }

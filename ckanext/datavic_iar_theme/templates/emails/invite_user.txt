@@ -1,0 +1,26 @@
+{% set first_name = user_name.split("-")[0] %}Dear {{ first_name[0]|upper }}{{ first_name[1:] }},
+{% if role_name == 'Member' %}
+You have been invited to the {{ site_title }}. The {{ site_title }} is the place for Victoria Public Servants to find, discover and share data amongst departments and agencies.
+
+This is a new service that we are currently testing with a limited number of users. Your feedback will help us improve it.
+
+An account has already been created for you with the username {{ user_name }}. You can change it later.
+
+Your account allows you to search and find open data as well as a data restricted to Victorian Public Servants.
+{% else %}
+You have been invited to the {{ site_title }}.
+
+A user has already been created for you with the username {{ user_name }}. You can change it later.
+
+You have been added to the {{ group_type }} {{ group_title }} with the following role: {{ role_name }}.
+{% endif %}
+To accept this invite, please reset your password at:
+
+   {{ reset_link }}
+
+Thankyou.
+
+The DataVic Team
+
+--
+Message sent by the {{ site_title }} ({{ site_url }})
