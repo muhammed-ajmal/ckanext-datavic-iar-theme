@@ -26,5 +26,8 @@ class DatavicIARThemePlugin(plugins.SingletonPlugin):
             'format_list': helpers.format_list,
             'get_parent_site_url': helpers.get_parent_site_url,
             'get_gtm_code': helpers.get_gtm_code,
-            'datavic_linked_user': helpers.datavic_linked_user
+            'datavic_linked_user': helpers.datavic_linked_user,
+            'hotjar_tracking_enabled': helpers.hotjar_tracking_enabled,
+            'get_hotjar_hsid': helpers.get_hotjar_hsid,
+            'get_hotjar_hjsv': helpers.get_hotjar_hjsv,
         }

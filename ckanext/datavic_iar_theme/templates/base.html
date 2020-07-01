@@ -5,6 +5,9 @@
   {% if h.get_gtm_code() %}
     {% snippet "snippets/gtm_include.html" %}
   {% endif %}
+  {% if h.hotjar_tracking_enabled() == true %}
+    {% snippet "snippets/hotjar.html" %}
+  {% endif %}
 {% endblock %}
 
 {% block styles %}
