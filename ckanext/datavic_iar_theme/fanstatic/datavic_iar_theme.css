@@ -1686,7 +1686,8 @@ nav {
 .dataset-resources {
   margin-top: 0.75rem; }
   .dataset-resources li a.label {
-    font-family: "Vic-Medium", arial, sans-serif; }
+    font-family: "Vic-Medium", arial, sans-serif;
+    font-weight: normal; }
 
 .dataset-item {
   border-bottom: none;
