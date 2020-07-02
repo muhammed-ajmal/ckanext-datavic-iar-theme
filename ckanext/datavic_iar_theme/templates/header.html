@@ -74,7 +74,9 @@
                   <ul class="rpl-menu__items rpl-menu__items--root">
                     <li class="rpl-menu__item">
                     {% if c.userobj %}
-                      <a href="{{ h.url_for(controller='user', action='dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                      {% if h.check_access('package_create') %}
+                        <a href="{{ h.url_for(controller='user', action='dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                      {% endif %}
                     {% else %}
                       <a href="{{ h.url_for(controller='user', action='login') }}" class="rpl-link rpl-menu__item-link">{{ _('Login') }}</a>
                     {% endif %}
@@ -134,7 +136,9 @@
                   <ul class="rpl-menu__items rpl-menu__items--root">
                     <li class="rpl-menu__item">
                     {% if c.userobj %}
+                      {% if h.check_access('package_create') %}
                         <a href="{{ h.url_for(controller='user', action='dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                      {% endif %}
                     {% else %}
                       <a href="{{ h.url_for(controller='user', action='login') }}" class="rpl-link rpl-menu__item-link">{{ _('Login') }}</a>
                     {% endif %}
