@@ -9,6 +9,12 @@
   {% endif %} 
 {% endblock %}
 
+{% block content_action %}
+  {% if h.check_access('user_update', user) %}
+    {% link_for _('Edit'), controller='user', action='edit', id=user.name, class_='btn', icon='wrench' %}
+  {% endif %}
+{% endblock %}
+
 {% block content_primary_nav %}
   {% if h.check_access('package_create') %}
     {{ h.build_nav_icon('user_datasets', _('Datasets'), id=user.name) }}
