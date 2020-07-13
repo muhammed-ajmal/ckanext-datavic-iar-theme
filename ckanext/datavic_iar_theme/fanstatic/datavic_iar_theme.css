@@ -2611,13 +2611,17 @@ label.chk-label-active .custom-check,
     position: unset; }
 
 
-/* Hides gravatar for organisation members, user list */ */
-.activity .item .actor .gravatar,
+/* Hides gravatar for user list */ */
+.activity .item .actor .gravatar {
+  display: none;
+}
+
+/* Hides gravatar for organisation members */ */
 .media .gravatar {
   display: none;
 }
 
-/* Hides gravatar for activity feed. Not sure why but adding to above CSS does not work */
+/* Hides gravatar for activity feed */
 .user-list .gravatar {
   display: none;
 }
@@ -2631,4 +2635,9 @@ label.chk-label-active .custom-check,
  .activity .item .actor {
   position: absolute;
   left: 40px;
+}
+
+/* User toolbar icon */
+.account-masthead .account.authed .image img {
+  vertical-align: -4px;
 }

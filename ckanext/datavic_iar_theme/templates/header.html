@@ -25,7 +25,7 @@
               <li>
                 {% set user_url = h.url_for(controller='user', action='read', id=c.userobj.name) if h.check_access('package_create') else h.url_for(controller='user', action='activity', id=c.userobj.name) %}
                 <a href="{{ user_url }}" class="image" title="{{ _('View profile') }}">
-                  <img src="/user-gravatar.png" class="" width="22" height="22" alt="User gravatar">
+                  <img src="/user-gravatar.svg" width="16" height="16" alt="User gravatar">
                   <span class="username">{{ c.userobj.display_name }}</span>
                 </a>
               </li>
