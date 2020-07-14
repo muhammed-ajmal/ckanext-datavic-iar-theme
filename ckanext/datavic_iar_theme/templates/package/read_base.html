@@ -14,7 +14,13 @@
       {{ harvest_text }}
     </span>
   {% endif %}
+
   {% if h.check_access('package_update', {'id':pkg.id }) %}
-    <a class="btn" href="{{ h.url_for(controller='package', action='edit', id=pkg.name) }}" data-module="datavicmain-confirm-link-action" data-module-content="{{ confirmation_text }}"><i class="fa fa-wrench"></i> {{ _('Edit') }}</a>
+    {% set url = h.url_for(controller='package', action='edit', id=pkg.name) %}
+    {% if pkg.workflow_status|lower != 'draft' %}
+      <a class="btn" href="{{ url }}" data-module="datavicmain-confirm-link-action" data-module-content="{{ confirmation_text }}"><i class="fa fa-wrench"></i> {{ _('Edit') }}</a>
+    {% else %}
+      <a class="btn" href="{{ url }}"><i class="fa fa-wrench"></i> {{ _('Edit') }}</a>
+    {% endif %}
   {% endif %}
 {% endblock %}
