@@ -2611,17 +2611,17 @@ label.chk-label-active .custom-check,
     position: unset; }
 
 
-/* Hides gravatar for user list */ */
+/* Hides gravatar for activity feed */
 .activity .item .actor .gravatar {
   display: none;
 }
 
-/* Hides gravatar for organisation members */ */
+/* Hides gravatar for organisation members */
 .media .gravatar {
   display: none;
 }
 
-/* Hides gravatar for activity feed */
+/* Hides gravatar for user list */
 .user-list .gravatar {
   display: none;
 }
