@@ -58,3 +58,26 @@ body {
   padding-bottom: 0;
   border-bottom: none;
 }
+
+/* Hides gravatar for: Activity feed, User list and Organisation members */
+.activity .item .actor,
+.user-list,
+.media {
+  .gravatar {
+    display: none;
+  }
+}
+
+/* Activity feed user name needs to replace the area where the gravatar img was before removing above */
+.activity .item .actor {
+  position: relative;
+}
+
+/* User toolbar icon */
+.account-masthead .account.authed .image img {
+  vertical-align: -4px;
+}
+
+.activity .item p {
+  margin: 5px 0 0 40px;
+}
