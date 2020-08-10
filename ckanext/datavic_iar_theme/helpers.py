@@ -15,6 +15,21 @@ def organization_list():
     return toolkit.get_action('organization_list')({}, {'all_fields': True})
 
 
+def get_parent_orgs(output=None):
+    organisations = model.Group.get_top_level_groups('organization')
+
+    if output == 'list':
+        parent_orgs = [org.name for org in organisations]
+    else:
+        parent_orgs = [
+            {'value': '', 'text': 'Please select...'}
+        ]
+        for org in organisations:
+            parent_orgs.append({'value': org.name, 'text': org.display_name})
+
+    return parent_orgs
+
+
 def search_form_group_list():
     return toolkit.get_action('group_list')({}, {'all_fields': True})
 
