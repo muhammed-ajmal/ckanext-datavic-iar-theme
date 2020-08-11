@@ -2626,3 +2626,25 @@ label.chk-label-active .custom-check,
   .dataset-contact .privacy-statement input[type="checkbox"] {
     margin-top: 3px;
     position: unset; }
+
+.report-options {
+  display: none; }
+
+.reporting-form-center .form-actions {
+  border: none; }
+
+@media screen and (min-width: 576px) {
+  .reporting-form-center {
+    width: 80%;
+    margin-left: 10%; }
+    .reporting-form-center .form-horizontal .control-label {
+      width: 25%; }
+    .reporting-form-center .form-horizontal .controls {
+      width: 73%;
+      margin-left: 27%; }
+      .reporting-form-center .form-horizontal .controls select {
+        width: auto; }
+    .reporting-form-center .form-actions {
+      text-align: left;
+      margin: 0 0 0 27%;
+      padding: 0; } }
