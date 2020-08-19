@@ -22,9 +22,13 @@ class DatavicIARThemePlugin(plugins.SingletonPlugin):
         '''
         return {
             'organization_list': helpers.organization_list,
+            'get_parent_orgs': helpers.get_parent_orgs,
             'search_form_group_list': helpers.search_form_group_list,
             'format_list': helpers.format_list,
             'get_parent_site_url': helpers.get_parent_site_url,
             'get_gtm_code': helpers.get_gtm_code,
-            'datavic_linked_user': helpers.datavic_linked_user
+            'datavic_linked_user': helpers.datavic_linked_user,
+            'hotjar_tracking_enabled': helpers.hotjar_tracking_enabled,
+            'get_hotjar_hsid': helpers.get_hotjar_hsid,
+            'get_hotjar_hjsv': helpers.get_hotjar_hjsv,
         }

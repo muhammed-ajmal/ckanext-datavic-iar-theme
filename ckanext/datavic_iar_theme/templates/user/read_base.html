@@ -9,6 +9,12 @@
   {% endif %} 
 {% endblock %}
 
+{% block content_action %}
+  {% if h.check_access('user_update', user) %}
+    {% link_for _('Edit'), controller='user', action='edit', id=user.name, class_='btn', icon='wrench' %}
+  {% endif %}
+{% endblock %}
+
 {% block content_primary_nav %}
   {% if h.check_access('package_create') %}
     {{ h.build_nav_icon('user_datasets', _('Datasets'), id=user.name) }}
@@ -28,6 +34,10 @@
       {{ h.follow_button('user', user.id) }}</li>
     </div>
   {% endif %}
+{% endblock %}
+
+{% block user_image %}
+
 {% endblock %}
 
 {% block user_info %}
@@ -54,6 +64,10 @@
   <dl>
     <dt>{{ _('State') }}</dt>
     <dd>{{ _(user.state) }}</dd>
+    {% if h.is_user_account_pending_review(user.id) and h.check_access('sysadmin') %}
+      <dd><a class="btn btn-warning" href="{{ h.url_for('user_approve', id=user.id)}}">Approve</a></dd>
+      <dd><a class="btn btn-danger" href="{{ h.url_for('user_deny', id=user.id)}}">Deny</a></dd>   
+    {% endif %}
   </dl>
   {% if c.is_myself and h.check_access('sysadmin') %}
     <dl>

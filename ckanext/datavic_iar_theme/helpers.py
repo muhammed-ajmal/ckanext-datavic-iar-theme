@@ -15,6 +15,21 @@ def organization_list():
     return toolkit.get_action('organization_list')({}, {'all_fields': True})
 
 
+def get_parent_orgs(output=None):
+    organisations = model.Group.get_top_level_groups('organization')
+
+    if output == 'list':
+        parent_orgs = [org.name for org in organisations]
+    else:
+        parent_orgs = [
+            {'value': '', 'text': 'Please select...'}
+        ]
+        for org in organisations:
+            parent_orgs.append({'value': org.name, 'text': org.display_name})
+
+    return parent_orgs
+
+
 def search_form_group_list():
     return toolkit.get_action('group_list')({}, {'all_fields': True})
 
@@ -43,10 +58,24 @@ def format_list(limit=100):
 def get_parent_site_url():
     return config.get('ckan.parent_site_url', 'https://www.data.vic.gov.au')
 
+
+def hotjar_tracking_enabled():
+    return toolkit.asbool(config.get('ckan.tracking.hotjar_enabled', False))
+
+
+def get_hotjar_hsid():
+    return config.get('ckan.tracking.hotjar.hjid', None)
+
+
+def get_hotjar_hjsv():
+    return config.get('ckan.tracking.hotjar.hjsv', None)
+
+
 def get_gtm_code():
     # To get Google Tag Manager Code
     gtm_code = config.get('ckan.google_tag_manager.gtm_container_id', False)
     return str(gtm_code)
+
 
 def datavic_linked_user(user, maxlength=0, avatar=20):
     # Copied from ckan.lib.helpers.linked_user

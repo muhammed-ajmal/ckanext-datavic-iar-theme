@@ -25,7 +25,7 @@
               <li>
                 {% set user_url = h.url_for(controller='user', action='read', id=c.userobj.name) if h.check_access('package_create') else h.url_for(controller='user', action='activity', id=c.userobj.name) %}
                 <a href="{{ user_url }}" class="image" title="{{ _('View profile') }}">
-                  {{ h.gravatar((c.userobj.email_hash if c and c.userobj else ''), size=22) }}
+                  <img src="/user-gravatar.svg" width="16" height="16" alt="User gravatar">
                   <span class="username">{{ c.userobj.display_name }}</span>
                 </a>
               </li>
@@ -74,7 +74,9 @@
                   <ul class="rpl-menu__items rpl-menu__items--root">
                     <li class="rpl-menu__item">
                     {% if c.userobj %}
-                      <a href="{{ h.url_for(controller='user', action='dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                      {% if h.check_access('package_create') %}
+                        <a href="{{ h.url_for(controller='user', action='dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                      {% endif %}
                     {% else %}
                       <a href="{{ h.url_for(controller='user', action='login') }}" class="rpl-link rpl-menu__item-link">{{ _('Login') }}</a>
                     {% endif %}
@@ -86,7 +88,7 @@
                       <a href="{{ h.url_for('organizations_index') }}" class="rpl-link rpl-menu__item-link">{{ _('Organisations') }}</a>
                     </li>
                     <li class="rpl-menu__item">
-                      <a href="{{ h.get_parent_site_url() }}/about-datavic" class="rpl-link rpl-menu__item-link" target="_blank">{{ _('About us') }}</a>
+                      <a href="{{ h.url_for('about') }}" class="rpl-link rpl-menu__item-link">{{ _('About us') }}</a>
                     </li>
                     <li class="rpl-menu__item">
                       <a href="{{ h.get_parent_site_url() }}/contact-us" class="rpl-link rpl-menu__item-link" target="_blank">{{ _('Contact us') }}</a>
@@ -134,7 +136,9 @@
                   <ul class="rpl-menu__items rpl-menu__items--root">
                     <li class="rpl-menu__item">
                     {% if c.userobj %}
+                      {% if h.check_access('package_create') %}
                         <a href="{{ h.url_for(controller='user', action='dashboard') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                      {% endif %}
                     {% else %}
                       <a href="{{ h.url_for(controller='user', action='login') }}" class="rpl-link rpl-menu__item-link">{{ _('Login') }}</a>
                     {% endif %}
@@ -146,7 +150,7 @@
                       <a href="{{ h.url_for('organizations_index') }}" class="rpl-link rpl-menu__item-link">{{ _('Organisations') }}</a>
                     </li>
                     <li class="rpl-menu__item">
-                      <a href="{{ h.get_parent_site_url() }}/about-datavic" class="rpl-link rpl-menu__item-link" target="_blank">{{ _('About us') }}</a>
+                      <a href="{{ h.url_for('about') }}" class="rpl-link rpl-menu__item-link">{{ _('About us') }}</a>
                     </li>
                     <li class="rpl-menu__item">
                       <a href="{{ h.get_parent_site_url() }}/contact-us" class="rpl-link rpl-menu__item-link" target="_blank">{{ _('Contact us') }}</a>

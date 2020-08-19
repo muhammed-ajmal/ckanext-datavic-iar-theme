@@ -1,0 +1,31 @@
+
+.report-options {
+    display: none;
+}
+
+.reporting-form-center {
+    .form-actions {
+      border: none;
+    }
+    @include rpl_breakpoint('s') {
+      width: 80%;
+      margin-left: 10%;
+      .form-horizontal {
+        .control-label {
+          width: 25%;
+        }
+        .controls {
+          width: 73%;
+          margin-left: 27%;
+          select {
+            width: auto;
+          }
+        }
+      }
+      .form-actions {
+        text-align: left;
+        margin: 0 0 0 27%;
+        padding: 0;
+      }
+    }
+}
