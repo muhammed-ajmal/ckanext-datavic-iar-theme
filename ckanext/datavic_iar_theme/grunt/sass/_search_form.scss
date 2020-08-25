@@ -25,7 +25,7 @@
 
 $rpl-search-form-button-width: rem(28px) !default;
 $rpl-search-form-input-text-color: rpl-color('dark_neutral') !default;
-$rpl-search-form-input-text-placeholder-color: rpl-color('mid_neutral_3') !default;
+$rpl-search-form-input-text-placeholder-color: #758195 !default;
 $rpl-search-form-input-margin: auto auto ($rpl-space-4) auto !default;
 $rpl-search-form-input-margin-s: auto auto ($rpl-space-4) auto !default;
 $rpl-search-form-input-margin-l: auto auto ($rpl-space-4) auto !default;
@@ -59,7 +59,8 @@ $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
   @include rpl_mobile_padding();
   padding-top: $rpl-space * 7;
   padding-bottom: $rpl-space-4 * 2;
-
+  background-color: rpl-color('mid_neutral_2');
+  
   @include rpl_breakpoint('m') {
     padding-left: 0;
     padding-right: 0;
@@ -140,8 +141,6 @@ $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
 
   &__label-text {
     @include rpl_visually_hidden;
-    color: #758195;
-    background-color: rpl-color('mid_neutral_2');
   }
 
   &__field {
@@ -210,7 +209,7 @@ $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
 }
 
 .search-form-wrapper {
-  background-color: rpl-color('light_neutral');
+  background-color: rpl-color('mid_neutral_2');
   border-top: 0;
   margin-bottom: 1px;
   @include full-width;
@@ -247,16 +246,16 @@ $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
     line-height: 1.17em;
     padding: 1px;
     &::-webkit-input-placeholder { /* WebKit browsers */
-        color: transparent;
+        color: $rpl-search-form-input-text-placeholder-color;
     }
     &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-       color: transparent;
+       color: $rpl-search-form-input-text-placeholder-color;
     }
     &::-moz-placeholder { /* Mozilla Firefox 19+ */
-       color: transparent;
+       color: $rpl-search-form-input-text-placeholder-color;
     }
     &:-ms-input-placeholder { /* Internet Explorer 10+ */
-       color: transparent;
+       color: $rpl-search-form-input-text-placeholder-color;
     }
     @include rpl_breakpoint('s') {
         &::-webkit-input-placeholder { /* WebKit browsers */
