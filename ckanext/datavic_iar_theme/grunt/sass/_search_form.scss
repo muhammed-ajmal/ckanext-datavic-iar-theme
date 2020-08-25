@@ -140,6 +140,8 @@ $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
 
   &__label-text {
     @include rpl_visually_hidden;
+    color: #758195;
+    background-color: rpl-color('mid_neutral_2');
   }
 
   &__field {
@@ -271,4 +273,8 @@ $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
         }
     }
   }
+}
+
+.rpl-checklist__info {
+  border-radius: $rpl-form-element-border-radius;
 }

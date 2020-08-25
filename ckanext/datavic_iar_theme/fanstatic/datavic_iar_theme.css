@@ -523,8 +523,12 @@ h2 {
     .account-masthead .account ul li a {
       color: #465870; }
 
-.dashboard .nav-tabs > li > a:hover {
-  border: 1px solid #D7DBE0; }
+.dashboard .nav-tabs > li > a {
+  color: #6A778A; }
+  .dashboard .nav-tabs > li > a:hover {
+    border: 1px solid #D7DBE0; }
+  .dashboard .nav-tabs > li > a i {
+    padding-right: 6px; }
 
 @media screen and (min-width: 768px) {
   .dashboard .nav-tabs {
@@ -2147,7 +2151,8 @@ nav {
     font-size: 0.875rem;
     line-height: 1em;
     font-weight: normal;
-    margin-left: 0.5rem; }
+    margin-left: 0.5rem;
+    font-weight: bold; }
   .rpl-checkbox__box {
     display: inline-block;
     vertical-align: middle;
@@ -2170,6 +2175,9 @@ nav {
         top: 0;
         bottom: 0;
         margin: auto; }
+
+label.rpl-checkbox:after {
+  content: ""; }
 
 .rpl-clearform {
   padding: 0.5rem 0;
@@ -2305,7 +2313,9 @@ nav {
     overflow: hidden;
     clip: rect(0 0 0 0);
     border: 0;
-    pointer-events: none; }
+    pointer-events: none;
+    color: #758195;
+    background-color: #E8EBEE; }
   .rpl-search-form__field {
     position: relative;
     display: flex;
@@ -2411,6 +2421,9 @@ nav {
     .rpl-search-form__field input[type="text"]:-ms-input-placeholder {
       /* Internet Explorer 10+ */
       color: #BFC5CD; } }
+
+.rpl-checklist__info {
+  border-radius: 0.25rem; }
 
 ul.btn-holder {
   margin: 0;
@@ -2648,3 +2661,90 @@ label.chk-label-active .custom-check,
       text-align: left;
       margin: 0 0 0 27%;
       padding: 0; } }
+
+.module.module-narrow.module-shallow .module-heading {
+  border: none; }
+
+.action a.btn {
+  color: #011A3C;
+  text-align: center;
+  display: inline-block;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  width: 100%;
+  padding: 1rem 3rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  color: #011A3C;
+  background-color: #BFC5CD;
+  padding: 4px 12px; }
+  @media screen and (min-width: 0) {
+    .action a.btn {
+      font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
+      font-size: 0.875rem;
+      line-height: 1em;
+      font-weight: normal; } }
+  @media screen and (min-width: 768px) {
+    .action a.btn {
+      font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
+      font-size: 1rem;
+      line-height: 1em; } }
+  @media print {
+    .action a.btn {
+      color: #000; } }
+  @media screen and (min-width: 576px) {
+    .action a.btn {
+      width: auto; } }
+  @media print {
+    .action a.btn {
+      padding-left: 0;
+      padding-right: 0;
+      width: auto; } }
+  .action a.btn:hover, .action a.btn:focus {
+    text-decoration: none; }
+  .action a.btn:active {
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #F6BE00 0%, #F69C00 100%);
+    color: #011A3C; }
+  @media print {
+    .action a.btn {
+      color: #000; } }
+  @media print {
+    .action a.btn {
+      background-color: transparent; } }
+  .action a.btn:hover, .action a.btn:focus {
+    background-color: #909BA9;
+    color: #011A3C; }
+  .action a.btn:active {
+    color: #011A3C;
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #011A3C 0%, #909BA9 100%); }
+    @media print {
+      .action a.btn:active {
+        color: #000; } }
+
+.error-explanation.alert.alert-error {
+  background-color: rgba(175, 39, 47, 0.07);
+  color: #af272f; }
+
+.control-group.error .control-label {
+  color: #af272f; }
+
+.form-inline.control-medium label, .form-inline.control-medium input, .form-inline.control-medium button {
+  margin-right: 20px; }
+
+.form-inline.control-medium input {
+  border-color: #D7DBE0; }
+
+@media screen and (min-width: 0) {
+  .form-inline.control-medium .btn.btn-primary {
+    margin-top: 32px; } }
+
+@media screen and (min-width: 992px) {
+  .form-inline.control-medium .btn.btn-primary {
+    margin-top: 0px; } }
+
+a.close {
+  font-size: 1.5rem; }
