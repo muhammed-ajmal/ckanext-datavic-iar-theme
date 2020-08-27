@@ -1,0 +1,46 @@
+// User login form
+.module.module-narrow.module-shallow {
+  .module-heading {
+    border: none;
+  }
+}
+
+.action a.btn {
+  @include rpl_button;
+  @include rpl_button_secondary;
+
+  padding: 4px 12px;
+}
+
+.error-explanation.alert.alert-error {
+  background-color: $rpl-danger-bg-color;
+  color: rpl-color("danger");
+}
+
+.control-group.error .control-label {
+  color: rpl-color("danger");
+}
+
+// Password reset request form
+.form-inline.control-medium {
+  label,
+  input,
+  button {
+    margin-right: 20px;
+  }
+  input {
+    border-color: rpl-color("mid_neutral_1");
+  }
+  .btn.btn-primary {
+    @include rpl-breakpoint(xs) {
+      margin-top: 32px;
+    }
+    @include rpl-breakpoint(l) {
+      margin-top: 0px;
+    }
+  }
+}
+
+a.close {
+  font-size: rpl-font-size(xl);
+}
