@@ -23,6 +23,7 @@ $rpl-checkbox-box-border-radius: rem(4px);
   &__inline-label {
     @include rpl_typography_ruleset($rpl-form-element-text-ruleset);
     margin-left: $rpl-space-2;
+    font-weight: bold;
   }
 
   &__box {
@@ -54,4 +55,8 @@ $rpl-checkbox-box-border-radius: rem(4px);
       }
     }
   }
+}
+
+label.rpl-checkbox:after {
+  content: "";
 }

@@ -90,6 +90,10 @@ $nav-tab-a-color: rpl-color('mid_neutral_4') !default;
         &:hover {
           border: 1px solid rpl-color('mid_neutral_1');
         }
+        color: #6A778A;
+        i {
+          padding-right: 6px
+        }
       }
     }
   }
