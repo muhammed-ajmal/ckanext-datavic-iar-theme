@@ -1,9 +1,10 @@
   {% block search_input %}
 
-    {% set fields_grouped = c.fields_grouped %}
-    {% set organization = fields_grouped['organization'][0] if fields_grouped['organization'] and fields_grouped['organization'][0] else '' %}
-    {% set group = fields_grouped['groups'][0] if fields_grouped['groups'] and fields_grouped['groups'][0] else '' %}
-    {% set format = fields_grouped['res_format'][0] if fields_grouped['res_format'] and fields_grouped['res_format'][0] else '' %}
+    <!-- DATAVIC-245 change g.fields_grouped to g.facets -->
+    {% set facets = g.facets  %}
+    {% set organization = facets['organization'][0] if facets['organization'] and facets['organization'][0] else '' %}
+    {% set group = facets['groups'][0] if facets['groups'] and facets['groups'][0] else '' %}
+    {% set format = facets['res_format'][0] if facets['res_format'] and facets['res_format'][0] else '' %}
 
     <div class="search-form-wrapper">
       <div class="rpl-search-form da-search rpl-site-constrain--on-all">

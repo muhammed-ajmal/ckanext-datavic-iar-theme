@@ -6,7 +6,7 @@ from ckan.common import config
 from sqlalchemy import and_ as _and_
 from sqlalchemy.sql import func
 import ckan.lib.helpers as h
-#from webhelpers.html import tags
+import dominate.tags as tags
 
 log = logging.getLogger(__name__)
 
