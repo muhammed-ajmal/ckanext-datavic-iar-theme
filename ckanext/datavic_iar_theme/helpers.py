@@ -6,7 +6,7 @@ from ckan.common import config
 from sqlalchemy import and_ as _and_
 from sqlalchemy.sql import func
 import ckan.lib.helpers as h
-from webhelpers.html import tags
+#from webhelpers.html import tags
 
 log = logging.getLogger(__name__)
 
@@ -49,7 +49,7 @@ def format_list(limit=100):
                 func.lower(model.Resource.format)
             ))
         resource_formats = [resource.format for resource in query if not resource.format == '']
-    except Exception, e:
+    except Exception as e:
         log.error(e.message)
 
     return resource_formats
@@ -78,6 +78,7 @@ def get_gtm_code():
 
 
 def datavic_linked_user(user, maxlength=0, avatar=20):
+    return None
     # Copied from ckan.lib.helpers.linked_user
     if not isinstance(user, model.User):
         user_name = unicode(user)

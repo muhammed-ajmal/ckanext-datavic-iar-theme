@@ -1,6 +1,6 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
-import helpers
+import ckanext.datavic_iar_theme.helpers as helpers
 
 
 class DatavicIARThemePlugin(plugins.SingletonPlugin):

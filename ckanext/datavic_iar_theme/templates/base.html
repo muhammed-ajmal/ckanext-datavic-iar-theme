@@ -1,5 +1,8 @@
 {% ckan_extends %}
 
+{%- block title -%}
+    DADADADADAß
+{% endblock %}
 {% block head_extras %}
   {{ super() }}
   {% if h.get_gtm_code() %}
@@ -12,10 +15,10 @@
 
 {% block styles %}
   {{ super() }}
-  {% resource 'datavic_iar_theme/datavic_iar_theme.css' %}
+  {% asset 'datavic_iar_theme/iar-theme-css' %}
 {% endblock %}
 
 {% block scripts %}
   {{ super() }}
-  {% resource 'datavic_iar_theme/datavic_iar_theme.js' %}
+  {#% resource 'datavic_iar_theme/datavic_iar_theme.js' %#}
 {% endblock %}
