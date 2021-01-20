@@ -1,7 +1,7 @@
 {% block header_wrapper %}
   {% block header_debug %}
     {% if g.debug and not g.debug_supress_header %}
-      <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
+      <div class="debug">Controller : {{ g.controller }}<br/>Action : {{ g.action }}</div>
     {% endif %}
   {% endblock %}
 
@@ -11,22 +11,22 @@
     <div class="container">
       {% block header_account_container_content %}
         {% if c.userobj %}
-          <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
+          <div class="account avatar authed" data-module="me" data-me="{{ g.userobj.id }}">
             <ul class="unstyled">
               {% block header_account_logged %}
               {% if c.userobj.sysadmin %}
                 <li>
-                  <a href="{{ h.url_for(controller='admin', action='index') }}" title="{{ _('Sysadmin settings') }}">
+                  <a href="{{ h.url_for('admin.index') }}" title="{{ _('Sysadmin settings') }}">
                     <i class="fa fa-gavel" aria-hidden="true"></i>
                     <span class="text">{{ _('Admin') }}</span>
                   </a>
                 </li>
               {% endif %}
               <li>
-                {% set user_url = h.url_for(controller='user', action='read', id=c.userobj.name) if h.check_access('package_create') else h.url_for(controller='user', action='activity', id=c.userobj.name) %}
+                {% set user_url = h.url_for('user.read', id=g.userobj.name) if h.check_access('package_create') else h.url_for('user.activity', id=g.userobj.name) %}
                 <a href="{{ user_url }}" class="image" title="{{ _('View profile') }}">
                   <img src="/user-gravatar.svg" width="16" height="16" alt="User gravatar">
-                  <span class="username">{{ c.userobj.display_name }}</span>
+                  <span class="username">{{ g.userobj.display_name }}</span>
                 </a>
               </li>
               {% block header_account_log_out_link %}
@@ -44,9 +44,9 @@
           <nav class="account not-authed">
             <ul class="unstyled">
               {% block header_account_notlogged %}
-              <li>{% link_for _('Log in'), controller='user', action='login' %}</li>
+              <li>{% link_for _('Log in'), 'user.login' %}</li>
               {% if h.check_access('user_create') %}
-                <li>{% link_for _('Register'), controller='user', action='register', class_='sub' %}</li>
+                <li>{% link_for _('Register'), 'user.register', class_='sub' %}</li>
               {% endif %}
               {% endblock %}
             </ul>
@@ -137,10 +137,10 @@
                     <li class="rpl-menu__item">
                     {% if c.userobj %}
                       {% if h.check_access('package_create') %}
-                        <a href="{# { h.url_for(controller='user', action='dashboard') } #}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
+                        <a href="{{ h.url_for('dashboard.index') }}" class="rpl-link rpl-menu__item-link">{{ _('Dashboard') }}</a>
                       {% endif %}
                     {% else %}
-                      <a href="{{ h.url_for(controller='user', action='login') }}" class="rpl-link rpl-menu__item-link">{{ _('Login') }}</a>
+                      <a href="{{ h.url_for('user.login') }}" class="rpl-link rpl-menu__item-link">{{ _('Login') }}</a>
                     {% endif %}
                     </li>
                     <li class="rpl-menu__item">
