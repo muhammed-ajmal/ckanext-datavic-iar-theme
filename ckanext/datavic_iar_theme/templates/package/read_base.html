@@ -16,7 +16,7 @@
   {% endif %}
 
   {% if h.check_access('package_update', {'id':pkg.id }) %}
-    {% set url = h.url_for(controller='package', action='edit', id=pkg.name) %}
+    {% set url = h.url_for('dataset.edit', id=pkg.name) %}
     {% if pkg.workflow_status|lower != 'draft' %}
       <a class="btn" href="{{ url }}" data-module="datavicmain-confirm-link-action" data-module-content="{{ confirmation_text }}"><i class="fa fa-wrench"></i> {{ _('Edit') }}</a>
     {% else %}

@@ -10,20 +10,20 @@
             <li class="{% if h.current_url () == '/dashboard' %}active{% endif %}">
               <a href="/dashboard"><i class="fa fa-sitemap"></i>{{_('My datasets')}}</a>
             </li>
-            {{ h.build_nav_icon('user_dashboard_organizations', _('My organizations')) }}
-            {{ h.build_nav_icon('user_dashboard_groups', _('My groups')) }}
-            {{ h.build_nav_icon('user_dashboard_newsfeed', _('Activity Stream')) }}
+            {{ h.build_nav_icon('dashboard.organizations', _('My organizations')) }}
+            {{ h.build_nav_icon('dashboard.groups', _('My groups')) }}
+            {{ h.build_nav_icon('dashboard.index', _('Activity Stream')) }}
             {% if h.check_access('user_dashboard_reports') %}
-            {{ h.build_nav_icon('user_dashboard_reports', _('Reports')) }}         
+            {{ h.build_nav_icon('reporting.reports', _('Reports')) }}         
             {% endif %}
             {% if h.check_access('user_report_schedules') %}        
-              {{ h.build_nav_icon('user_report_schedules', _('Report schedules')) }}
+              {{ h.build_nav_icon('scheduling.schedules', _('Report schedules')) }}
             {% endif %}
           {% else %}
             <li class="{% if h.current_url () == '/dashboard' %}active{% endif %}">
               <a href="/dashboard/organizations"><i class="fa fa-sitemap"></i>{{_('My organizations')}}</a>
             </li>
-            {{ h.build_nav_icon('user_dashboard_newsfeed', _('Activity Stream')) }}
+            {{ h.build_nav_icon('dahsboard.index', _('Activity Stream')) }}
           {% endif %}
         </ul>
       </header>
