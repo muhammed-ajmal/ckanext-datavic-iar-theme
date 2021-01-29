@@ -3,7 +3,7 @@
     {% block page_header %}
       <header class="dashboard module-content page-header hug">
         <div class="content_action">
-          {% link_for _('Edit'), controller='user', action='edit', id=user.name, class_='btn', icon='cog' %}
+          {% link_for _('Edit'), named_route='datavicuser.edit', id=user.name, class_='btn', icon='cog' %}
         </div>
         <ul class="nav nav-tabs">
           {% if h.check_access('package_create') %}
@@ -38,7 +38,7 @@
           <small>{{ _("Activity from items that I'm following") }}</small>
         </h2>
         {% block activity_stream %}
-          {{ c.dashboard_activity_stream }}
+          {{ dashboard_activity_stream }}
         {% endblock %}
       </div>
     {% endblock %}
