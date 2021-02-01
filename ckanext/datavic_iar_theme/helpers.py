@@ -78,10 +78,9 @@ def get_gtm_code():
 
 
 def datavic_linked_user(user, maxlength=0, avatar=20):
-    return None
     # Copied from ckan.lib.helpers.linked_user
     if not isinstance(user, model.User):
-        user_name = unicode(user)
+        user_name = str(user)
         user = model.User.get(user_name)
         if not user:
             return user_name
@@ -92,14 +91,14 @@ def datavic_linked_user(user, maxlength=0, avatar=20):
         if maxlength and len(user.display_name) > maxlength:
             displayname = displayname[:maxlength] + '...'
 
-        return tags.literal(u'{icon} {link}'.format(
+        return h.literal(u'{icon} {link}'.format(
             icon=h.gravatar(
                 email_hash=user.email_hash,
                 size=avatar
             ),
-            link=tags.link_to(
+            link=h.link_to(
                 displayname,
                 # DataVic custom changes to show different links depending on user access
-                h.url_for(controller='user', action='read', id=name) if h.check_access('package_create') else  h.url_for(controller='user', action='activity', id=name)
+                h.url_for('user.read', id=name) if h.check_access('package_create') else  h.url_for('user.activity', id=name)
             )
         ))
