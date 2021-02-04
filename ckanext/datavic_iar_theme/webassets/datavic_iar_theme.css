@@ -2187,7 +2187,7 @@ nav {
     /* fix icon alignment */ }
 
 .rpl-search-form form,
-.rpl-search-form .wrapper {
+.rpl-search-form {
   margin-bottom: 0; }
 
 .rpl-search-form__field label:after,

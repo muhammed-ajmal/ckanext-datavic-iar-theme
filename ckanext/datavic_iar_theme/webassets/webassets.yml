@@ -7,6 +7,11 @@ iar-theme-css:
 #  filters: rjsmin
 #  output: qdes_schema/jquery.repeater.js
 
+datavic_iar_theme:
+  contents:
+    - datavic_iar_theme.js
+  filters: rjsmin
+
 confirm-link-action:
   contents:
     - datavicmain-confirm-link-action.js
