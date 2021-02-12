@@ -1,15 +1,14 @@
 {% ckan_extends %}
 
     {% block page_header %}
-      <header class="dashboard module-content page-header hug">
+      <header class="module-content page-header hug">
         <div class="content_action">
           {% link_for _('Edit'), named_route='datavicuser.edit', id=user.name, class_='btn', icon='cog' %}
         </div>
         <ul class="nav nav-tabs">
           {% if h.check_access('package_create') %}
-            <li class="{% if h.current_url () == '/dashboard' %}active{% endif %}">
-              <a href="/dashboard"><i class="fa fa-sitemap"></i>{{_('My datasets')}}</a>
-            </li>
+           
+            {{ h.build_nav_icon('dashboard.datasets', _('My Datasets'), icon='sitemap') }}
             {{ h.build_nav_icon('dashboard.organizations', _('My organizations')) }}
             {{ h.build_nav_icon('dashboard.groups', _('My groups')) }}
             {{ h.build_nav_icon('dashboard.index', _('Activity Stream')) }}
@@ -20,9 +19,7 @@
               {{ h.build_nav_icon('scheduling.schedules', _('Report schedules')) }}
             {% endif %}
           {% else %}
-            <li class="{% if h.current_url () == '/dashboard' %}active{% endif %}">
-              <a href="/dashboard/organizations"><i class="fa fa-sitemap"></i>{{_('My organizations')}}</a>
-            </li>
+            {{ h.build_nav_icon('dashboard.organizations', _('My organizations')) }}  
             {{ h.build_nav_icon('dahsboard.index', _('Activity Stream')) }}
           {% endif %}
         </ul>
@@ -38,7 +35,7 @@
           <small>{{ _("Activity from items that I'm following") }}</small>
         </h2>
         {% block activity_stream %}
-          {{ dashboard_activity_stream }}
+          {% snippet 'snippets/activity_stream.html', activity_stream=dashboard_activity_stream, id=id, object_type='user' %}
         {% endblock %}
       </div>
     {% endblock %}

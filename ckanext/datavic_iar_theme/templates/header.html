@@ -116,7 +116,7 @@
           </a>
         </div>
         <div class="rpl-site-header__title cobrand">
-          <a href="{{ h.url_for('home') }}" class="rpl-link">
+          <a href="{{ h.url_for('home.index') }}" class="rpl-link">
             <img src="/vps-data-directory-logo.svg" alt="VPS Data Directory logo">
           </a>
         </div>
@@ -144,13 +144,13 @@
                     {% endif %}
                     </li>
                     <li class="rpl-menu__item">
-                      <a href="{{ h.url_for('search') }}" class="rpl-link rpl-menu__item-link">{{ _('Datasets') }}</a>
+                      <a href="{{ h.url_for('dataset.search') }}" class="rpl-link rpl-menu__item-link">{{ _('Datasets') }}</a>
                     </li>
                     <li class="rpl-menu__item">
-                      <a href="{{ h.url_for('organizations_index') }}" class="rpl-link rpl-menu__item-link">{{ _('Organisations') }}</a>
+                      <a href="{{ h.url_for('organization.index') }}" class="rpl-link rpl-menu__item-link">{{ _('Organisations') }}</a>
                     </li>
                     <li class="rpl-menu__item">
-                      <a href="{{ h.url_for('about') }}" class="rpl-link rpl-menu__item-link">{{ _('About us') }}</a>
+                      <a href="{{ h.url_for('home.about') }}" class="rpl-link rpl-menu__item-link">{{ _('About us') }}</a>
                     </li>
                     <li class="rpl-menu__item">
                       <a href="{{ h.get_parent_site_url() }}/contact-us" class="rpl-link rpl-menu__item-link" target="_blank">{{ _('Contact us') }}</a>
