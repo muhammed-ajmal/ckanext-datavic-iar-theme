@@ -1,6 +1,7 @@
 iar-theme-css:
   contents:
     - datavic_iar_theme.css
+  output: datavic_iar_theme_css/%(version)s_datavic_iar_theme
 #  extra:
 #    preload:
 #      - vendor/jquery
@@ -8,19 +9,22 @@ iar-theme-css:
 #  output: qdes_schema/jquery.repeater.js
 
 datavic_iar_theme:
+  output: datavic_iar_theme/%(version)s_datavic_iar_theme
   contents:
     - datavic_iar_theme.js
   filters: rjsmin
 
 confirm-link-action:
+  output: datavic_iar_theme/%(version)s_confirm_link_action
   contents:
     - datavicmain-confirm-link-action.js
 
-repeating-fields:
-  extra:
-    preload:
-      - qdes_schema/repeater
-  contents:
-    - repeating-fields.js
+# repeating-fields:
+#   output: 'datavic_iar_theme/%(version)s_'
+#   extra:
+#     preload:
+#       - qdes_schema/repeater
+#   contents:
+#     - repeating-fields.js
 #  filters: rjsmin
 #  output: qdes_schema/repeating-fields.js
