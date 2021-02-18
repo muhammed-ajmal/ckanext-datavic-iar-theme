@@ -8,7 +8,6 @@
     {{ h.build_nav('user.activity', user.display_name|truncate(35), id=user.name) }}
   {% endif %} 
 {% endblock %}
-  {{ user }}
 
 {% block content_action %}
   {% if h.check_access('user_update', user) %}
