@@ -44,6 +44,7 @@ This CSS file is generated through a basic `grunt` configuration in:
         ~/ckanext-datavic-iar-theme/ckanext/datavic_iar_theme/grunt
 
 CD into that directory and run `npm install` to install grunt and its dependencies.
+Install grunt cli globally `npm install -g grunt-cli`
 
 Then compile the `.scss` files in the `ckanext-datavic-iar-theme/ckanext/datavic_iar_theme/grunt/sass` dir using:
 
