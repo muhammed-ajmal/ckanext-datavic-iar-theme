@@ -20,7 +20,7 @@
     </div>
     {% endif %}
 
-    {% block maintag %}<div role="main">{% endblock %}
+    {% block maintag %}<div class="main" role="main">{% endblock %}
       <div id="content" class="container">
         {% block main_content %}
           {% block flash %}
@@ -51,23 +51,24 @@
             {% block pre_primary %}
             {% endblock %}
 
+            {% block secondary %}
+              {% set span = 9 if c.controller in ['user', 'admin', 'ckanext.harvest.controllers.view:ViewController'] else 12 %}
+              {% if span != 12 %}
+                  <aside class="secondary col-sm-3">
+                    {% block secondary_content %}{% endblock %}
+                  </aside>
+              {% endif %}
+            {% endblock %}
+
             {% block primary %}
               {% set span = 9 if c.controller in ['user', 'admin', 'ckanext.harvest.controllers.view:ViewController'] else 12 %}
-              <div class="primary span{{ span }}">
+              <div class="primary col-sm-{{ span }} col-xs-12" role="main">
                 {% block primary_content %}
                   {{ super() }}
                 {% endblock %}
               </div>
             {% endblock %}
 
-            {% block secondary %}
-              {% set span = 9 if c.controller in ['user', 'admin', 'ckanext.harvest.controllers.view:ViewController'] else 12 %}
-              {% if span != 12 %}
-                  <aside class="secondary span3">
-                    {% block secondary_content %}{% endblock %}
-                  </aside>
-              {% endif %}
-            {% endblock %}
           </div>
         {% endblock %}
       </div>
