@@ -1541,17 +1541,18 @@ nav {
   #mobile-menu .rpl-site-header__top {
     height: 3rem; }
 
-.module-content .pagination {
+.module-content .pagination-wrapper .pagination {
   margin: 0; }
 
-.module .pagination {
+.module .pagination-wrapper .pagination {
   box-sizing: border-box; }
 
 .module .pagination li a {
   border: none;
   padding: 0; }
 
-.module .pagination {
+.module .pagination-wrapper
+.pagination {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   display: flex;
@@ -1559,67 +1560,86 @@ nav {
   padding-top: 3rem;
   width: 100%; }
   @media screen and (min-width: 576px) {
-    .module .pagination {
+    .module .pagination-wrapper
+.pagination {
       padding-left: 1.75rem;
       padding-right: 1.75rem; } }
   @media print {
-    .module .pagination {
+    .module .pagination-wrapper
+.pagination {
       padding: 0; } }
   @media screen and (min-width: 768px) {
-    .module .pagination {
+    .module .pagination-wrapper
+.pagination {
       padding-left: 0;
       padding-right: 0; } }
-  .module .pagination ul {
+  .module .pagination-wrapper
+.pagination ul {
     padding: 0;
     margin: 0;
     list-style: none; }
-    .module .pagination ul > li {
+    .module .pagination-wrapper
+.pagination ul > li {
       display: inline-block;
       padding: 0 0 0 0.5rem; }
-      .module .pagination ul > li::after {
+      .module .pagination-wrapper
+.pagination ul > li::after {
         content: '/';
         color: #D7DBE0;
         padding: 0 0 0 0.5rem; }
         @media screen and (min-width: 0) {
-          .module .pagination ul > li::after {
+          .module .pagination-wrapper
+.pagination ul > li::after {
             font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
             font-size: 1rem;
             line-height: 1.5em;
             font-weight: normal; } }
         @media screen and (min-width: 992px) {
-          .module .pagination ul > li::after {
+          .module .pagination-wrapper
+.pagination ul > li::after {
             font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
             font-size: 1.25rem;
             line-height: 1.2em; } }
-      .module .pagination ul > li:last-child::after {
+      .module .pagination-wrapper
+.pagination ul > li:last-child::after {
         content: ''; }
-      .module .pagination ul > li > a,
-      .module .pagination ul > li.active > a {
+      .module .pagination-wrapper
+.pagination ul > li > a,
+      .module .pagination-wrapper
+.pagination ul > li.active > a {
         background: transparent;
         border: 0;
         margin: 0;
         padding: 0; }
         @media screen and (min-width: 0) {
-          .module .pagination ul > li > a,
-          .module .pagination ul > li.active > a {
+          .module .pagination-wrapper
+.pagination ul > li > a,
+          .module .pagination-wrapper
+.pagination ul > li.active > a {
             font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
             font-size: 1rem;
             line-height: 1.5em;
             font-weight: normal; } }
         @media screen and (min-width: 992px) {
-          .module .pagination ul > li > a,
-          .module .pagination ul > li.active > a {
+          .module .pagination-wrapper
+.pagination ul > li > a,
+          .module .pagination-wrapper
+.pagination ul > li.active > a {
             font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
             font-size: 1.25rem;
             line-height: 1.2em; } }
-      .module .pagination ul > li > a {
+      .module .pagination-wrapper
+.pagination ul > li > a {
         color: #011A3C;
         cursor: pointer;
         border-bottom: 2px solid transparent; }
-        .module .pagination ul > li > a:hover, .module .pagination ul > li > a:focus {
+        .module .pagination-wrapper
+.pagination ul > li > a:hover, .module .pagination-wrapper
+.pagination ul > li > a:focus {
           color: #011A3C;
           border-bottom: 2px solid transparent; }
-        .module .pagination ul > li > a span {
+        .module .pagination-wrapper
+.pagination ul > li > a span {
           position: absolute;
           width: 1px;
           height: 1px;
@@ -1629,7 +1649,8 @@ nav {
           clip: rect(0 0 0 0);
           border: 0;
           pointer-events: none; }
-      .module .pagination ul > li.active > a {
+      .module .pagination-wrapper
+.pagination ul > li.active > a {
         color: #D63C00;
         border-bottom: 2px solid #D63C00; }
 
@@ -2056,7 +2077,7 @@ nav {
   position: relative; }
   .rpl-checklist__combobox--expanded {
     border: 1px solid #F6BE00; }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 576px) {
       .rpl-checklist__combobox--expanded {
         border-radius: 0.25rem 0.25rem 0 0;
         border-bottom: 1px solid transparent; } }
@@ -2187,7 +2208,7 @@ nav {
     /* fix icon alignment */ }
 
 .rpl-search-form form,
-.rpl-search-form {
+.rpl-search-form .wrapper {
   margin-bottom: 0; }
 
 .rpl-search-form__field label:after,
