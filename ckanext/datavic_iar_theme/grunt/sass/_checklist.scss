@@ -19,11 +19,12 @@ $rpl-checklist-dropdown-max-height: (rem(38px) * 10);
     border: 1px solid $rpl-form-element-border-color;
     border-radius: $rpl-form-element-border-radius;
     position: relative;
+    padding: $rpl-space;
 
     &--expanded {
       border: $rpl-checklist-expanded-border;
 
-      @include rpl_breakpoint('m') {
+      @include rpl_breakpoint('s') {
         border-radius: $rpl-form-element-border-radius $rpl-form-element-border-radius 0 0;
         border-bottom: 1px solid transparent;
       }
@@ -45,8 +46,8 @@ $rpl-checklist-dropdown-max-height: (rem(38px) * 10);
     width: 100%;
     background: rpl-color('white');
     border: 0;
-    padding: $rpl-form-element-padding-s;
-    @include rpl_breakpoint(m) {
+    padding: 1px;
+    @include rpl_breakpoint('m') {
       padding: $rpl-form-element-padding-m;
     }
 
@@ -57,7 +58,7 @@ $rpl-checklist-dropdown-max-height: (rem(38px) * 10);
       right: $rpl-form-element-padding-s-horizontal;
       margin: auto;
       transition: transform .25s;
-      @include rpl_breakpoint(m) {
+      @include rpl_breakpoint('m') {
         right: $rpl-form-element-padding-m-horizontal;
       }
     }
@@ -114,6 +115,6 @@ $rpl-checklist-dropdown-max-height: (rem(38px) * 10);
   }
 
   .rpl-checkbox {
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
 }

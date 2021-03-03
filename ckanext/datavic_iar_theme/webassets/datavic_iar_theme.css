@@ -15,11 +15,6 @@ body {
       padding-left: 20px;
       padding-right: 20px; } }
 
-.wrapper {
-  background: none;
-  border: none;
-  box-shadow: none; }
-
 .btn {
   background-image: none;
   border: none;
@@ -49,9 +44,8 @@ body {
   border-bottom: none; }
 
 /* Hides gravatar for: Activity feed, User list and Organisation members */
-.activity .item .actor .gravatar,
-.user-list .gravatar,
-.media .gravatar {
+.activity .item .actor,
+.user-image {
   display: none; }
 
 /* Activity feed user name needs to replace the area where the gravatar img was before removing above */
@@ -1541,18 +1535,17 @@ nav {
   #mobile-menu .rpl-site-header__top {
     height: 3rem; }
 
-.module-content .pagination-wrapper .pagination {
+.module-content .pagination {
   margin: 0; }
 
-.module .pagination-wrapper .pagination {
+.module .pagination {
   box-sizing: border-box; }
 
 .module .pagination li a {
   border: none;
   padding: 0; }
 
-.module .pagination-wrapper
-.pagination {
+.module .pagination {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   display: flex;
@@ -1560,86 +1553,67 @@ nav {
   padding-top: 3rem;
   width: 100%; }
   @media screen and (min-width: 576px) {
-    .module .pagination-wrapper
-.pagination {
+    .module .pagination {
       padding-left: 1.75rem;
       padding-right: 1.75rem; } }
   @media print {
-    .module .pagination-wrapper
-.pagination {
+    .module .pagination {
       padding: 0; } }
   @media screen and (min-width: 768px) {
-    .module .pagination-wrapper
-.pagination {
+    .module .pagination {
       padding-left: 0;
       padding-right: 0; } }
-  .module .pagination-wrapper
-.pagination ul {
+  .module .pagination ul {
     padding: 0;
     margin: 0;
     list-style: none; }
-    .module .pagination-wrapper
-.pagination ul > li {
+    .module .pagination ul > li {
       display: inline-block;
       padding: 0 0 0 0.5rem; }
-      .module .pagination-wrapper
-.pagination ul > li::after {
+      .module .pagination ul > li::after {
         content: '/';
         color: #D7DBE0;
         padding: 0 0 0 0.5rem; }
         @media screen and (min-width: 0) {
-          .module .pagination-wrapper
-.pagination ul > li::after {
+          .module .pagination ul > li::after {
             font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
             font-size: 1rem;
             line-height: 1.5em;
             font-weight: normal; } }
         @media screen and (min-width: 992px) {
-          .module .pagination-wrapper
-.pagination ul > li::after {
+          .module .pagination ul > li::after {
             font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
             font-size: 1.25rem;
             line-height: 1.2em; } }
-      .module .pagination-wrapper
-.pagination ul > li:last-child::after {
+      .module .pagination ul > li:last-child::after {
         content: ''; }
-      .module .pagination-wrapper
-.pagination ul > li > a,
-      .module .pagination-wrapper
-.pagination ul > li.active > a {
+      .module .pagination ul > li > a,
+      .module .pagination ul > li.active > a {
         background: transparent;
         border: 0;
         margin: 0;
         padding: 0; }
         @media screen and (min-width: 0) {
-          .module .pagination-wrapper
-.pagination ul > li > a,
-          .module .pagination-wrapper
-.pagination ul > li.active > a {
+          .module .pagination ul > li > a,
+          .module .pagination ul > li.active > a {
             font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
             font-size: 1rem;
             line-height: 1.5em;
             font-weight: normal; } }
         @media screen and (min-width: 992px) {
-          .module .pagination-wrapper
-.pagination ul > li > a,
-          .module .pagination-wrapper
-.pagination ul > li.active > a {
+          .module .pagination ul > li > a,
+          .module .pagination ul > li.active > a {
             font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
             font-size: 1.25rem;
             line-height: 1.2em; } }
-      .module .pagination-wrapper
-.pagination ul > li > a {
+      .module .pagination ul > li > a {
         color: #011A3C;
         cursor: pointer;
         border-bottom: 2px solid transparent; }
-        .module .pagination-wrapper
-.pagination ul > li > a:hover, .module .pagination-wrapper
-.pagination ul > li > a:focus {
+        .module .pagination ul > li > a:hover, .module .pagination ul > li > a:focus {
           color: #011A3C;
           border-bottom: 2px solid transparent; }
-        .module .pagination-wrapper
-.pagination ul > li > a span {
+        .module .pagination ul > li > a span {
           position: absolute;
           width: 1px;
           height: 1px;
@@ -1649,8 +1623,7 @@ nav {
           clip: rect(0 0 0 0);
           border: 0;
           pointer-events: none; }
-      .module .pagination-wrapper
-.pagination ul > li.active > a {
+      .module .pagination ul > li.active > a {
         color: #D63C00;
         border-bottom: 2px solid #D63C00; }
 
@@ -1780,7 +1753,7 @@ nav {
     text-decoration: underline; }
   .da-search .rpl-search-form__field {
     background: #fff;
-    padding: 1rem;
+    padding: 1.25rem;
     border: 1px solid transparent; }
     .da-search .rpl-search-form__field:focus-within {
       border: 1px solid #F6BE00; }
@@ -2074,7 +2047,8 @@ nav {
   background-color: #F6F6F9;
   border: 1px solid #D7DBE0;
   border-radius: 0.25rem;
-  position: relative; }
+  position: relative;
+  padding: 0.25rem; }
   .rpl-checklist__combobox--expanded {
     border: 1px solid #F6BE00; }
     @media screen and (min-width: 576px) {
@@ -2093,7 +2067,7 @@ nav {
   width: 100%;
   background: #fff;
   border: 0;
-  padding: 1rem; }
+  padding: 1px; }
   @media screen and (min-width: 768px) {
     .rpl-checklist__info {
       padding: 1rem 1.25rem; } }
@@ -2150,7 +2124,7 @@ nav {
   color: #F6BE00; }
 
 .rpl-checklist .rpl-checkbox {
-  margin-bottom: 0; }
+  margin-bottom: 10px; }
 
 .rpl-checkbox {
   position: relative; }
@@ -2292,7 +2266,6 @@ nav {
   .rpl-search-form__input {
     background-color: transparent;
     border: 0;
-    padding: 1px;
     width: 100%;
     color: #465870; }
     @media screen and (min-width: 0) {
@@ -2403,10 +2376,12 @@ nav {
 .rpl-search-form__field input[type="text"] {
   background-color: transparent;
   color: #465870;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 400;
   line-height: 1.17em;
-  padding: 1px; }
+  border: 0; }
+  .rpl-search-form__field input[type="text"]:focus {
+    border: 0; }
   .rpl-search-form__field input[type="text"]::-webkit-input-placeholder {
     /* WebKit browsers */
     color: transparent; }
