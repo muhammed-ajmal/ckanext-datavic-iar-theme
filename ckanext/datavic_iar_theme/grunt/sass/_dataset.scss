@@ -1,0 +1,99 @@
+.form-group.control-full {
+
+  display: inline-flex;
+  vertical-align: bottom;
+  width: 100%;
+  right: auto;
+
+  .control-label {
+    width: 125px;
+    padding-top: 10px;
+    display: inline-flex;
+    vertical-align: bottom;
+   
+  }
+
+  .controls {
+    vertical-align: bottom;
+    padding-left: 20px;
+    width: 100%;
+  }
+}
+
+.form-group.control-medium {
+
+  display: inline-flex;
+  vertical-align: bottom;
+  width: 100%;
+
+
+  .control-label {
+    width: 125px;
+    padding-top: 10px;
+    display: inline-flex;
+  }
+
+  .form-group .controls {
+    vertical-align: bottom;
+    padding-left: 20px;
+    width: 50%
+  }
+}
+
+.form-group.control-full.control-large {
+
+  display: inline-flex;
+  vertical-align: bottom;
+  width: 100%;
+
+
+  .control-label {
+    width: 125px;
+    padding-top: 10px;
+    display: inline-flex;
+    vertical-align: bottom;
+  }
+
+  .controls {
+    vertical-align: bottom;
+    padding-left: 20px;
+  }
+}
+
+.form-group.control-select {
+   
+  display: inline-flex;
+  vertical-align: bottom;
+  width: 100%;
+
+
+  .control-label {
+    width: 125px;
+    padding-top: 10px;
+    display: inline-flex;
+    vertical-align: bottom;
+  }
+
+  .controls {
+    vertical-align: bottom;
+    width: 50%;
+  }
+}
+
+.form-group {
+
+  display: inline-flex;
+  vertical-align: bottom;
+  width: 100%;
+
+  .control-label {
+    width: 125px;
+    padding-top: 10px;
+    display: inline-flex;
+    vertical-align: bottom;
+  }
+
+  .controls {
+    padding-left: 20px;
+  }
+}

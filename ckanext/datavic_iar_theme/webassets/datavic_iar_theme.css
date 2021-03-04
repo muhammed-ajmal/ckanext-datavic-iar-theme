@@ -1950,7 +1950,7 @@ nav {
 
 .vue-form-generator .form-group {
   margin-bottom: 1rem;
-  display: flex;
+  display: inline-flex;
   flex-direction: column; }
   @media screen and (min-width: 768px) {
     .vue-form-generator .form-group {
@@ -2644,3 +2644,69 @@ label.chk-label-active .custom-check,
       text-align: left;
       margin: 0 0 0 27%;
       padding: 0; } }
+
+.form-group.control-full {
+  display: inline-flex;
+  vertical-align: bottom;
+  width: 100%;
+  right: auto; }
+  .form-group.control-full .control-label {
+    width: 125px;
+    padding-top: 10px;
+    display: inline-flex;
+    vertical-align: bottom; }
+  .form-group.control-full .controls {
+    vertical-align: bottom;
+    padding-left: 20px;
+    width: 100%; }
+
+.form-group.control-medium {
+  display: inline-flex;
+  vertical-align: bottom;
+  width: 100%; }
+  .form-group.control-medium .control-label {
+    width: 125px;
+    padding-top: 10px;
+    display: inline-flex; }
+  .form-group.control-medium .form-group .controls {
+    vertical-align: bottom;
+    padding-left: 20px;
+    width: 50%; }
+
+.form-group.control-full.control-large {
+  display: inline-flex;
+  vertical-align: bottom;
+  width: 100%; }
+  .form-group.control-full.control-large .control-label {
+    width: 125px;
+    padding-top: 10px;
+    display: inline-flex;
+    vertical-align: bottom; }
+  .form-group.control-full.control-large .controls {
+    vertical-align: bottom;
+    padding-left: 20px; }
+
+.form-group.control-select {
+  display: inline-flex;
+  vertical-align: bottom;
+  width: 100%; }
+  .form-group.control-select .control-label {
+    width: 125px;
+    padding-top: 10px;
+    display: inline-flex;
+    vertical-align: bottom; }
+  .form-group.control-select .controls {
+    vertical-align: bottom;
+    width: 50%; }
+
+.form-group {
+  display: inline-flex;
+  vertical-align: bottom;
+  width: 100%; }
+  .form-group .control-label {
+    width: 125px;
+    padding-top: 10px;
+    display: inline-flex;
+    vertical-align: bottom; }
+  .form-group .controls {
+    padding-left: 20px; }
