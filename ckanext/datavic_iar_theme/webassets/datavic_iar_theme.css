@@ -1745,10 +1745,12 @@ nav {
 
 .da-search {
   background-color: #F6F6F9; }
-  .da-search .rpl-search-form__btn:hover span, .da-search .rpl-search-form__btn:focus span {
-    color: #011A3C; }
-  .da-search .rpl-search-form__btn:hover svg, .da-search .rpl-search-form__btn:focus svg {
-    fill: #011A3C; }
+  .da-search .rpl-search-form__btn:hover, .da-search .rpl-search-form__btn:focus {
+    outline-color: transparent; }
+    .da-search .rpl-search-form__btn:hover span, .da-search .rpl-search-form__btn:focus span {
+      color: #011A3C; }
+    .da-search .rpl-search-form__btn:hover svg, .da-search .rpl-search-form__btn:focus svg {
+      fill: #011A3C; }
   .da-search .rpl-search-form__show-filters:hover, .da-search .rpl-search-form__show-filters:focus {
     text-decoration: underline; }
   .da-search .rpl-search-form__field {
@@ -2381,7 +2383,8 @@ nav {
   line-height: 1.17em;
   border: 0; }
   .rpl-search-form__field input[type="text"]:focus {
-    border: 0; }
+    border: 0;
+    outline-color: transparent; }
   .rpl-search-form__field input[type="text"]::-webkit-input-placeholder {
     /* WebKit browsers */
     color: transparent; }

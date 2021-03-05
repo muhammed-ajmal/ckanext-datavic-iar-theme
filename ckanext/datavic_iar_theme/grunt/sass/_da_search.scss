@@ -4,6 +4,7 @@
   .rpl-search-form {
     &__btn {
       &:hover, &:focus {
+        outline-color:transparent;
         span {
           color: rpl-color('secondary');
         }

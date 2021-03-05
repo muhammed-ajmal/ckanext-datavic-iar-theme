@@ -245,6 +245,7 @@ $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
     border: 0;
     &:focus {
       border: 0;
+      outline-color:transparent;
     }
     &::-webkit-input-placeholder { /* WebKit browsers */
         color: transparent;
