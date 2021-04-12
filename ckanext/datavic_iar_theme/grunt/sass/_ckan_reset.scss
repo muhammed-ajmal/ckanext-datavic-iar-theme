@@ -1,3 +1,7 @@
+html {
+  font-size: 100%;
+}
+
 body {
   background-color: white;
   background-image: none;
@@ -80,4 +84,77 @@ body {
 
 .activity .item p {
   margin: 5px 0 0 40px;
+}
+
+.primary {
+  .control-group {
+    margin-bottom: 20px;
+  }
+  form {
+    .controls {
+      margin-left: 130px;
+    }
+    .control-group {
+      &:after,
+      &:before {
+        display: table;
+        content: "";
+        line-height: 0;
+        clear: both;
+      }
+    }
+    .control-label {
+      float: left;
+      width: 7.5rem;
+      padding-top: 0.5rem;
+      text-align: right;
+    }
+    .form-group {
+      clear: both;
+    }
+    .info-block {
+      position: relative;
+      display: block;
+      font-size: 11px;
+      color: #aaa;
+      line-height: 1.3;
+      margin-top: 6px;
+    }
+  }
+}
+
+.control-large {
+  input,
+  .control-label {
+    font-size: 1.0625rem;
+    line-height: 30px;
+  }
+}
+
+.control-medium input, .control-medium select, .control-medium textarea {
+  width: 20rem;
+}
+
+[role="main"] .container {
+  padding-left: 0;
+  padding-right: 0;
+  width: 940px;
+}
+
+.unstyled {
+  margin: 0;
+}
+
+.module-content:first-child {
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+.module-heading {
+  &:after,
+  &:before {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
 }
