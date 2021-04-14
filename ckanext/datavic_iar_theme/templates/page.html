@@ -13,7 +13,7 @@
     <div class="rpl-breadcrumbs">
         <nav aria-label="breadcrumbs">
             <ul class="rpl-breadcrumbs__items">
-                <li class="rpl-breadcrumbs__item"><a href="{{ h.url_for('home') }}"  class="rpl-link rpl-breadcrumbs__link">Home</a></li>
+                <li class="rpl-breadcrumbs__item"><a href="{{ h.url_for('home.index') }}"  class="rpl-link rpl-breadcrumbs__link">Home</a></li>
                 {% block breadcrumb_content %}{% endblock %}
             </ul>
         </nav>
@@ -52,7 +52,7 @@
             {% endblock %}
 
             {% block secondary %}
-              {% set span = 9 if c.controller in ['user', 'admin', 'ckanext.harvest.controllers.view:ViewController'] else 12 %}
+              {% set span = 9 if c.controller in ['user', 'admin', 'harvester'] else 12 %}
               {% if span != 12 %}
                   <aside class="secondary col-sm-3">
                     {% block secondary_content %}{% endblock %}
@@ -61,7 +61,7 @@
             {% endblock %}
 
             {% block primary %}
-              {% set span = 9 if c.controller in ['user', 'admin', 'ckanext.harvest.controllers.view:ViewController'] else 12 %}
+              {% set span = 9 if c.controller in ['user', 'admin', 'harvester'] else 12 %}
               <div class="primary col-sm-{{ span }} col-xs-12" role="main">
                 {% block primary_content %}
                   {{ super() }}
