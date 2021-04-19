@@ -2,8 +2,8 @@
 
 {# this snippet is meant to be called from workflow.html,
 not used as a form_snippet directly #}
-{% macro _workflow_status() %}
-  {% set existing_workflow_status = data.workflow_status %}
+{% macro _workflow_status(field, data, errors, workflow_available, workflow_required, workflow_option_tag) %}
+  {% set existing_workflow_status = data.get(field.field_name, None) %}
   {% call form.input_block('field-'+field.field_name,
     label=h.scheming_language_text(field.label),
     error=errors[field.field_name],
@@ -15,7 +15,7 @@ not used as a form_snippet directly #}
       form.attributes(field.form_attrs) if 'form_attrs' in field else '' }}>
     <select id="field-{{field.field_name}}" name="{{field.field_name}}">
       {% for workflow_status in workflow_available %}
-        {% set selected_workflow_status = existing_workflow_status == workflow_status %}
+        {% set selected_workflow_status = existing_workflow_status == workflow_status.get('value', None) %}
         {{ workflow_option_tag(workflow_status, selected_workflow_status) }}
       {% endfor %}
     </select>
@@ -23,6 +23,6 @@ not used as a form_snippet directly #}
   {% endcall %}
 {% endmacro %}
 
-{% call _workflow_status() %}
+{% call _workflow_status(field, data, errors, workflow_available, workflow_required, workflow_option_tag) %}
   {%- snippet 'scheming/form_snippets/help_text.html', field=field %}
 {% endcall %}
