@@ -52,10 +52,10 @@ body {
   border-bottom: none; }
 
 /* Hides gravatar for: Activity feed, User list and Organisation members */
-.activity .item .actor .gravatar,
-.user-list .gravatar,
-.media .gravatar {
-  display: none; }
+.activity .item .actor,
+.user-image{
+    display: none;
+}
 
 /* Activity feed user name needs to replace the area where the gravatar img was before removing above */
 .activity .item .actor {
