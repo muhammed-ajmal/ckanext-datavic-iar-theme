@@ -2,7 +2,7 @@
 {% set url_action = 'resource_edit' if url_is_edit and can_edit else 'resource_read' %}
 {% set url = h.url_for(controller='package', action=url_action, id=pkg.name, resource_id=res.id) %}
 
-<li class="resource-item {% if res.public_order_url %}has-wms-buttons{% endif %}" data-id="{{ res.id }}">
+<li class="resource-item {% if res.public_order_url or res.wms_url %}has-wms-buttons{% endif %}" data-id="{{ res.id }}">
 
     {% if res.public_order_url %}
     <div id='orderEmail'>
@@ -50,7 +50,7 @@
   {% endblock %}
   {% block resource_item_explore %}
   {% if not url_is_edit %}
-    {% if res.public_order_url %}
+    {% if res.public_order_url or res.wms_url %}
 </li>
 <li class="resource-item wms-buttons {% if res.format not in ['wms', 'WMS'] %}no-wms-url{% endif %}">
       {% if res.wms_url and res.format in ["wms", "WMS"] %}
@@ -66,7 +66,7 @@
             </form>
             </li>
         </ul>
-      {% endif %}
+      {% elif res.public_order_url  %}
         <ul class="btn-holder">
             <li>
                 {% set sdm_url = res.url | replace("https://sdm.iar.data.vic.gov.au/vicgislite/sdmAccess.jsp", h.current_url() + '/order') %}
@@ -85,6 +85,7 @@
                 </form>
             </li>
         </ul>
+      {% endif %}
     {% else %}
   <div class="dropdown btn-group">
     <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
