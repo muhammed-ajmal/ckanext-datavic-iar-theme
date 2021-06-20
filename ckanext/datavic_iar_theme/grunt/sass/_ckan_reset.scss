@@ -47,6 +47,12 @@ body {
   text-shadow: none;
 }
 
+.btn-primary {
+  &:hover {
+    border-color: transparent;
+  }
+}
+
 .search-form .search-input.search-giant button {
   margin-top: -14px;
 }

@@ -38,6 +38,9 @@ body {
   border: none;
   text-shadow: none; }
 
+.btn-primary:hover {
+  border-color: transparent; }
+
 .search-form .search-input.search-giant button {
   margin-top: -14px; }
 
@@ -2108,7 +2111,7 @@ nav {
   padding: 0.25rem; }
   .rpl-checklist__combobox--expanded {
     border: 1px solid #F6BE00; }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 576px) {
       .rpl-checklist__combobox--expanded {
         border-radius: 0.25rem 0.25rem 0 0;
         border-bottom: 1px solid transparent; } }
