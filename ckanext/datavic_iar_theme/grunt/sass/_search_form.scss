@@ -20,12 +20,17 @@
     border: none;
     box-shadow: none;
     margin-bottom: 0;
+    padding: 0;
+
+    &:focus-visible {
+      outline: none;
+    }
   }
 }
 
 $rpl-search-form-button-width: rem(28px) !default;
 $rpl-search-form-input-text-color: rpl-color('dark_neutral') !default;
-$rpl-search-form-input-text-placeholder-color: rpl-color('mid_neutral_3') !default;
+$rpl-search-form-input-text-placeholder-color: rpl-color('mid_neutral_5') !default;
 $rpl-search-form-input-margin: auto auto ($rpl-space-4) auto !default;
 $rpl-search-form-input-margin-s: auto auto ($rpl-space-4) auto !default;
 $rpl-search-form-input-margin-l: auto auto ($rpl-space-4) auto !default;
@@ -207,7 +212,7 @@ $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
 }
 
 .search-form-wrapper {
-  background-color: rpl-color('light_neutral');
+  background-color: rpl-color('mid_neutral_2');
   border-top: 0;
   margin-bottom: 1px;
   @include full-width;
