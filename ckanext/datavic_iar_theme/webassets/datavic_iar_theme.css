@@ -2108,7 +2108,7 @@ nav {
   padding: 0.25rem; }
   .rpl-checklist__combobox--expanded {
     border: 1px solid #F6BE00; }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 576px) {
       .rpl-checklist__combobox--expanded {
         border-radius: 0.25rem 0.25rem 0 0;
         border-bottom: 1px solid transparent; } }
@@ -2691,7 +2691,8 @@ label.chk-label-active .custom-check,
     width: 80%;
     margin-left: 10%; }
     .reporting-form-center .form-horizontal .control-label {
-      width: 25%; }
+      width: 25%;
+      float: left; }
     .reporting-form-center .form-horizontal .controls {
       width: 73%;
       margin-left: 27%; }
@@ -2701,3 +2702,11 @@ label.chk-label-active .custom-check,
       text-align: left;
       margin: 0 0 0 27%;
       padding: 0; } }
+
+.form-horizontal.report .control-label {
+  width: 120px;
+  float: left; }
+
+.form-horizontal.report .controls {
+  margin-left: 130px;
+  width: 210px; }
