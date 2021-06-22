@@ -30,3 +30,17 @@
       }
     }
 }
+
+.form-horizontal {
+  &.report {
+    .control-label {
+      width: 120px;
+      float: left;
+    }
+
+    .controls {
+      margin-left: 130px;
+      width: 210px;
+    }
+  }
+}
