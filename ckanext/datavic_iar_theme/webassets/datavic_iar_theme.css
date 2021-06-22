@@ -38,6 +38,9 @@ body {
   border: none;
   text-shadow: none; }
 
+.btn-primary:hover {
+  border-color: transparent; }
+
 .search-form .search-input.search-giant button {
   margin-top: -14px; }
 
@@ -538,6 +541,9 @@ h2 {
 
 .rpl-icon--color_mid_neutral_4 {
   fill: #909BA9; }
+
+.rpl-icon--color_mid_neutral_5 {
+  fill: #758195; }
 
 .rpl-icon--color_light_neutral {
   fill: #F6F6F9; }
@@ -1801,7 +1807,7 @@ nav {
   margin-bottom: 0.75rem; }
 
 .da-search {
-  background-color: #F6F6F9; }
+  background-color: #E8EBEE; }
   .da-search .rpl-search-form__btn:hover span, .da-search .rpl-search-form__btn:focus span {
     color: #011A3C; }
   .da-search .rpl-search-form__btn:hover svg, .da-search .rpl-search-form__btn:focus svg {
@@ -2249,7 +2255,10 @@ nav {
 .rpl-search-form__field input[type="text"] {
   border: none;
   box-shadow: none;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  padding: 0; }
+  .rpl-search-form__field input[type="text"]:focus-visible {
+    outline: none; }
 
 .rpl-search-form {
   padding-left: 1.25rem;
@@ -2344,7 +2353,7 @@ nav {
     .rpl-search-form--dark .rpl-search-form__input {
       color: #fff; }
     .rpl-search-form__input::-webkit-input-placeholder {
-      color: #BFC5CD; }
+      color: #758195; }
       .rpl-search-form--dark .rpl-search-form__input::-webkit-input-placeholder {
         color: #fff; }
   .rpl-search-form__label-text {
@@ -2403,7 +2412,7 @@ nav {
     padding-top: 3rem; }
 
 .search-form-wrapper {
-  background-color: #F6F6F9;
+  background-color: #E8EBEE;
   border-top: 0;
   margin-bottom: 1px;
   width: 100vw;
@@ -2454,16 +2463,16 @@ nav {
   @media screen and (min-width: 576px) {
     .rpl-search-form__field input[type="text"]::-webkit-input-placeholder {
       /* WebKit browsers */
-      color: #BFC5CD; }
+      color: #758195; }
     .rpl-search-form__field input[type="text"]:-moz-placeholder {
       /* Mozilla Firefox 4 to 18 */
-      color: #BFC5CD; }
+      color: #758195; }
     .rpl-search-form__field input[type="text"]::-moz-placeholder {
       /* Mozilla Firefox 19+ */
-      color: #BFC5CD; }
+      color: #758195; }
     .rpl-search-form__field input[type="text"]:-ms-input-placeholder {
       /* Internet Explorer 10+ */
-      color: #BFC5CD; } }
+      color: #758195; } }
 
 ul.btn-holder {
   margin: 0;
