@@ -12,7 +12,7 @@ log = logging.getLogger(__name__)
 
 
 def organization_list():
-    return toolkit.get_action('organization_list')({}, {'all_fields': True})
+    return toolkit.get_action('organization_list')({}, {'all_fields': True, 'limit': 1000})
 
 
 def get_parent_orgs(output=None):
