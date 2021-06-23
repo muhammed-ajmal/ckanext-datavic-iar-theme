@@ -1,6 +1,6 @@
   {% block search_input %}
 
-    {% set facet_values = facets.get('fields', {}) %}
+    {% set facet_values = facets.get('fields', {}) if facets is mapping else {} %}
 
     {% set organization = facet_values.get('organization')[0] if facet_values.get('organization', [])[0] else '' %}
     {% set group = facet_values.get('groups')[0] if facet_values.get('groups', [])[0] else '' %}
