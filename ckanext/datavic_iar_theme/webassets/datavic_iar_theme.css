@@ -2724,6 +2724,14 @@ label.chk-label-active .custom-check,
       margin: 0 0 0 27%;
       padding: 0; } }
 
+.form-horizontal.report .control-label {
+  width: 120px;
+  float: left; }
+
+.form-horizontal.report .controls {
+  margin-left: 130px;
+  width: 210px; }
+
 .module.module-narrow.module-shallow .module-heading {
   border: none; }
 
