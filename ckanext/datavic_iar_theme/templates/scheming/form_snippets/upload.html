@@ -1,15 +1,15 @@
 {% import 'macros/form.html' as form %}
 
+{%- set pkg_id = data.package_id if 'package_id' in data else None -%}
 {%- set is_upload = (data.url_type == 'upload') -%}
-{%- set pkg_id = data.package_id or None -%}
-{{ pkg_dict }}
+{%- set is_upload_enabled = h.uploads_enabled() and (h.is_sysadmin() or h.user_org_can_upload(pkg_id)) -%}
 {{ form.image_upload(
     data,
     errors,
     field_url=field.field_name,
     field_upload=field.upload_field,
     field_clear=field.upload_clear,
-    is_upload_enabled=h.user_org_can_upload(pkg_id),
+    is_upload_enabled=is_upload_enabled,
     is_url=data[field.field_name] and not is_upload,
     is_upload=is_upload,
     upload_label=h.scheming_language_text(field.upload_label),
