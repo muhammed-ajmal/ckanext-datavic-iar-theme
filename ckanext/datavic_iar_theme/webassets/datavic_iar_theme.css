@@ -2689,6 +2689,13 @@ label.chk-label-active .custom-check,
 .dataset-contact form label:after {
   content: ""; }
 
+.dataset-contact form .control-label {
+  float: none;
+  width: auto; }
+
+.dataset-contact form .controls {
+  margin-left: 0; }
+
 .dataset-contact .form-controls {
   margin-bottom: 0.875rem; }
 
@@ -2699,8 +2706,7 @@ label.chk-label-active .custom-check,
   .dataset-contact .privacy-statement label {
     font-weight: normal; }
   .dataset-contact .privacy-statement input[type="checkbox"] {
-    margin-top: 3px;
-    position: unset; }
+    margin-top: 3px; }
 
 .report-options {
   display: none; }
