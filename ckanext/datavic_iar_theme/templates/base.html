@@ -12,10 +12,13 @@
 
 {% block styles %}
   {{ super() }}
-  {% resource 'datavic_iar_theme/datavic_iar_theme.css' %}
+  {% asset 'datavic_iar_theme/iar-theme-css' %}
+  
+  {% asset 'datavic_iar_theme/datavic-iar-theme-js' %}
 {% endblock %}
+
 
 {% block scripts %}
   {{ super() }}
-  {% resource 'datavic_iar_theme/datavic_iar_theme.js' %}
+   
 {% endblock %}

@@ -6,13 +6,19 @@ from ckan.common import config
 from sqlalchemy import and_ as _and_
 from sqlalchemy.sql import func
 import ckan.lib.helpers as h
-from webhelpers.html import tags
+import dominate.tags as tags
 
 log = logging.getLogger(__name__)
 
 
 def organization_list():
-    return toolkit.get_action('organization_list')({}, {'all_fields': True})
+    org_list = toolkit.get_action('organization_list')({}, {})
+    organizations = []
+    for org in org_list:
+        org_dict = toolkit.get_action('organization_show')({}, {'id': org})
+        organizations.append(org_dict)
+
+    return organizations
 
 
 def get_parent_orgs(output=None):
@@ -49,7 +55,7 @@ def format_list(limit=100):
                 func.lower(model.Resource.format)
             ))
         resource_formats = [resource.format for resource in query if not resource.format == '']
-    except Exception, e:
+    except Exception as e:
         log.error(e.message)
 
     return resource_formats
@@ -80,7 +86,7 @@ def get_gtm_code():
 def datavic_linked_user(user, maxlength=0, avatar=20):
     # Copied from ckan.lib.helpers.linked_user
     if not isinstance(user, model.User):
-        user_name = unicode(user)
+        user_name = str(user)
         user = model.User.get(user_name)
         if not user:
             return user_name
@@ -91,14 +97,14 @@ def datavic_linked_user(user, maxlength=0, avatar=20):
         if maxlength and len(user.display_name) > maxlength:
             displayname = displayname[:maxlength] + '...'
 
-        return tags.literal(u'{icon} {link}'.format(
+        return h.literal(u'{icon} {link}'.format(
             icon=h.gravatar(
                 email_hash=user.email_hash,
                 size=avatar
             ),
-            link=tags.link_to(
+            link=h.link_to(
                 displayname,
                 # DataVic custom changes to show different links depending on user access
-                h.url_for(controller='user', action='read', id=name) if h.check_access('package_create') else  h.url_for(controller='user', action='activity', id=name)
+                h.url_for('user.read', id=name) if h.check_access('package_create') else  h.url_for('user.activity', id=name)
             )
         ))

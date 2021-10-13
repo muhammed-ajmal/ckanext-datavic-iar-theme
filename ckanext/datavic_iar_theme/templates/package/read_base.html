@@ -3,7 +3,7 @@
 {% set confirmation_text = _('You will now enter edit mode. By saving any changes the workflow status for this dataset will transition to DRAFT. Are you sure you want to edit this dataset?') %}
 
 {% block content_action %}
-  {% resource 'datavic_iar_theme/datavicmain-confirm-link-action.js' %}
+  {% asset 'datavic_iar_theme/confirm-link-action' %}
 
   {% if h.is_dataset_harvested(pkg.id) %}
     {% set harvest_text = 'Harvest Data' if h.check_access('sysadmin') else 'Harvest Data - Read Only'%}
@@ -16,7 +16,7 @@
   {% endif %}
 
   {% if h.check_access('package_update', {'id':pkg.id }) %}
-    {% set url = h.url_for(controller='package', action='edit', id=pkg.name) %}
+    {% set url = h.url_for('dataset.edit', id=pkg.name) %}
     {% if pkg.workflow_status|lower != 'draft' %}
       <a class="btn" href="{{ url }}" data-module="datavicmain-confirm-link-action" data-module-content="{{ confirmation_text }}"><i class="fa fa-wrench"></i> {{ _('Edit') }}</a>
     {% else %}

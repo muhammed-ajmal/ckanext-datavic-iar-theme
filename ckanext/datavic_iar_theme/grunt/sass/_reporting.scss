@@ -13,6 +13,7 @@
       .form-horizontal {
         .control-label {
           width: 25%;
+          float: left;
         }
         .controls {
           width: 73%;
@@ -28,4 +29,18 @@
         padding: 0;
       }
     }
+}
+
+.form-horizontal {
+  &.report {
+    .control-label {
+      width: 120px;
+      float: left;
+    }
+
+    .controls {
+      margin-left: 130px;
+      width: 210px;
+    }
+  }
 }

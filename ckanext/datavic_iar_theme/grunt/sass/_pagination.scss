@@ -28,7 +28,7 @@ $rpl-pagination-step-current-border-bottom: 2px solid rpl-color('dark_primary') 
 $rpl-pagination-nav-margin: 0 0 0 ($rpl-space * 5) !default;
 
 .module {
-  .pagination {
+  .pagination-wrapper {
     @include rpl_mobile_padding();
     @include rpl_breakpoint('m') {
       padding-left: 0;
@@ -75,6 +75,7 @@ $rpl-pagination-nav-margin: 0 0 0 ($rpl-space * 5) !default;
           color: $rpl-pagination-step-color;
           cursor: pointer;
           border-bottom: $rpl-pagination-step-border-bottom;
+          border-radius: 0;
 
           &:hover,
           &:focus {

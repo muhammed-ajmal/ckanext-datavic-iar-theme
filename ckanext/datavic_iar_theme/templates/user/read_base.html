@@ -1,26 +1,26 @@
 {% ckan_extends %}
 
 {% block breadcrumb_content %}
-  {{ h.build_nav('user_index', _('Users')) }}
+  {{ h.build_nav('user.index', _('Users')) }}
   {% if h.check_access('package_create') %}
-    {{ h.build_nav('user_datasets', user.display_name|truncate(35), id=user.name) }}
+    {{ h.build_nav('user.read', user.display_name|truncate(35), id=user.name) }}
   {% else %}
-    {{ h.build_nav('user_activity_stream', user.display_name|truncate(35), id=user.name) }}
+    {{ h.build_nav('user.activity', user.display_name|truncate(35), id=user.name) }}
   {% endif %} 
 {% endblock %}
 
 {% block content_action %}
   {% if h.check_access('user_update', user) %}
-    {% link_for _('Edit'), controller='user', action='edit', id=user.name, class_='btn', icon='wrench' %}
+    {% link_for _('Edit'), named_route='datavicuser.edit', id=user.name, class_='btn', icon='wrench' %}
   {% endif %}
 {% endblock %}
 
 {% block content_primary_nav %}
   {% if h.check_access('package_create') %}
-    {{ h.build_nav_icon('user_datasets', _('Datasets'), id=user.name) }}
-    {{ h.build_nav_icon('user_activity_stream', _('Activity Stream'), id=user.name) }}
+    {{ h.build_nav_icon('user.read', _('Datasets'), id=user.name) }}
+    {{ h.build_nav_icon('user.activity', _('Activity Stream'), id=user.name) }}
   {% else %}
-    {{ h.build_nav_icon('user_activity_stream', _('Activity Stream'), id=user.name) }}
+    {{ h.build_nav_icon('user.activity', _('Activity Stream'), id=user.name) }}
   {% endif %} 
 {% endblock %}
 
@@ -51,7 +51,7 @@
       <dd>{{ user.name }}</dd>
     {% endif %}
   </dl>
-  {% if c.is_myself %}
+  {% if is_myself %}
     <dl>
       <dt>{{ _('Email') }} <span class="label" title="{{ _('This means only you can see this') }}">{{ _('Private') }}</span></dt>
       <dd>{{ user.email }}</dd>
@@ -65,11 +65,11 @@
     <dt>{{ _('State') }}</dt>
     <dd>{{ _(user.state) }}</dd>
     {% if h.is_user_account_pending_review(user.id) and h.check_access('sysadmin') %}
-      <dd><a class="btn btn-warning" href="{{ h.url_for('user_approve', id=user.id)}}">Approve</a></dd>
-      <dd><a class="btn btn-danger" href="{{ h.url_for('user_deny', id=user.id)}}">Deny</a></dd>   
+      <dd><a class="btn btn-warning" href="{{ h.url_for('datavicuser.approve', id=user.id)}}">Approve</a></dd>
+      <dd><a class="btn btn-danger" href="{{ h.url_for('datavicuser.deny', id=user.id)}}">Deny</a></dd>   
     {% endif %}
   </dl>
-  {% if c.is_myself and h.check_access('sysadmin') %}
+  {% if is_myself and h.check_access('sysadmin') %}
     <dl>
       <dt class="key">{{ _('API Key') }} <span class="label" title="{{ _('This means only you can see this') }}">{{ _('Private') }}</span></dt>
       <dd class="value"><code>{{ user.apikey }}</code></dd>
