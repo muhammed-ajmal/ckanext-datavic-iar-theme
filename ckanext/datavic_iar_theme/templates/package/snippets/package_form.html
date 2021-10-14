@@ -13,7 +13,7 @@
 
 {% block save_button %}
   {% if form_style == 'edit' and is_dataset_harvested %}
-    {% resource 'ckanext-datavicmain/datavicmain-confirm-action.js' %}
+    {% asset 'ckanext-datavicmain/datavicmain-confirm-action.js' %}
     <input type="hidden" name="save" value="true" />
     <button class="btn btn-primary" type="submit" data-module="datavicmain-confirm-action" data-module-with-data=true data-module-content="{{ confirmation_text }}{{ _('Are you sure you want to update?') }}">{{ _('Update Dataset') }}</button>
   {% else %} 
