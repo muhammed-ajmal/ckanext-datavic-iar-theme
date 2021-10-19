@@ -84,7 +84,7 @@
         {% if pkg_dict.access %}
           <tr>
             <th scope="row" class="dataset-label">{{ _('Access') }}</th>
-            <td class="dataset-details">{{h.get_option_label('dataset', 'access', pkg_dict.access)}}</td>
+            <td class="dataset-details">{{h.option_value_to_label('access', pkg_dict.access)}}</td>
           </tr>
         {% endif %}
 
