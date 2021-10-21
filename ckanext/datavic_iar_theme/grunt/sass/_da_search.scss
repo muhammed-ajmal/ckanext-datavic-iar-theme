@@ -1,5 +1,5 @@
 .da-search {
-  background-color: rpl-color('light_neutral');
+  background-color: rpl-color('mid_neutral_2');
 
   .rpl-search-form {
     &__btn {
@@ -21,8 +21,9 @@
 
     &__field {
       background: rpl-color('white');
-      padding: $rpl-space-4;
+      padding: 1.25rem;
       border: 1px solid transparent;
+
 
       &:focus-within {
         border: 1px solid rpl-color('primary');
@@ -43,7 +44,7 @@
   .rpl-fieldset {
     .form-group {
       &--col-four {
-        @include rpl-breakpoint(m) {
+        @include rpl-breakpoint('m') {
           margin-top: ($rpl-space-4 + $rpl-space-3);
           flex-basis: calc(25% - (#{$rpl-space-3} * 2));
         }

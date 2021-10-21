@@ -1,6 +1,6 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
-import helpers
+import ckanext.datavic_iar_theme.helpers as helpers
 
 
 class DatavicIARThemePlugin(plugins.SingletonPlugin):
@@ -12,7 +12,7 @@ class DatavicIARThemePlugin(plugins.SingletonPlugin):
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
-        toolkit.add_resource('fanstatic', 'datavic_iar_theme')
+        toolkit.add_resource('webassets', 'datavic_iar_theme')
 
     # ITemplateHelpers
 

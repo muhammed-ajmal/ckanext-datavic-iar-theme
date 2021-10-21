@@ -20,12 +20,17 @@
     border: none;
     box-shadow: none;
     margin-bottom: 0;
+    padding: 0;
+
+    &:focus-visible {
+      outline: none;
+    }
   }
 }
 
 $rpl-search-form-button-width: rem(28px) !default;
 $rpl-search-form-input-text-color: rpl-color('dark_neutral') !default;
-$rpl-search-form-input-text-placeholder-color: #758195 !default;
+$rpl-search-form-input-text-placeholder-color: rpl-color('mid_neutral_5') !default;
 $rpl-search-form-input-margin: auto auto ($rpl-space-4) auto !default;
 $rpl-search-form-input-margin-s: auto auto ($rpl-space-4) auto !default;
 $rpl-search-form-input-margin-l: auto auto ($rpl-space-4) auto !default;
@@ -118,7 +123,6 @@ $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
     @include rpl_typography_ruleset($rpl-search-form-input-ruleset);
     background-color: transparent;
     border: 0;
-    padding: 1px;
     width: 100%;
     color: $rpl-search-form-input-text-color;
 
@@ -241,10 +245,13 @@ $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
   input[type="text"] {
     background-color: transparent;
     color: $rpl-search-form-input-text-color;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 400;
     line-height: 1.17em;
-    padding: 1px;
+    border: 0;
+    &:focus {
+      border: 0;
+    }
     &::-webkit-input-placeholder { /* WebKit browsers */
         color: $rpl-search-form-input-text-placeholder-color;
     }
@@ -257,7 +264,7 @@ $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
     &:-ms-input-placeholder { /* Internet Explorer 10+ */
        color: $rpl-search-form-input-text-placeholder-color;
     }
-    @include rpl_breakpoint('s') {
+    @include rpl_breakpoint(s) {
         &::-webkit-input-placeholder { /* WebKit browsers */
             color: $rpl-search-form-input-text-placeholder-color;
         }

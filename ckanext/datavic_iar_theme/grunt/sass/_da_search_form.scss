@@ -91,7 +91,6 @@ $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
     @include rpl_typography_ruleset($rpl-search-form-input-ruleset);
     background-color: transparent;
     border: 0;
-    padding: 1px;
     width: 100%;
     color: $rpl-search-form-input-text-color;
 
@@ -119,7 +118,7 @@ $rpl-search-form-search-text: $rpl-search-form-show-filters-ruleset !default;
   &__field {
     position: relative;
     display: flex;
-    margin: $rpl-search-form-input-margin;
+    margin: $rpl-search-form-input-margin-l;
 
     @include rpl_breakpoint('s') {
       margin: $rpl-search-form-input-margin-s;
