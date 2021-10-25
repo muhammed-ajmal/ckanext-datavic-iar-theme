@@ -1733,17 +1733,16 @@ nav {
     background-image: none;
     background-color: #F6BE00; }
 
-.dataset-resources .label {
+.dataset-resources .label.label-default {
   background: none;
   color: #465870;
   font-size: 0.875rem;
   padding: 0 0.25rem 0 0;
   text-shadow: none;
   text-transform: uppercase; }
-  .dataset-resources .label:hover, .dataset-resources .label:focus {
-    color: #465870;
+  .dataset-resources .label.label-default:hover, .dataset-resources .label.label-default:focus {
     text-decoration: underline; }
-  .dataset-resources .label:before {
+  .dataset-resources .label.label-default:before {
     content: "|";
     padding-right: 0.625rem; }
 
