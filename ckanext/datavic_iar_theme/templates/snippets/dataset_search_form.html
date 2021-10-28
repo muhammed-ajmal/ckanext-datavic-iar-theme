@@ -5,6 +5,7 @@
     {% set organization = facet_values.get('organization')[0] if facet_values.get('organization', [])[0] else '' %}
     {% set group = facet_values.get('groups')[0] if facet_values.get('groups', [])[0] else '' %}
     {% set format = facet_values.get('res_format')[0] if facet_values.get('res_format', [])[0] else '' %}
+    {% set placeholder =  _('Search Data') %}
 
     <div class="search-form-wrapper">
       <div class="rpl-search-form da-search rpl-site-constrain--on-all">

@@ -19,7 +19,6 @@ $rpl-checklist-dropdown-max-height: (rem(38px) * 10);
     border: 1px solid $rpl-form-element-border-color;
     border-radius: $rpl-form-element-border-radius;
     position: relative;
-    padding: $rpl-space;
 
     &--expanded {
       border: $rpl-checklist-expanded-border;
@@ -71,10 +70,11 @@ $rpl-checklist-dropdown-max-height: (rem(38px) * 10);
       border-top: 0;
       position: absolute;
       z-index: 1;
-      left: -1px;
-      width: 100%;
+      width: auto;
       max-height: $rpl-checklist-dropdown-max-height;
       overflow: auto;
+      left: -1px;
+      right: -1px;
     }
   }
 
