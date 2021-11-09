@@ -10,29 +10,25 @@ Add this repository as a sub-module to your main project repository:
 
 Activate the Python virtual environment:
 
-        . /usr/lib/ckan/default/bin/activate
+        . /app/ckan/default/bin/activate
 
 Install the CKAN extension:
 
-        cd /usr/lib/ckan/default/src/ckanext-datavic-iar-theme
+        cd /app/ckan/default/src/ckanext-datavic-iar-theme
 
         python setup.py develop
         
-*Add* `datavic_iar_theme` to plugins in /etc/ckan/default/development.ini & /etc/ckan/default/production.ini
+*Add* `datavic_iar_theme` to plugins in /app/ckan/default/ckan.ini
 
         ckan.plugins = [...existing plugins...] datavic_iar_theme
 
 Restart CKAN
 
-        paster serve /etc/ckan/default/development.ini
+        paster serve /app/ckan/default/development.ini
 
-Or... Restart Nginx & Apache:
+Or... Restart docker:
 
-        sudo service nginx stop
-        sudo service apache2 stop
-        sudo service apache2 start
-        sudo service nginx start
-
+        docker-compose restart ckan
 ## CSS & Grunt
 
 This theme adds a CSS resource to CKAN via the `fanstatic` dir:
