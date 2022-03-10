@@ -1,0 +1,16 @@
+{% ckan_extends %}
+
+{% block help_inner %}
+  <h2 class="module-heading">{{ _('How does this work?') }}</h2>
+  <div class="module-content">
+    <p>{% trans %}Simply enter a new password and we'll update your account.{% endtrans %}</p>
+    <p>Your password must be 12 characters or longer and contain at least 1 character from each of the following character sets:
+      <ul>
+        <li>uppercase characters</li>
+        <li>lowercase characters</li>
+        <li>digits</li>
+        <li>punctuation/special characters (eg. !”#$%&()*+,-./:;<=>?@[\]^_`~)</li>
+      </ul>
+    </p>
+  </div>
+{% endblock %}
