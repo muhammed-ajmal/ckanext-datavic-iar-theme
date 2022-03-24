@@ -31,4 +31,5 @@ class DatavicIARThemePlugin(plugins.SingletonPlugin):
             'hotjar_tracking_enabled': helpers.hotjar_tracking_enabled,
             'get_hotjar_hsid': helpers.get_hotjar_hsid,
             'get_hotjar_hjsv': helpers.get_hotjar_hjsv,
+            'visibility_list': helpers.visibility_list
         }

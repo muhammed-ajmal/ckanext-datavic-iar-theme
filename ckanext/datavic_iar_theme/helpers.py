@@ -12,13 +12,7 @@ log = logging.getLogger(__name__)
 
 
 def organization_list():
-    org_list = toolkit.get_action('organization_list')({}, {})
-    organizations = []
-    for org in org_list:
-        org_dict = toolkit.get_action('organization_show')({}, {'id': org})
-        organizations.append(org_dict)
-
-    return organizations
+    return toolkit.get_action('organization_list')({}, {"all_fields": True, "include_dataset_count": False})
 
 
 def get_parent_orgs(output=None):
@@ -37,7 +31,7 @@ def get_parent_orgs(output=None):
 
 
 def search_form_group_list():
-    return toolkit.get_action('group_list')({}, {'all_fields': True})
+    return toolkit.get_action('group_list')({}, {'all_fields': True, "include_dataset_count": False})
 
 
 def format_list(limit=100):
@@ -53,7 +47,7 @@ def format_list(limit=100):
             .group_by(model.Resource.format)
             .order_by(
                 func.lower(model.Resource.format)
-            ))
+        ))
         resource_formats = [resource.format for resource in query if not resource.format == '']
     except Exception as e:
         log.error(e.message)
@@ -105,6 +99,14 @@ def datavic_linked_user(user, maxlength=0, avatar=20):
             link=h.link_to(
                 displayname,
                 # DataVic custom changes to show different links depending on user access
-                h.url_for('user.read', id=name) if h.check_access('package_create') else  h.url_for('user.activity', id=name)
+                h.url_for('user.read', id=name) if h.check_access('package_create') else h.url_for('user.activity', id=name)
             )
         ))
+
+
+def visibility_list():
+    return [
+        {"value": "all", "label": "Open to the public and VPS only"},
+        {"value": "private", "label": "Open to the VPS only"},
+        {"value": "public", "label": "Open to the public"}
+    ]

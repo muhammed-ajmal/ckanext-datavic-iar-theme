@@ -60,6 +60,10 @@ jQuery(document).ready(function () {
                 jQuery('.rpl-search-form input[name="sort"]').val(value);
                 jQuery('.rpl-search-form form').submit();
             }
+            else if (jQuery(this).attr('data-checklist') == 'checklist-visibility') {
+                jQuery('.rpl-search-form input[name="visibility"]').val(value);
+                jQuery('.rpl-search-form form').submit();
+            }
         }
 
         hideDropdown(checklist);
