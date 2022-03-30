@@ -75,6 +75,8 @@ jQuery(document).ready(function () {
         jQuery('#groups').val('');
         jQuery('#res_format').val('');
         jQuery('input[name="q"]').val('');
+        jQuery('.rpl-search-form input[name="sort"]').val('');
+        jQuery('.rpl-search-form input[name="visibility"]').val('');
         jQuery('.rpl-checklist__combobox').each(function () {
             var value = jQuery(this).find('.rpl-checklist__list-row button.default span').text();
             jQuery(this).find('.rpl-checklist__main-row button span').text(value);
