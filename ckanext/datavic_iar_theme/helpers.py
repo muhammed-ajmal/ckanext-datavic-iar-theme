@@ -107,6 +107,6 @@ def datavic_linked_user(user, maxlength=0, avatar=20):
 def visibility_list():
     return [
         {"value": "all", "label": "Open to the public and VPS only"},
-        {"value": "private", "label": "Open to the VPS only"},
+        {"value": "private", "label": "Open to VPS only"},
         {"value": "public", "label": "Open to the public"}
     ]
