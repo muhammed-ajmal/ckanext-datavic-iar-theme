@@ -1304,11 +1304,6 @@ nav {
     letter-spacing: 0.0125rem;
     line-height: 1rem;
     padding-left: 0; }
-  .rpl-site-header .alpha-label {
-    display: inline-block;
-    margin-top: 0.4375rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem; }
 
 .rpl-text-icon--before {
   margin: auto .5rem auto auto; }
@@ -1799,7 +1794,8 @@ nav {
 .order-by .vue-form-generator .form-group {
   margin-bottom: 0; }
 
-.order-by .vue-form-generator label {
+.order-by .vue-form-generator label,
+.order-by .vue-form-generator .pseudo-label {
   font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
   font-size: 1rem;
   line-height: 1em;
@@ -1840,7 +1836,8 @@ nav {
   font-weight: normal; }
   .rpl-form__title {
     margin-top: 0; }
-  .rpl-form label {
+  .rpl-form label,
+  .rpl-form .pseudo-label {
     font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
     font-size: 1rem;
     line-height: 1em;
