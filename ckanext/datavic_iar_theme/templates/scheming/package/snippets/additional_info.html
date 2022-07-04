@@ -77,7 +77,17 @@
         {% if pkg_dict.license_id %}
           <tr>
             <th scope="row" class="dataset-label">{{ _('License') }}</th>
-            <td class="dataset-details">{{ pkg_dict.license_title }}</td>
+            <td class="dataset-details">
+              {% if pkg_dict.custom_licence_text %}
+                {% if pkg_dict.custom_licence_link %}
+                  <a href="{{ pkg_dict.custom_licence_link }}" target="_blank">{{ pkg_dict.custom_licence_text }}</a>
+                {% else %}
+                  {{ pkg_dict.custom_licence_text }}
+                {% endif %}
+              {% else %}
+                <a href="{{ pkg_dict.license_url }}" target="_blank">{{ pkg_dict.license_title }}</a>
+              {% endif %}
+            </td>
           </tr>
         {% endif %}
 

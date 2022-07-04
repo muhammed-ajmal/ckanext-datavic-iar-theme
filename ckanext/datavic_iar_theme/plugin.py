@@ -14,6 +14,14 @@ class DatavicIARThemePlugin(plugins.SingletonPlugin):
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('webassets', 'datavic_iar_theme')
 
+        toolkit.add_ckan_admin_tab(
+            toolkit.config,
+            'check_link.report',
+            'Link availability',
+            config_var='ckan.admin_tabs',
+            icon="chain-broken",
+        )
+
     # ITemplateHelpers
 
     def get_helpers(self):
