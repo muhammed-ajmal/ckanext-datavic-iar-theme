@@ -1753,6 +1753,12 @@ nav {
   content: "";
   padding-right: 0; }
 
+.res_abstract_heading {
+  font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
+  font-size: 1.5rem;
+  line-height: 1.2em;
+  font-weight: normal; }
+
 .dataset-resources {
   margin-top: 0.75rem; }
   .dataset-resources li a.label {
