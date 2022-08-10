@@ -22,7 +22,7 @@ def get_parent_orgs(output=None):
         parent_orgs = [org.name for org in organisations]
     else:
         parent_orgs = [
-            {'value': '', 'text': 'Please select...'}
+            {'value': '', 'text': 'Organisation'}
         ]
         for org in organisations:
             parent_orgs.append({'value': org.name, 'text': org.display_name})
