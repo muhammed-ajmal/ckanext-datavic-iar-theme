@@ -17,6 +17,39 @@
 
   {% if h.check_access('package_update', {'id':pkg.id }) %}
     {% set url = h.url_for('dataset.edit', id=pkg.name) %}
+    {% set is_ready_for_sync = h.is_ready_for_publish(pkg) %}
+    {% if is_ready_for_sync %}
+      <a type="btn" class="btn" data-toggle="modal" data-target="#syncModal">
+        <i class="fa fa-upload"></i>
+        {{ _('Sync') }}
+      </a>
+
+      <div class="modal fade" id="syncModal" tabindex="-1" role="dialog" aria-labelledby="syncModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Syndicate Dataset: {{ pkg.title }}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Notice:
+                        By clicking "Sync" button, Dataset will be Re-syndicated to ODP.
+                    </p>
+                    <p>Are you sure you want to Re-syndicate this dataset?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success"
+                      data-module="datavic_sync_dataset"
+                      data-module-action="syndicate_sync"
+                      data-module-flash-error="{{ _('Dataset cannot be syndicated.') }}"
+                      data-module-flash-success="{{ _("Dataset " ~ pkg.title ~ " is being syndicated to ODP.") }}"
+                      data-module-payload="{{ {"profile": "odp", "topic": "update", "id": pkg.id}|tojson|forceescape }}"
+                      >Sync</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
     {% if pkg.workflow_status|lower != 'draft' %}
       <a class="btn" href="{{ url }}" data-module="datavicmain-confirm-link-action" data-module-content="{{ confirmation_text }}"><i class="fa fa-wrench"></i> {{ _('Edit') }}</a>
     {% else %}
