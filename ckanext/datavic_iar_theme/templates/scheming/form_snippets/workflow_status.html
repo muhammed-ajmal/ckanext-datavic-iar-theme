@@ -1,7 +1,9 @@
-{% macro workflow_option_tag(workflow_status, selected_workflow_status) %}
+{% macro workflow_option_tag(workflow_status, selected_workflow_status, still_published) %}
+  {% set val = workflow_status.get('value') %}
+  {% set extra_label = still_published if val == 'draft' or val == 'ready_for_approval' else '' %}
   {% block workflow_status_option scoped %}
-    <option value="{{ workflow_status.get('value') }}"{% if selected_workflow_status %} selected="selected"{% endif
-      %}>{{ workflow_status.get('text')}}</option>
+    <option value="{{ val }}"{% if selected_workflow_status %} selected="selected"{% endif
+      %}>{{ workflow_status.get('text')}} {{ extra_label }}</option>
   {% endblock %}
 {% endmacro %}
 
