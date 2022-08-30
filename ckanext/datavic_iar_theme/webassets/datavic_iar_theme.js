@@ -116,4 +116,6 @@ jQuery(document).ready(function () {
         e.preventDefault();
     });
 
+    // remove link for active breadcrumb item
+    jQuery(".rpl-breadcrumbs__items li.active a, .page-header .nav-tabs li.active a").attr("href", "#")
 });
