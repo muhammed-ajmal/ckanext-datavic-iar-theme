@@ -1753,6 +1753,12 @@ nav {
   content: "";
   padding-right: 0; }
 
+.res_abstract_heading {
+  font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
+  font-size: 1.5rem;
+  line-height: 1.2em;
+  font-weight: normal; }
+
 .dataset-resources {
   margin-top: 0.75rem; }
   .dataset-resources li a.label {
@@ -1778,11 +1784,11 @@ nav {
     padding: 0.1875rem 0.5rem; }
     .dataset-item .privacy-label.private {
       background-color: #FCEBB3; }
-  .dataset-item h5.search-result-organisation {
+  .dataset-item h4.search-result-organisation {
     font-family: "Vic-Medium", arial, sans-serif;
     font-size: 1.125rem;
     margin: 0.75rem 0; }
-    .dataset-item h5.search-result-organisation a {
+    .dataset-item h4.search-result-organisation a {
       color: #465870; }
 
 .dataset-heading {
