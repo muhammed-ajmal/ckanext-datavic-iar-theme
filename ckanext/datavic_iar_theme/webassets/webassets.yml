@@ -9,6 +9,7 @@ datavic-iar-theme-js:
   contents:
     - datavic_iar_theme.js
     - datavic_sync_dataset.js
+    - datavic-api-info.js
   extra:
     preload:
       - base/main
