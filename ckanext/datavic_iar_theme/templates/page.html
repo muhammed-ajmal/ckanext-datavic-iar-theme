@@ -20,7 +20,7 @@
     </div>
     {% endif %}
 
-    {% block maintag %}<div class="main" role="main">{% endblock %}
+    {% block maintag %}<main class="main" role="main">{% endblock %}
       <div id="content" class="container">
         {% block main_content %}
           {% block flash %}
@@ -62,7 +62,7 @@
 
             {% block primary %}
               {% set span = 9 if c.controller in ['user', 'admin', 'harvester'] else 12 %}
-              <div class="primary col-sm-{{ span }} col-xs-12" role="main">
+              <div class="primary col-sm-{{ span }} col-xs-12">
                 {% block primary_content %}
                   {{ super() }}
                 {% endblock %}
@@ -72,6 +72,6 @@
           </div>
         {% endblock %}
       </div>
-    </div>
+    </main>
   {% endblock -%}
 
