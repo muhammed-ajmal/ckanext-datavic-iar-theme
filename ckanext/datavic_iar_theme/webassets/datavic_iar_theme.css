@@ -104,8 +104,7 @@ body {
 
 [role="main"] .container {
   padding-left: 0;
-  padding-right: 0;
-  width: 940px; }
+  padding-right: 0; }
 
 .unstyled {
   margin: 0; }
@@ -474,6 +473,10 @@ html {
 
 body {
   color: #011A3C; }
+  @media (max-width: 767px) {
+    body {
+      padding-left: 0;
+      padding-right: 0; } }
 
 .module-content h1 {
   font-family: "Vic-Bold", arial, sans-serif;
