@@ -22,6 +22,7 @@ ckan.module("-datavic-autocomplete", function ($) {
       target.attr("role"),
       newRole
     );
-    target.attr("role", newRole);
+      target.attr("role", newRole);
+      target.attr("aria-expanded", "false")
   };
 });
