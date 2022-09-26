@@ -20,7 +20,7 @@
     {% set is_ready_for_sync = h.is_ready_for_publish(pkg) %}
     {% if is_ready_for_sync %}
       <a type="btn" class="btn" data-toggle="modal" data-target="#syncModal">
-        <i class="fa fa-upload"></i>
+        <i class="fa fa-refresh"></i>
         {{ _('Sync') }}
       </a>
 
@@ -28,7 +28,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Sync dataset on DataVic: {{ pkg.title }}</h4>
+                    <h4 class="modal-title">Dataset {{ pkg.title }} is being syndicated to DataVIc.</h4>
                 </div>
                 <div class="modal-body">
                     <p>Note: This will send the most recent version of this dataset to DataVic. Data records are automatically updated on DataVic when published, with only a small time delay. In rare cases there can be a connection issue at the time of publishing. this manual update should only be used if the change has not appeared on DataVic after 10 minutes. 
