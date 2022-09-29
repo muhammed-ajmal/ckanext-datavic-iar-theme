@@ -49,3 +49,18 @@ $rpl-form-textarea-height-m: rem(75px) !default;
   border-color: rpl-color('danger');
   background-color: $rpl-danger-bg-color;
 }
+
+label[for="organisation_id"], label[for="field-username"], 
+label[for="field-fullname"], label[for="field-email"],
+label[for="field-password"], label[for="field-confirm-password"],
+label[for="field-login"], label[for="field-password"]
+{ 
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

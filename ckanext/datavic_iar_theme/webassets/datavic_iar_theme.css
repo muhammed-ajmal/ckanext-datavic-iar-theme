@@ -1835,6 +1835,19 @@ nav {
       margin-top: 1.75rem;
       flex-basis: calc(25% - (0.75rem * 2)); } }
 
+label[for="organisation_id"], label[for="field-username"],
+label[for="field-fullname"], label[for="field-email"],
+label[for="field-password"], label[for="field-confirm-password"],
+label[for="field-login"], label[for="field-password"] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
 .rpl-form {
   font-family: "VIC-Regular", "Arial", "Helvetica", "sans-serif";
   font-size: 0.875rem;
