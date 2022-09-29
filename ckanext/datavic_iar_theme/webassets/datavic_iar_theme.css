@@ -1708,7 +1708,7 @@ nav {
   .resource-item .resource-summary {
     flex-grow: 2;
     margin-right: 15px;
-    word-break: break-word; }
+    word-break: break-all; }
   .resource-item .resource-icon {
     max-width: 45px; }
     .resource-item .resource-icon .format-label {
