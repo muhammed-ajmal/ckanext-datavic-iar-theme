@@ -8,6 +8,7 @@ datavic-iar-theme-js:
   output: datavic_iar_theme/%(version)s_datavic_iar_theme.js
   contents:
     - datavic_iar_theme.js
+    - datavic-api-info.js
     - _datavic_autocomplete.js
   extra:
     preload:
