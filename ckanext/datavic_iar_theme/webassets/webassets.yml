@@ -9,9 +9,11 @@ datavic-iar-theme-js:
   contents:
     - datavic_iar_theme.js
     - datavic-api-info.js
+    - _datavic_autocomplete.js
   extra:
     preload:
       - base/main
+      - base/ckan
   filters: rjsmin
 
 confirm-link-action:
