@@ -1,4 +1,9 @@
 ckan.module("-datavic-autocomplete", function ($) {
+  /**
+   * Patch CKAN core autocomplete widget with the following behaviors:
+   * * add role and aria-expanded attributes to autocomplete dropdowns
+   * * [...] mention here all additional changes
+   */
   const module = ckan.module.registry["autocomplete"];
   if (!module) {
     console.warn("`autocomplete` module is not registered");
@@ -12,33 +17,21 @@ ckan.module("-datavic-autocomplete", function ($) {
     _setup.call(this);
 
     const target = this._select2.focusser;
+    // dropdowns have focusser element. If it's missing, we are looking at
+    // tag-input, probably
     if (!target) {
       return;
     }
 
     console.debug(
-      "Change %o role from %s to %s",
+      "[-datavic-autocomplete] Change %o role from %s to %s",
       target,
       target.attr("role"),
       newRole
     );
-      target.attr("role", newRole);
-      target.attr("aria-expanded", "false");
-      target.prop("required", true);
-      target.attr("aria-required", "true");
+    target.attr("role", newRole);
 
-    $('.select2-search, .select2-search-field').children('input[type="text"]').on('focusin, change', function() {
-      $(this).prop('required', true);
-      $(this).attr('aria-required', 'true');
-    });
-
-    // add aria-required attribute
-    $('#field-organizations').prop('required', true);
-    $('#field-organizations').attr('aria-required', 'true');
-    $('#field-license_id').prop('required', true);
-    $('#field-license_id').attr('aria-required', 'true');
-    $('#field-format').prop('required', true);
-    $('#field-format').attr('aria-required', 'true');
-    
+    console.debug("[-datavic-autocomplete] Set aria-expanded on %o", target);
+    target.attr("aria-expanded", "false");
   };
 });
