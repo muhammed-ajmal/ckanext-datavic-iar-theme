@@ -28,8 +28,29 @@
   {% endif %}
 
   <div class="form-actions">
+    {% block oidc_login_button %}
+        <a href="{{ h.url_for("oidc_pkce.login", came_from=request.path  ~ '?__no_cache__=True') }}" class="btn btn-primary">
+            {{ _("Single Sign on using your VPS account") }}
+        </a>
+    {% endblock %}
+
     {% block form_actions %}
     <button class="btn btn-primary" type="submit" name="save">{{ _("Create Account") }}</button>
     {% endblock %}
+
+
+    {% if session.pop("ckanext:oidc-pkce:error", null) %}
+        <div>
+            <p>
+                {% trans %}
+                Your email account is not automatically recognised.  If you
+                work in the Victorian Public Service, please register for an
+                account using the standard form. Please contact
+                <a href="mailto:datavic@dpc.vic.gov.au">datavic@dpc.vic.gov.au</a> for assistance.
+                {% endtrans %}
+            </p>
+        </div>
+
+    {% endif %}
   </div>
 </form>
