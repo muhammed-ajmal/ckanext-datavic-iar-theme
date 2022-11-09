@@ -1,10 +1,56 @@
 {% ckan_extends  %}
 
-{% block page_heading %}{{ _('Request for an Account') }}{% endblock %}
+{% block wrapper_class %} user-register-page {% endblock %}
 
 {% block help_inner %}
 <h2 class="module-heading">{{ _('Why Sign Up?') }}</h2>
 <div class="module-content">
   <p>Get access to a range of datasets available only to the VPS.</p>
 </div>
+{% endblock %}
+
+
+{% block primary_content %}
+  <article class="module">
+    <div class="module-content">
+
+      {% block primary_content_inner %}
+        <h1 class="page-heading">
+            {% block page_heading %}{{ _('Register for an Account') }}{% endblock %}
+        </h1>
+
+        <div class="sso-block">
+            <div class="sso-block--info">
+                <span class="info--icon">
+                    {% include 'snippets/svg/info.svg' %}
+                </span>
+                <span class="info--text">
+                    {% trans %}
+                    The VPS Data Directory has introduced Single Sign-On (SSO)
+                    access. If you have an eligible account, you can now access
+                    the VPS Data Directory via the SSO button below, without
+                    completing the registration process below.
+                    Find out more, <a href="http://pxtoem.com/">including who is eligible, here.</a>
+                    {% endtrans %}
+                </span>
+            </div>
+
+            {% block oidc_login_button %}
+                <div class="sso-block-button">
+                    <a href="{{ h.url_for("oidc_pkce.login", came_from=request.path ~ '?__no_cache__=True') }}" class="btn btn-primary">
+                    {{ _("Access VPS Data Directory using Single Sign-On") }}
+                    </a>
+                </div>
+            {% endblock %}
+        </div>
+
+        <div class="division-line">
+            <span>{{ _('Or') }}</span>
+        </div>
+
+        {{ form | safe }}
+      {% endblock %}
+
+    </div>
+  </article>
 {% endblock %}
