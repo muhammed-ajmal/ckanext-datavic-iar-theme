@@ -59,12 +59,6 @@ a.close {
             margin-bottom: rem(64px);
         }
 
-        form {
-            a {
-                text-decoration: underline;
-            }
-        }
-
         .sso-block {
             padding: 0 30px;
 
@@ -93,6 +87,12 @@ a.close {
                     svg {
                         height: 32px;
                         width: 32px;
+                    }
+                }
+
+                .info--text {
+                    a {
+                        text-decoration: underline;
                     }
                 }
             }
@@ -167,6 +167,7 @@ a.close {
 
                 a {
                     color: rpl-color('secondary');
+                    text-decoration: underline;
                 }
             }
         }
