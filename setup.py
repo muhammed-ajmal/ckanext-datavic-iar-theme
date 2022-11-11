@@ -57,7 +57,7 @@ setup(
 
     install_requires=[
         "ckanext-check-link~=0.0.16",
-        "ckanext-oidc-pkce~=0.0.3",
+        "ckanext-oidc-pkce~=0.1.0",
       # CKAN extensions should not list dependencies here, but in a separate
       # ``requirements.txt`` file.
       #

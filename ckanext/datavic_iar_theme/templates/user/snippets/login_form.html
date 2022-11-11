@@ -14,6 +14,30 @@ Example:
 {% set username_error = true if error_summary %}
 {% set password_error = true if error_summary %}
 
+{# TODO: drop debug condition #}
+{% if g.action == "logged_in" %}
+    <div class="sdp-alert sdp-alert-danger alert">
+        <svg data-v-75058d3a="" viewBox="0 0 20 20" aria-hidden="true" overflow="visible" class="rpl-icon rpl-icon--alert_information rpl-icon--color_danger" style="width: 20px; height: 20px;"><!----> <path d="M11.667 10a1.667 1.667 0 11-3.334 0V5a1.667 1.667 0 013.334 0v5zM10 16.667a1.67 1.67 0 01-1.54-2.306A1.667 1.667 0 1110 16.667zM0 10c0 5.514 4.486 10 10 10s10-4.486 10-10S15.514 0 10 0 0 4.486 0 10z"></path> </svg>
+
+        <div class="sdp-alert__content">
+        <h4 class="heading">
+            {{ _("There is an error with your request:") }}
+        </h4>
+        <ul class="error-list">
+            <li>
+                {% trans %}
+                This account has previously been linked to Single SIgn-On to
+                access the Data Directory. Use the Single Sign-On button below
+                to access the Data Directory with your account.
+                {% endtrans %}
+
+            </li>
+        </ul>
+        </div>
+    </div>
+{% endif %}
+
+
 <form action="{{ action }}" method="post" class="form-horizontal">
   {{ form.errors(errors=error_summary) }}
 
@@ -84,20 +108,6 @@ Example:
       </div>
       <button class="btn btn-primary" type="submit">{{ _('Login') }}</button>
     {% endblock %}
-
-    {% if session.pop("ckanext:oidc-pkce:error", null) %}
-        <div>
-            <p>
-                {% trans %}
-                Your email account is not automatically recognised.  If you
-                work in the Victorian Public Service, please register for an
-                account using the standard form. Please contact
-                <a href="mailto:datavic@dpc.vic.gov.au">datavic@dpc.vic.gov.au</a> for assistance.
-                {% endtrans %}
-            </p>
-        </div>
-
-    {% endif %}
 
   </div>
 </form>
