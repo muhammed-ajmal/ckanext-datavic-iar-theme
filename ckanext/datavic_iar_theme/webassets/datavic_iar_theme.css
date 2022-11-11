@@ -624,6 +624,29 @@ h2 {
     .dashboard .nav-tabs > li:first-child > a:hover {
       border-left: 1px solid #D7DBE0; } }
 
+.sdp-alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 20px; }
+  .sdp-alert .rpl-icon {
+    min-width: 25px;
+    min-height: 25px;
+    margin-inline-end: 10px; }
+  .sdp-alert-danger {
+    color: #af272f;
+    border-color: #af272f;
+    background: #f9f0f0; }
+    .sdp-alert-danger .error-list {
+      padding-inline-start: 30px; }
+  .sdp-alert-success {
+    color: #027a83;
+    border-color: #027a83;
+    background: #edf6f6; }
+    .sdp-alert-success .rpl-icon {
+      fill: #027a83; }
+
 .select2-search-choice-close, .select2-container-multi .select2-search-choice-close {
   top: 5px; }
 
