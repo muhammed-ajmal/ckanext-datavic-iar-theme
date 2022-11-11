@@ -632,7 +632,13 @@ h2 {
   justify-content: space-between;
   align-items: center;
   font-size: 1.2rem;
-  padding: 20px; }
+  padding: 20px;
+  margin-left: -40px;
+  margin-right: -40px; }
+  @media (max-width: 767px) {
+    .sdp-alert {
+      margin-left: 0px;
+      margin-right: 0px; } }
   .sdp-alert .rpl-icon {
     min-width: 25px;
     min-height: 25px;
