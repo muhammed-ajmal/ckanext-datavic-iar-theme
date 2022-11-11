@@ -2884,9 +2884,6 @@ a.close {
   .row.user-login-page .primary .page-heading,
   .row.user-register-page .primary .page-heading {
     margin-bottom: 4rem; }
-  .row.user-login-page .primary form a,
-  .row.user-register-page .primary form a {
-    text-decoration: underline; }
   .row.user-login-page .primary .sso-block,
   .row.user-register-page .primary .sso-block {
     padding: 0 30px; }
@@ -2912,6 +2909,9 @@ a.close {
         .row.user-register-page .primary .sso-block .sso-block--info .info--icon svg {
           height: 32px;
           width: 32px; }
+      .row.user-login-page .primary .sso-block .sso-block--info .info--text a,
+      .row.user-register-page .primary .sso-block .sso-block--info .info--text a {
+        text-decoration: underline; }
   .row.user-login-page .primary .module-content,
   .row.user-register-page .primary .module-content {
     width: fit-content;
@@ -2969,7 +2969,8 @@ a.close {
       text-align: right; }
       .row.user-login-page .primary .module-content .password-reset a,
       .row.user-register-page .primary .module-content .password-reset a {
-        color: #011A3C; }
+        color: #011A3C;
+        text-decoration: underline; }
 
 @media (max-width: 767px) {
   .row.user-login-page .primary,
