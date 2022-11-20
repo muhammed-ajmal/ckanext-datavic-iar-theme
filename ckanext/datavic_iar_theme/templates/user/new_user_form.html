@@ -1,33 +1,10 @@
 {% import "macros/form.html" as form %}
 
-{# TODO: drop debug condition #}
-{% if session.pop("ckanext:oidc-pkce:error", null) or request.args.__oidc_debug_message %}
-    <div class="sdp-alert sdp-alert-danger alert">
-        <svg data-v-75058d3a="" viewBox="0 0 20 20" aria-hidden="true" overflow="visible" class="rpl-icon rpl-icon--alert_information rpl-icon--color_danger" style="width: 20px; height: 20px;"><!----> <path d="M11.667 10a1.667 1.667 0 11-3.334 0V5a1.667 1.667 0 013.334 0v5zM10 16.667a1.67 1.67 0 01-1.54-2.306A1.667 1.667 0 1110 16.667zM0 10c0 5.514 4.486 10 10 10s10-4.486 10-10S15.514 0 10 0 0 4.486 0 10z"></path> </svg>
-
-        <div class="sdp-alert__content">
-        <h4 class="heading">
-            {{ _("There is an error with your request:") }}
-        </h4>
-        <ul class="error-list">
-            <li>
-                {% trans %}
-                Your email account was not automatically recognised. If you
-                work in the Victorian Public Service, please register an
-                account using the standard form below. Please contact
-                <a href="mailto:datavic@dpc.vic.gov.au">datavic@dpc.vic.gov.au</a> for assistance.
-                {% endtrans %}
-
-            </li>
-        </ul>
-        </div>
-    </div>
-{% endif %}
-
 <form id="user-register-form" class="form-horizontal" action="" method="post">
   {{ form.errors(error_summary) }}
 
-  {{ form.select(
+  <div class="custom-select">
+    {{ form.select(
     "organisation_id",
     label=_("Organisation"),
     options=h.get_parent_orgs(),
@@ -35,18 +12,28 @@
     error=errors.organisation_id,
     classes=["control-medium"]
   ) }}
+  </div>
 
   {{ form.input("name", id="field-username", label=_("Username"), placeholder=_("username"), value=data.name, error=errors.name, classes=["control-medium"]) }}
   {{ form.input("fullname", id="field-fullname", label=_("Full Name"), placeholder=_("Joe Bloggs"), value=data.fullname, error=errors.fullname, classes=["control-medium"]) }}
   {{ form.input("email", id="field-email", label=_("Email"), type="email", placeholder=_("joe@example.com"), value=data.email, error=errors.email, classes=["control-medium"]) }}
 
-    <h2>Password</h2>
-    <p>Your password must be a minimum of 12 characters in length and include
-        <br />at least one upper and lower-case letter, a number and a symbol.</p>
+  <div class="password-block">
+    <div class="password-block--info">
+        <div class="info--title">
+            <h2>Password</h2>
+        </div>
+        <div class="info--text">
+            <p>Your password must be a minimum of 12 characters in length and include at least one upper and lower-case letter, a number and a symbol.
+            </p>
+        </div>
+    </div>
 
-  {{ form.input("password1", id="field-password", label=_("Password"), type="password", placeholder="••••••••", value=data.password1, error=errors.password1, classes=["control-medium"]) }}
-  {{ form.input("password2", id="field-confirm-password", label=_("Confirm"), type="password", placeholder="••••••••", value=data.password2, error=errors.password1, classes=["control-medium"]) }}
 
+    {{ form.input("password1", id="field-password", label=_("Password"), type="password", placeholder=_("Password"), value=data.password1, error=errors.password1, classes=["control-medium"]) }}
+    {{ form.input("password2", id="field-confirm-password", label=_("Confirm password"), type="password", placeholder=_("Confirm password"), value=data.password2, error=errors.password1, classes=["control-medium"]) }}
+
+  </div>
   {% if g.recaptcha_publickey %}
     {% snippet "user/snippets/recaptcha.html", public_key=g.recaptcha_publickey %}
   {% endif %}

@@ -42,11 +42,47 @@ Example:
 <form action="{{ action }}" method="post" class="form-horizontal">
   {{ form.errors(errors=error_summary) }}
 
-  {{ form.input('login', label=_("Username"), id='field-login', value="", error=username_error, classes=["control-medium"]) }}
+  <div class="sso-block">
+    {% block oidc_login_button %}
+      <div class="sso-block-button">
+        <a href="{{ h.url_for("oidc_pkce.login", came_from=request.path ~ '?__no_cache__=True') }}" class="btn btn-primary">
+          {{ _("Access VPS Data Directory using Single Sign-On") }}
+        </a>
+      </div>
+    {% endblock %}
 
-  {{ form.input('password', label=_("Password"), id='field-password', type="password", value="", error=password_error, classes=["control-medium"]) }}
+    <div class="sso-block--info">
+      <span class="info--icon">
+        {% include 'snippets/svg/info.svg' %}
+      </span>
+      <span class="info--text">
+        {% trans %}
+          The VPS Data Directory has introduced Single Sign-On (SSO)
+          access. If you have an account, you can now access the VPS
+          Data Directory via the SSO button above and use your
+          work Microsoft Office email to login. Find out more,
+          <a href="http://pxtoem.com/">including who is eligible, here.</a>
+        {% endtrans %}
+      </span>
+    </div>
+  </div>
 
-  <div class="control-group ">
+  <div class="division-line">
+    <span>{{ _('Or') }}</span>
+  </div>
+
+  <div class="block-details">
+      <p>
+          {{ _('Access the VPS Data Directory using your login details.') }}
+      </p>
+  </div>
+
+
+  {{ form.input('login', label=_("Username"), id='field-login', placeholder="Username", value="", error=username_error, classes=["control-medium"]) }}
+
+  {{ form.input('password', label=_("Password"), id='field-password', placeholder="Enter password", type="password", value="", error=password_error, classes=["control-medium"]) }}
+
+  <div class="control-group hidden">
     <div class="controls">
       <label class="rpl-checkbox" for="field-remember">
         <input type="checkbox" id='field-remember' name="remember" checked=true, value="63072000" />
@@ -58,15 +94,20 @@ Example:
     </div>
   </div>
 
-  <div class="form-actions">
-    {% block oidc_login_button %}
-        <a href="{{ h.url_for("oidc_pkce.login", came_from=request.path ~ '?__no_cache__=True') }}" class="btn btn-primary">
-            {{ _("Single Sign on using your VPS account") }}
-        </a>
-    {% endblock %}
+    <div class="password-reset">
+      <span>
+        <a href="{{ h.url_for('user.request_reset') }}">{{ _('Forgotten your password?') }}</a>
+      </span>
+    </div>
 
+  <div class="form-actions">
     {% block login_button %}
-    <button class="btn btn-primary" type="submit">{{ _('Login') }}</button>
+      <div class="sign-up">
+        <span>
+        {{ _('Don t have an account yet?') }} <a href="{{ h.url_for('user.register') }}">{{ _('Sign up here.') }}</a>
+        </span>
+      </div>
+      <button class="btn btn-primary" type="submit">{{ _('Login') }}</button>
     {% endblock %}
 
   </div>
