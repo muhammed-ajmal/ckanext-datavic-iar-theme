@@ -19,6 +19,7 @@
             {% block page_heading %}{{ _('Request for an Account') }}{% endblock %}
         </h1>
 
+
         {# TODO: drop debug condition #}
         {% if session.pop("ckanext:oidc-pkce:error", null) or request.args.__oidc_debug_message %}
             <div class="sdp-alert sdp-alert-danger alert">
@@ -42,7 +43,6 @@
                 </div>
             </div>
         {% endif %}
-
 
         <div class="sso-block">
             <div class="sso-block--info">

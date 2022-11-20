@@ -2912,7 +2912,7 @@ a.close {
   float: none; }
   .row.user-login-page .primary .page-heading,
   .row.user-register-page .primary .page-heading {
-    margin-bottom: 2rem; }
+    margin-bottom: 4rem; }
   .row.user-login-page .primary .sso-block,
   .row.user-register-page .primary .sso-block {
     padding: 0 30px; }
