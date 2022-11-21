@@ -56,7 +56,7 @@ setup(
     namespace_packages=['ckanext'],
 
     install_requires=[
-        "ckanext-check-link~=0.0.8",
+        "ckanext-check-link~=0.0.16",
       # CKAN extensions should not list dependencies here, but in a separate
       # ``requirements.txt`` file.
       #
