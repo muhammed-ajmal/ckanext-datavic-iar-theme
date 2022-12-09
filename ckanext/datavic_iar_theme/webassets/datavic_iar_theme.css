@@ -1337,6 +1337,11 @@ nav {
     line-height: 1rem;
     padding-left: 0; }
 
+.module .dashboard-header {
+  font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
+  font-size: 1.5em;
+  padding: 0px 15px 0px 30px; }
+
 .rpl-text-icon--before {
   margin: auto .5rem auto auto; }
 
@@ -2367,8 +2372,9 @@ label.rpl-checkbox:after {
       padding-top: 3rem;
       padding-bottom: 3.75rem; } }
   .rpl-search-form h1 {
-    color: #F6BE00;
-    margin-top: 0; }
+    color: #011A3C;
+    margin-top: 0;
+    padding-left: 25px; }
     @media screen and (min-width: 0) {
       .rpl-search-form h1 {
         font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
@@ -2378,12 +2384,12 @@ label.rpl-checkbox:after {
     @media screen and (min-width: 768px) {
       .rpl-search-form h1 {
         font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
-        font-size: 3rem;
+        font-size: 2rem;
         line-height: 1em; } }
     @media screen and (min-width: 1600px) {
       .rpl-search-form h1 {
         font-family: "VIC-Bold", "Arial", "Helvetica", "sans-serif";
-        font-size: 3.5rem;
+        font-size: 2rem;
         line-height: 1em; } }
     .rpl-search-form--dark h1 {
       color: #fff; }
