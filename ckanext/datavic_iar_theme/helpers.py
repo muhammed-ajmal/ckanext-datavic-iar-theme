@@ -110,3 +110,18 @@ def visibility_list():
         {"value": "private", "label": "Open to VPS only"},
         {"value": "public", "label": "Open to the public"}
     ]
+
+def featured_resource_preview(resources):
+    featured_preview = None
+    for item in resources:
+        if item.get('featured') is True:
+            resource_views = toolkit.get_action('resource_view_list')(
+            {}, {'id': item['id']})
+            if len(resource_views) > 0:
+                featured_preview = {
+                    'preview':resource_views[0],
+                    'resource':item
+                    }
+            break
+
+    return featured_preview
