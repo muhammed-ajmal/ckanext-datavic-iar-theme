@@ -111,17 +111,20 @@ def visibility_list():
         {"value": "public", "label": "Open to the public"}
     ]
 
-def featured_resource_preview(resources):
+def featured_resource_preview(package):
     featured_preview = None
-    for item in resources:
-        if item.get('featured') is True:
-            resource_views = toolkit.get_action('resource_view_list')(
-            {}, {'id': item['id']})
-            if len(resource_views) > 0:
-                featured_preview = {
-                    'preview':resource_views[0],
-                    'resource':item
-                    }
-            break
-
+    if package.get('nominated_view_id',None):
+        try:
+            resource_view = toolkit.get_action('resource_view_list')(
+                {}, {'id': package['nominated_view_id']})
+            resource = toolkit.get_action('resource_show')(
+                {}, {'id': resource_view['resource_id']})
+            featured_preview = {
+                            'preview':resource_view,
+                            'resource':resource
+                            }
+        except:
+            pass
     return featured_preview
+
+
