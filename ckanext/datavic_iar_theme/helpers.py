@@ -8,6 +8,7 @@ from sqlalchemy.sql import func
 import ckan.lib.helpers as h
 import dominate.tags as tags
 
+NotFound = toolkit.ObjectNotFound
 log = logging.getLogger(__name__)
 
 
@@ -111,11 +112,13 @@ def visibility_list():
         {"value": "public", "label": "Open to the public"}
     ]
 
+
 def featured_resource_preview(package):
+    # To get a featured preview for the dataset
     featured_preview = None
     if package.get('nominated_view_id',None):
         try:
-            resource_view = toolkit.get_action('resource_view_list')(
+            resource_view = toolkit.get_action('resource_view_show')(
                 {}, {'id': package['nominated_view_id']})
             resource = toolkit.get_action('resource_show')(
                 {}, {'id': resource_view['resource_id']})
@@ -123,7 +126,7 @@ def featured_resource_preview(package):
                             'preview':resource_view,
                             'resource':resource
                             }
-        except:
+        except NotFound:
             pass
     return featured_preview
 

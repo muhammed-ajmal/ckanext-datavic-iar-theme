@@ -6,7 +6,7 @@
 <section class="datapreview">
   <h3>{{ _('Data preview') }}</h3>
   <div class="resource-view">
-      {% set resource_view = h.featured_resource_preview(pkg.resources) %}
+      {% set resource_view = h.featured_resource_preview(pkg) %}
       {% if resource_view %}
 
         {% snippet 'package/snippets/resource_view.html',
