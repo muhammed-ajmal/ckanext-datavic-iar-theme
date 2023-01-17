@@ -17,7 +17,7 @@
   </a>
 
   {% if pkg.nominated_view_id == view.id %}
-    {% set url_denominate = h.url_for('datavicmain.denominate_view', package_id=pkg.id) %}
+    {% set url_denominate = h.url_for('datavicmain.denominate_view', package_id=pkg.id, view_id=view.id) %}
     <form action="{{url_denominate}}" method="post">
       <button type="submit" class="btn btn-danger">
         Remove from Data preview
@@ -25,7 +25,7 @@
     </form>
   {% else %}
 
-    {% set url_nominate = h.url_for('datavicmain.nominate_view', package_id=pkg.id,view_id=view.id) %}
+    {% set url_nominate = h.url_for('datavicmain.nominate_view', package_id=pkg.id, view_id=view.id) %}
     <form action="{{url_nominate}}" method="post">
       <button type="submit" class="btn btn-success">
         Make as Data preview
