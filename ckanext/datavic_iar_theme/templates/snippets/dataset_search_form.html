@@ -5,11 +5,27 @@
     {% set organization = facet_values.get('organization')[0] if facet_values.get('organization', [])[0] else '' %}
     {% set group = facet_values.get('groups')[0] if facet_values.get('groups', [])[0] else '' %}
     {% set format = facet_values.get('res_format')[0] if facet_values.get('res_format', [])[0] else '' %}
-    {% set placeholder =  _('Search Data') %}
+    {% set placeholder =  _('Search') %}
     {% set visibility_selected = g.visibility_selected or 'all' %}
 
     <div class="search-form-wrapper">
       <div class="rpl-search-form da-search rpl-site-constrain--on-all">
+        {% if query %}
+          <h1> {{ ungettext(
+            'Search Results ({number} dataset found)', 
+            'Search Results ({number} datasets found)', 
+             count
+            ).format(number=count) }}
+         </h1>              
+        {% else %}
+          <h1>
+            {{ ungettext(
+              'Search {number} dataset', 
+              'Search {number} datasets', 
+               count
+            ).format(number=count) }}
+         </h1>
+        {% endif %}
         <form {% if form_id %}id="{{ form_id }}" {% endif %}class="rpl-form" action="{{ h.url_for('dataset.search') }}" method="get">
           <input type="hidden" id="field-order-by" name="sort" value="{{ sorting_selected }}" />
           <input type="hidden" id="field-visibility" name="visibility" value="{{ visibility_selected }}" />
@@ -53,7 +69,7 @@
                                       {% endif %}
                                     {% endfor %}
                                   {% else %}
-                                  <span>Please select an organisation</span>
+                                  <span>Organisation</span>
                                   {% endif %}
                                   <svg focusable="false" aria-hidden="true" class="rpl-icon rpl-icon--down rpl-icon--color_light_primary" style="width: 8px; height: 5px;" width="8" height="5" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
                                     <path id="arrow-vector-1" fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L4 2.58579L6.29289 0.292893C6.68342 -0.0976311 7.31658 -0.0976311 7.70711 0.292893C8.09763 0.683417 8.09763 1.31658 7.70711 1.70711L4.70711 4.70711C4.31658 5.09763 3.68342 5.09763 3.29289 4.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z"
@@ -70,7 +86,7 @@
                                               data-target="organization"
                                               data-checklist="checklist-organization"
                                       >
-                                        <span>Please select an organisation</span>
+                                        <span>Organisation</span>
                                       </button><!---->
                                     </div>
                                   {% for item in items %}
@@ -108,7 +124,7 @@
                                       {% endif %}
                                     {% endfor %}
                                   {% else %}
-                                  <span>Please select a category</span>
+                                  <span>Category</span>
                                   {% endif %}
                                   <svg focusable="false" aria-hidden="true" class="rpl-icon rpl-icon--down rpl-icon--color_light_primary" style="width: 8px; height: 5px;" width="8" height="5" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
                                     <path id="arrow-vector-2" fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L4 2.58579L6.29289 0.292893C6.68342 -0.0976311 7.31658 -0.0976311 7.70711 0.292893C8.09763 0.683417 8.09763 1.31658 7.70711 1.70711L4.70711 4.70711C4.31658 5.09763 3.68342 5.09763 3.29289 4.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z"
@@ -125,7 +141,7 @@
                                               data-target="groups"
                                               data-checklist="checklist-group"
                                       >
-                                        <span>Please select a category</span>
+                                        <span>Category</span>
                                       </button><!---->
                                     </div>
                                   {% for item in items %}
@@ -167,7 +183,7 @@
                                       {% endif %}
                                     {% endfor %}
                                   {% else %}
-                                  <span>Please select a format</span>
+                                  <span>Format</span>
                                   {% endif %}
                                   <svg focusable="false" aria-hidden="true" class="rpl-icon rpl-icon--down rpl-icon--color_light_primary" style="width: 8px; height: 5px;" width="8" height="5" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
                                     <path id="arrow-vector-3" fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L4 2.58579L6.29289 0.292893C6.68342 -0.0976311 7.31658 -0.0976311 7.70711 0.292893C8.09763 0.683417 8.09763 1.31658 7.70711 1.70711L4.70711 4.70711C4.31658 5.09763 3.68342 5.09763 3.29289 4.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z"
@@ -184,7 +200,7 @@
                                               data-target="res_format"
                                               data-checklist="checklist-format"
                                       >
-                                        <span>Please select a format</span>
+                                        <span>Format</span>
                                       </button><!---->
                                     </div>
                                   {% for item in items %}
@@ -357,9 +373,7 @@
   {% endblock %}
 
   {% block search_title %}
-    {% if not error and count %}
-      <h2 class="block-search-title">{% snippet 'snippets/search_result_text.html', query=query, count=count, type=type %}</h2>
-    {% elif error %}
+    {% if error %}
       <h2>Error</h2>
     {% endif %}
   {% endblock %}
