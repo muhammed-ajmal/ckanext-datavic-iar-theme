@@ -20,7 +20,7 @@
     {% set url_denominate = h.url_for('datavicmain.denominate_view', package_id=pkg.id, view_id=view.id) %}
     <form action="{{url_denominate}}" method="post">
       <button type="submit" class="btn btn-danger">
-        Remove from Data preview
+        {{ _('Stop showing this preview on Dataset page') }}
       </button>
     </form>
   {% else %}
@@ -28,7 +28,7 @@
     {% set url_nominate = h.url_for('datavicmain.nominate_view', package_id=pkg.id, view_id=view.id) %}
     <form action="{{url_nominate}}" method="post">
       <button type="submit" class="btn btn-success">
-        Make as Data preview
+        {{ _('Show this preview on Dataset page') }}
       </button>
     </form>
   {% endif %}
