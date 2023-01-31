@@ -13,6 +13,8 @@
     {{ h.snippet('package/snippets/stages.html', stages=stage) }}
   {% endblock %}
 
+  <h1 class="header"> {{ _('Create a new data record') }} </h1>
+
   <input type="hidden" name="_ckan_phase" value="dataset_new_1" />
   {# pkg_name used in 3 stage edit #}
   <input type="hidden" name="pkg_name" value="{{ data.id }}" />

@@ -18,6 +18,8 @@
 
   {% block errors %}{{ form.errors(error_summary) }}{% endblock %}
 
+  <h1 class="header">{{ _('Add a data resource') }} </h1>
+  
   <input name="id" value="{{ data.id }}" type="hidden"/>
 
   {% block basic_fields %}
