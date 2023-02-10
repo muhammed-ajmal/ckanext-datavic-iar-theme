@@ -7,7 +7,7 @@
 
 {% block header_account %}
   {% if c.userobj %}
-  <header class="account-masthead">
+  <nav id="account-menu" class="account-masthead">
     <div class="container">
       {% block header_account_container_content %}
         {% if c.userobj %}
@@ -54,11 +54,11 @@
         {% endif %}
       {% endblock %}
     </div>
-  </header>
+  </nav>
   {% endif %}
 {% endblock %}
 
-<div id="mobile-menu" class="rpl-site-header hidden">
+<nav id="mobile-menu" class="rpl-site-header hidden">
   <div class="rpl-site-header__inner">
     <div class="rpl-site-header__top">
       <div class="rpl-site-header__logo-container">
@@ -103,9 +103,9 @@
       <div class="rpl-site-header__btn-container"><!----> <!----></div>
     </div> <!---->
   </div>
-</div>
+</nav>
 
-<div id="main-menu" class="rpl-site-header">
+<nav id="main-menu" class="rpl-site-header">
   <div class="rpl-site-header__inner">
     <div class="rpl-site-header__top">
       <div class="rpl-site-header__logo-container">
@@ -163,6 +163,6 @@
       </div>
     </div> <!---->
   </div>
-</div>
+</nav>
 
 {% endblock %}
