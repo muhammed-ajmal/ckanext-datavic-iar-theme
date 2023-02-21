@@ -46,10 +46,7 @@ setup(
     install_requires=[
         "ckanext-check-link~=0.0.16",
         "ckanext-oidc-pkce~=0.1.2",
-        # CKAN extensions should not list dependencies here, but in a separate
-        # ``requirements.txt`` file.
-        #
-        # http://docs.ckan.org/en/latest/extensions/best-practices.html#add-third-party-libraries-to-requirements-txt
+        "ckanext-toolbelt >=0.2.3, <1.0.0",
     ],
     # If there are data files included in your packages that need to be
     # installed, specify them here.  If using Python 2.6 or less, then these
