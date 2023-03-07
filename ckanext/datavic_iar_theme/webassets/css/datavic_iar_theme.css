@@ -1749,7 +1749,11 @@ nav {
     max-width: 45px; }
     .resource-item .resource-icon .format-label {
       position: initial;
-      margin-right: 10px; }
+      margin-right: 10px;
+      color: transparent;
+      display: inline-block;
+      height: 60px;
+      width: 60px; }
 
 .resource-list .resource-item {
   display: flex;

@@ -20,6 +20,10 @@ $primary-color: #0052C2;
         .format-label {
             position: initial;
             margin-right: 10px;
+            color: transparent;
+            display: inline-block;
+            height: 60px;
+            width: 60px;
         }
     }
 }
