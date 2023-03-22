@@ -1,4 +1,4 @@
-this.ckan.module('datavic-confirm-link-action', function (jQuery) {
+ckan.module('datavic-confirm-link-action', function (jQuery) {
     return {
       /* An object of module options */
       options: {
