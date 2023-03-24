@@ -120,3 +120,11 @@ $primary-color: #0052C2;
         line-height: 1.5em;
     }
 }
+
+.resource-read {
+    .table.table-striped {
+        thead {
+            display: none;
+        }
+    }
+}

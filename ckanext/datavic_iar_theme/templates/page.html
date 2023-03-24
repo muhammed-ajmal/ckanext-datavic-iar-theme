@@ -70,7 +70,7 @@
           {% endblock %}
 
             {% block secondary %}
-              {% set span = 9 if g.blueprint in ['user', 'admin', 'harvester'] else 12 %}
+              {% set span = 9 if g.blueprint in ['user', 'admin', 'harvester', 'activity'] else 12 %}
               {% if span != 12 %}
                   <aside class="secondary col-sm-3">
                     {% block secondary_content %}{% endblock %}
@@ -79,7 +79,7 @@
             {% endblock %}
 
             {% block primary %}
-              {% set span = 9 if g.blueprint in ['user', 'admin', 'harvester'] else 12 %}
+              {% set span = 9 if g.blueprint in ['user', 'admin', 'harvester', 'activity'] else 12 %}
               <div class="primary col-sm-{{ span }} col-xs-12">
                 {% block primary_content %}
                   {{ super() }}
