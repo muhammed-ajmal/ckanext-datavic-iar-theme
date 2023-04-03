@@ -2,6 +2,8 @@
 {% set is_sso_user = h.oidc_pkce_is_sso_user(data.id) %}
 
 <form id="user-edit-form" class="dataset-form" method="post" action="{{ action }}" enctype="multipart/form-data">
+    {{ h.csrf_input() }}
+
   {{ form.errors(error_summary) }}
 
   <fieldset>
